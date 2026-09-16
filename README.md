@@ -168,9 +168,48 @@ git diff --cached --stat
 git diff --cached --check
 ```
 
+## Confirm or change the repository to private
+
+This repository has already been created as **private** at:
+
+```text
+https://github.com/4ffaad/fit3179-pet-insurance-data-viz
+```
+
+To check it in the GitHub website:
+
+1. Sign in to GitHub.
+2. Open the repository link above.
+3. Select **Settings** in the repository navigation bar.
+4. In the left menu, select **General** if it is not already selected.
+5. Scroll to **Danger Zone**.
+6. Find **Change repository visibility**.
+7. The current visibility should say **Private**.
+8. If it does not, select **Change visibility**, choose **Private**, read the warning and confirm the change.
+
+You can also confirm it from a terminal with GitHub CLI:
+
+```bash
+gh repo view 4ffaad/fit3179-pet-insurance-data-viz --json isPrivate,nameWithOwner
+```
+
+It should report:
+
+```json
+{"isPrivate":true,"nameWithOwner":"4ffaad/fit3179-pet-insurance-data-viz"}
+```
+
+If you ever need to change it back to private from the terminal, GitHub CLI requires an explicit consequence acknowledgement:
+
+```bash
+gh repo edit 4ffaad/fit3179-pet-insurance-data-viz \\
+  --visibility private \\
+  --accept-visibility-change-consequences
+```
+
 ## Privacy and final submission
 
-This repository is intended to remain **private while you are developing**.
+Keep this repository **private while you are developing**. Do not add passwords, API keys, access tokens, private class material or unrelated personal files.
 
 The assignment requires a publicly accessible visualisation. GitHub Pages availability for private repositories depends on the GitHub account/plan and repository settings. Before submission, confirm with your tutor whether:
 
