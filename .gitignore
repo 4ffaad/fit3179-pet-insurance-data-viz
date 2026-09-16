@@ -1,0 +1,28 @@
+# Local environments and test dependencies
+.venv/
+node_modules/
+.npm/
+.DS_Store
+
+# Large source/reference files: use the URLs in Source_Register instead
+*.pdf
+SA_LGA_geojson.zip
+LGA_GDA2020.geojson
+ABS_STE_2021_generalised.geojson
+ABS_STE_2021_simplified.geojson
+SA_DATA_*.xlsx
+SA_Most_Popular_*.xlsx
+SA_Top5_*.xlsx
+ACT_Veterinary_Premises_2026.csv
+web_data/act_veterinary_premises.csv
+SA_LGA_simplified.geojson
+data/*.geojson
+
+# Downloaded distribution archive; the repository stores its contents instead
+DV2_Pet_Insurance_Starter_Pack.zip
+
+# Local build scripts are not needed by the GitHub Pages draft
+build_pet_insurance_pack.py
+add_map_assets.py
+simplify_sa_geojson.py
+update_topo_pack.py

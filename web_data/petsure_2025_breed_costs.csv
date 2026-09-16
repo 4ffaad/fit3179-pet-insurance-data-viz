@@ -1,0 +1,13 @@
+rank_or_group,breed,avg_annual_claim_aud,species,source_id,reference_period,measure_definition
+1,Border Collie,771,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+2,Cavoodle,776,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+3,Kelpie,793,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+4,Dachshund,795,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+5,Groodle (Golden Doodle),813,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+All,ALL BREEDS,1047,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+High,French Bulldog,1641,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+High,Beagle,1428,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+High,Rottweiler,1341,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+High,Miniature Schnauzer,1296,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+High,Cavalier King Charles Spaniel,1259,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period
+High,Pug,1235,Dog,S4,2024 claims,Amount claimed per policy over a 12-month period

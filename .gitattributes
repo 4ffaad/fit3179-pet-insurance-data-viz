@@ -1,0 +1,5 @@
+# Keep data and text files consistent across macOS, Windows and GitHub
+*.csv  text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.html text eol=lf

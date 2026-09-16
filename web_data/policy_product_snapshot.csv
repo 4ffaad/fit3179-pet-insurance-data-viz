@@ -1,0 +1,6 @@
+provider_or_product,product_or_tier,annual_benefit_limit_aud,benefit_percentage_or_range,annual_excess_options,accident_cover,illness_cover,routine_care,booster_care,document_date_or_access,source_id,snapshot_caveat
+Buddy,Bronze,11000,As stated on certificate,As stated on certificate,Yes,Yes,Not listed as standard,"Optional benefit $2,000 additional to limit",PDS 2025-06-21,S13,Named product snapshot
+Buddy,Silver,20000,As stated on certificate,As stated on certificate,Yes,Yes,Not listed as standard,"Optional benefit $2,000 additional to limit",PDS 2025-06-21,S13,Named product snapshot
+Buddy,Gold,35000,As stated on certificate,As stated on certificate,Yes,Yes,Not listed as standard,"Optional benefit $2,000 additional to limit",PDS 2025-06-21,S13,Named product snapshot
+AAMI,Pet insurance options,7500 / 20000 / 35000,Up to 70% / 80% / 90%,Multiple options,Eligible accidental injuries,Eligible illnesses,Optional Routine Care,Optional Booster Care,Page checked 2026-09-16,S14,Current web-page snapshot; terms apply
+Pet Insurance Australia,Select and Protect,Product page states 15000 / 25000 / 35000,Product page states flexible percentages,Product page states flexible options,Yes,Yes,Optional Routine Care,Optional Booster Care,PDS effective 2025-10-22,S12,Current PDS/product snapshot

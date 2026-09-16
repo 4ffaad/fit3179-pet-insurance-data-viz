@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": "SA DACO registration classes by council",
+  "description": "Explicit bins: under 90%, 90\u2013under 95%, and 95% or higher.",
+  "data": {
+    "url": "data/sa_lga_simplified.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "sa_lgas"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.lga",
+      "from": {
+        "data": {
+          "url": "web_data/sa_council_map_summary.csv"
+        },
+        "key": "map_join_key",
+        "fields": [
+          "council_source_name",
+          "total_animals",
+          "registered_rate_pct",
+          "boundary_match"
+        ]
+      }
+    },
+    {
+      "filter": "datum.boundary_match === 'YES'"
+    },
+    {
+      "calculate": "datum.registered_rate_pct < 90 ? 'Under 90%' : datum.registered_rate_pct < 95 ? '90\u2013<95%' : '95%+'",
+      "as": "registration_class"
+    }
+  ],
+  "projection": {
+    "type": "mercator"
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "color": {
+      "field": "registration_class",
+      "type": "nominal",
+      "sort": [
+        "Under 90%",
+        "90\u2013<95%",
+        "95%+"
+      ],
+      "title": "Registered share class"
+    },
+    "tooltip": [
+      {
+        "field": "council_source_name",
+        "type": "nominal",
+        "title": "Council"
+      },
+      {
+        "field": "total_animals",
+        "type": "quantitative",
+        "title": "Recorded animals",
+        "format": ",d"
+      },
+      {
+        "field": "registered_rate_pct",
+        "type": "quantitative",
+        "title": "Registered share (%)",
+        "format": ".2f"
+      },
+      {
+        "field": "registration_class",
+        "type": "nominal",
+        "title": "Class"
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+council_source_name,map_join_key,total_animals,dogs,cats,registered_animals,unregistered_animals,registered_rate_pct,boundary_match,source_id,reference_period,derivation_note
+ADELAIDE HILLS COUNCIL,ADELAIDE HILLS COUNCIL,11709,9780,1929,10486,1223,89.56,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+ADELAIDE PLAINS COUNCIL,ADELAIDE PLAINS COUNCIL,6682,5790,892,5847,835,87.5,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+ALEXANDRINA COUNCIL,ALEXANDRINA COUNCIL,10005,8393,1612,9356,649,93.51,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+BARUNGA WEST COUNCIL,BARUNGA WEST COUNCIL,853,679,174,839,14,98.36,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CAMPBELLTOWN CITY COUNCIL,CAMPBELLTOWN CITY COUNCIL,8621,5776,2845,8106,515,94.03,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF ADELAIDE,CITY OF ADELAIDE,2065,1276,789,2004,61,97.05,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF BURNSIDE,CITY OF BURNSIDE,7402,5554,1848,6885,517,93.02,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF CHARLES STURT,CITY OF CHARLES STURT,21918,16350,5568,20262,1656,92.44,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF HOLDFAST BAY,CITY OF HOLDFAST BAY,7130,5734,1396,6030,1100,84.57,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF MARION,CITY OF MARION,19121,14266,4855,16826,2295,88.0,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF MITCHAM,CITY OF MITCHAM,15097,10838,4259,14825,272,98.2,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF MOUNT GAMBIER,CITY OF MOUNT GAMBIER,8194,5580,2614,7621,573,93.01,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF ONKAPARINGA,CITY OF ONKAPARINGA,49388,36812,12576,39654,9734,80.29,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF PLAYFORD,CITY OF PLAYFORD,29189,20992,8197,22481,6708,77.02,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF PORT ADELAIDE ENFIELD,CITY OF PORT ADELAIDE ENFIELD,25066,17522,7544,21676,3390,86.48,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF PORT LINCOLN,CITY OF PORT LINCOLN,3771,2885,886,3542,229,93.93,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF PROSPECT,CITY OF PROSPECT,3727,2612,1115,3206,521,86.02,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF SALISBURY,CITY OF SALISBURY,28728,20652,8076,24677,4051,85.9,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF TEA TREE GULLY,CITY OF TEA TREE GULLY,24111,18293,5818,19823,4288,82.22,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF UNLEY,CITY OF UNLEY,6747,4934,1813,5952,795,88.22,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF VICTOR HARBOR,CITY OF VICTOR HARBOR,4809,3775,1034,4346,463,90.37,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CITY OF WEST TORRENS,CITY OF WEST TORRENS,10620,7206,3414,8753,1867,82.42,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+CLARE AND GILBERT VALLEYS COUNCIL,CLARE AND GILBERT VALLEYS COUNCIL,3544,2842,702,2647,897,74.69,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+COORONG DISTRICT COUNCIL,COORONG DISTRICT COUNCIL,2485,1874,611,2406,79,96.82,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+COPPER COAST COUNCIL,COPPER COAST COUNCIL,5077,3742,1335,4501,576,88.65,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+DC OF ELLISTON,DC OF ELLISTON,428,352,76,420,8,98.13,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+DC OF ROBE,DC OF ROBE,549,483,66,524,25,95.45,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+DISTRICT COUNCIL OF CLEVE,THE DC OF CLEVE,560,433,127,458,102,81.79,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+INTERSTATE COUNCIL,INTERSTATE COUNCIL,4722,3834,888,860,3862,18.21,NO,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+KANGAROO ISLAND COUNCIL,KANGAROO ISLAND COUNCIL,1890,1638,252,1713,177,90.63,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+KINGSTON DC,KINGSTON DC,823,771,52,789,34,95.87,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+LIGHT REGIONAL COUNCIL,LIGHT REGIONAL COUNCIL,5569,4475,1094,5047,522,90.63,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+LOWER EYRE COUNCIL,LOWER EYRE COUNCIL,1885,1516,369,1692,193,89.76,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+MID MURRAY COUNCIL,MID MURRAY COUNCIL,3577,3041,536,3277,300,91.61,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+MOUNT BARKER DISTRICT COUNCIL,MOUNT BARKER DISTRICT COUNCIL,13077,9782,3295,11683,1394,89.34,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+MUNICIPAL COUNCIL OF ROXBY DOWNS,MUNICIPAL COUNCIL OF ROXBY DOWNS,843,687,156,769,74,91.22,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+NARACOORTE LUCINDALE COUNCIL,NARACOORTE LUCINDALE COUNCIL,2570,2271,299,2412,158,93.85,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+NORTHERN AREAS COUNCIL,NORTHERN AREAS COUNCIL,1796,1464,332,1672,124,93.1,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+OUTBACK COMMUNITIES AUTHORITY,OUTBACK COMMUNITIES AUTHORITY,561,475,86,252,309,44.92,NO,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+PORT AUGUSTA CITY COUNCIL,PORT AUGUSTA CITY COUNCIL,4179,3335,844,3632,547,86.91,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+PORT PIRIE REGIONAL COUNCIL,PORT PIRIE REGIONAL COUNCIL,5946,4515,1431,3906,2040,65.69,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+RENMARK PARINGA COUNCIL,RENMARK PARINGA COUNCIL,2326,1906,420,2189,137,94.11,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+SOUTHERN MALLEE DC,SOUTHERN MALLEE DC,688,579,109,644,44,93.6,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+TATIARA DC,TATIARA DC,1979,1707,272,1896,83,95.81,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE BAROSSA COUNCIL,THE BAROSSA COUNCIL,7933,5995,1938,7073,860,89.16,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE BERRI BARMERA COUNCIL,THE BERRI BARMERA COUNCIL,3087,2475,612,2777,310,89.96,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE CITY OF NORWOOD PAYNEHAM AND ST PETERS,THE CITY OF NORWOOD PAYNEHAM AND ST PETERS,5303,4083,1220,4426,877,83.46,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE CORPORATION OF THE CITY OF WHYALLA,THE CORPORATION OF THE CITY OF WHYALLA,7384,5402,1982,5609,1775,75.96,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE CORPORATION OF THE TOWN OF WALKERVILLE,THE CORPORATION OF THE TOWN OF WALKERVILLE,1278,933,345,1159,119,90.69,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF CEDUNA,THE DC OF CEDUNA,925,740,185,863,62,93.3,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF COOBER PEDY,THE DC OF COOBER PEDY,354,315,39,144,210,40.68,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF FRANKLIN HARBOUR,THE DC OF FRANKLIN HARBOUR,344,300,44,292,52,84.88,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF GRANT,THE DC OF GRANT,3832,2975,857,3711,121,96.84,NO,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF KAROONDA EAST MURRAY,THE DC OF KAROONDA EAST MURRAY,502,411,91,451,51,89.84,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF KIMBA,THE DC OF KIMBA,344,279,65,343,1,99.71,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF LOXTON WAIKERIE,THE DC OF LOXTON WAIKERIE,2952,2603,349,2857,95,96.78,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF MOUNT REMARKABLE,THE DC OF MOUNT REMARKABLE,1060,928,132,927,133,87.45,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF ORROROO CARRIETON,THE DC OF ORROROO CARRIETON,321,277,44,291,30,90.65,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF PETERBOROUGH,THE DC OF PETERBOROUGH,787,611,176,772,15,98.09,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF STREAKY BAY,THE DC OF STREAKY BAY,799,676,123,762,37,95.37,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF TUMBY BAY,THE DC OF TUMBY BAY,721,595,126,651,70,90.29,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE DC OF YANKALILLA,THE DC OF YANKALILLA,2258,1823,435,2126,132,94.15,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE FLINDERS RANGES COUNCIL,THE FLINDERS RANGES COUNCIL,676,530,146,598,78,88.46,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE REGIONAL COUNCIL OF GOYDER,THE REGIONAL COUNCIL OF GOYDER,2006,1633,373,1691,315,84.3,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+THE RURAL CITY OF MURRAY BRIDGE,THE RURAL CITY OF MURRAY BRIDGE,7375,5526,1849,5530,1845,74.98,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+TOWN OF GAWLER,TOWN OF GAWLER,8485,6330,2155,7105,1380,83.74,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+WAKEFIELD REGIONAL COUNCIL,WAKEFIELD REGIONAL COUNCIL,2695,1975,720,2364,331,87.72,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+WATTLE RANGE COUNCIL,WATTLE RANGE COUNCIL,3938,3510,428,3855,83,97.89,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+WUDINNA DISTRICT COUNCIL,WUDINNA DISTRICT COUNCIL,410,348,62,238,172,58.05,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.
+YORKE PENINSULA COUNCIL,YORKE PENINSULA COUNCIL,3515,2866,649,3377,138,96.07,YES,S7,30 May 2025 extract,Sum of source Count by council; no values invented.

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": "SA DACO registered-animal share by council",
+  "description": "Map template using the compact official/generalised SA LGA TopoJSON. Filter boundary_match=YES.",
+  "data": {
+        "url": "data/sa_lga_simplified.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "sa_lgas"
+        }
+      },
+  "transform": [
+    {
+      "lookup": "properties.lga",
+      "from": {
+        "data": {
+          "url": "web_data/sa_council_map_summary.csv"
+        },
+        "key": "map_join_key",
+        "fields": [
+          "council_source_name",
+          "total_animals",
+          "registered_rate_pct",
+          "boundary_match"
+        ]
+      }
+    },
+    {
+      "filter": "datum.boundary_match === 'YES'"
+    }
+  ],
+  "projection": {
+    "type": "mercator"
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "color": {
+      "field": "registered_rate_pct",
+      "type": "quantitative",
+      "title": "Registered share (%)"
+    },
+    "tooltip": [
+      {
+        "field": "council_source_name",
+        "type": "nominal",
+        "title": "Council"
+      },
+      {
+        "field": "total_animals",
+        "type": "quantitative",
+        "title": "Recorded animals",
+        "format": ",d"
+      },
+      {
+        "field": "registered_rate_pct",
+        "type": "quantitative",
+        "title": "Registered share (%)",
+        "format": ".2f"
+      }
+    ]
+  }
+}

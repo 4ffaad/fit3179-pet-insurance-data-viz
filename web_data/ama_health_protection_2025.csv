@@ -1,0 +1,14 @@
+measure,group_or_species,year_or_period,value_pct,source_id,question_or_definition,caveat
+Pet positive impact,All pet owners,2025,86.0,S1/S2,Owners saying pets positively impacted their lives,Survey response
+Required financial assistance for vet care,All pet owners,2025,12.0,S1/S2,Owners requiring financial assistance for veterinary care,Survey response
+Rated most recent vet visit 7+/10,All pet owners,2025,87.0,S1/S2,High satisfaction rating,Survey response
+Vaccinated in last 12 months,Dogs,2025,77.0,S1/S2,Dogs vaccinated in previous 12 months,Species-specific base
+Vaccinated in last 12 months,Cats,2025,66.0,S1/S2,Cats vaccinated in previous 12 months,Species-specific base
+Vaccinated at least once,Dogs,2025,96.0,S1/S2,Dogs vaccinated at least once,Species-specific base
+Vaccinated at least once,Cats,2025,90.0,S1/S2,Cats vaccinated at least once,Species-specific base
+Walked/exercised at least daily,Dogs,2025,70.0,S1/S2,Dog owners walking or exercising dogs at least once daily,Species-specific base
+Keep cats indoors only,Cats,2019,36.0,S1/S2,Indoor-only cats,Historical comparison
+Keep cats indoors only,Cats,2022,42.0,S1/S2,Indoor-only cats,Historical comparison
+Keep cats indoors only,Cats,2025,48.0,S1/S2,Indoor-only cats,Survey reference point March 2025
+Pet obtained through adoption,Dogs,2025,45.0,S1/S2,Dogs adopted from a shelter/rescue or similar category as defined by report,Check report wording before final prose
+Pet obtained through adoption,Cats,2025,75.0,S1/S2,Cats adopted from a shelter/rescue or similar category as defined by report,Check report wording before final prose

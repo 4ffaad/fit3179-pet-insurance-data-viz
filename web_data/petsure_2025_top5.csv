@@ -1,0 +1,11 @@
+species,rank,condition,source_id,reference_period,population_caveat
+Dogs,1,Skin infections/allergies,S4,2024 claims,Top-five FAQ on PetSure page/report
+Dogs,2,Gastrointestinal conditions,S4,2024 claims,Top-five FAQ on PetSure page/report
+Dogs,3,Ear infections,S4,2024 claims,Top-five FAQ on PetSure page/report
+Dogs,4,Traumatic injuries,S4,2024 claims,Top-five FAQ on PetSure page/report
+Dogs,5,Mass lesions,S4,2024 claims,Top-five FAQ on PetSure page/report
+Cats,1,Gastrointestinal conditions,S4,2024 claims,Top-five FAQ on PetSure page/report
+Cats,2,Urinary tract disorders,S4,2024 claims,Top-five FAQ on PetSure page/report
+Cats,3,Skin infections/allergies,S4,2024 claims,Top-five FAQ on PetSure page/report
+Cats,4,Fight or bite wounds,S4,2024 claims,Top-five FAQ on PetSure page/report
+Cats,5,Eye conditions,S4,2024 claims,Top-five FAQ on PetSure page/report

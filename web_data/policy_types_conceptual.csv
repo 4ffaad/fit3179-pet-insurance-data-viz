@@ -1,0 +1,5 @@
+policy_category,covers_in_general,usually_excludes_or_limits,how_to_visualise,source_id,status_note
+Accidental injury only,Specified accidental injuries such as broken bones or motor-vehicle incidents,Illnesses and pre-existing conditions; exact exclusions depend on PDS,Coverage matrix row,S5/S14,Conceptual category; verify with a current PDS before writing product-specific claims
+Accidental injury and illness,"Eligible accidental injuries plus specified illnesses such as cancer, depending on PDS","Pre-existing conditions, waiting periods, exclusions, benefit limits and excess",Coverage matrix row,S5/S12/S14,Conceptual category; actual terms vary
+Routine care add-on,Everyday wellness items may receive a separate non-insurance benefit/sub-limit,Not normally part of standard illness/injury cover; item limits apply,Coverage matrix column/add-on,S12/S14,Do not call this ordinary insurance reimbursement if the PDS calls it a non-insurance benefit
+Booster/specialised-care add-on,"Specified dental conditions or specialised therapies, depending on product","Specified items, limits and exclusions apply",Coverage matrix add-on,S12/S13/S14,Product-specific
