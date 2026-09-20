@@ -76,7 +76,14 @@
 
     <section>
       <h2>2 · Protection is uneven</h2>
-      <p class="section-intro">The final page will add the ownership, spending, insurance and policy charts here.</p>
+      <p class="section-intro">The first insurance chart uses the AMA owner-reported participation field. It is a simple example to edit before building the advanced idioms.</p>
+      <div class="grid">
+        <article class="card full">
+          <h3>Owners reporting pet insurance, by species</h3>
+          <div id="insurance" class="chart" aria-label="Bar chart of owners reporting pet insurance by species"></div>
+          <p class="source">Source: Animal Medicines Australia, <em>Pets in Australia 2025</em>. This is owner-reported participation, not insurer market share.</p>
+        </article>
+      </div>
       <div class="note"><strong>Next charts to build:</strong> pet-type treemap, spending composition, dog-versus-cat insurance interval, health-protection heatmap and policy coverage matrix.</div>
     </section>
 
@@ -116,13 +123,14 @@
 
     <footer>
       <p><strong>Data note:</strong> AMA is the broad household source; PetSure is an insured-claims source; South Australian DACO is a registration context source. Read the source register before writing final claims.</p>
-      <p><strong>Next step:</strong> open the repository README and the five JSON files in <code>specs/</code>. Four are rendered on this starter page; the state-population file is a standalone context template. Replace this layout gradually, keeping the page as one scrollable URL.</p>
+      <p><strong>Next step:</strong> open the repository README, the beginner lesson in <code>docs/01-vegalite-from-tableau.md</code> and the six JSON files in <code>specs/</code>. Five are rendered on this starter page; the state-population file is a standalone context template. Replace this layout gradually, keeping the page as one scrollable URL.</p>
     </footer>
   </main>
 
   <script>
     const charts = [
       ['ownership', 'specs/01_ama_ownership_trend.vl.json'],
+      ['insurance', 'specs/06_ama_insurance_by_species.vl.json'],
       ['choropleth', 'specs/03_sa_choropleth_template.vl.json'],
       ['symbols', 'specs/04_sa_proportional_symbol_template.vl.json'],
       ['bins', 'specs/05_sa_bin_map_template.vl.json']
@@ -135,7 +143,7 @@
         if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
         const spec = await response.json();
         spec.width = 'container';
-        spec.height = elementId === 'ownership' ? 300 : 430;
+        spec.height = ['ownership', 'insurance'].includes(elementId) ? 300 : 430;
         spec.autosize = {type: 'fit-x', contains: 'padding'};
         await vegaEmbed(target, spec, {actions: false, renderer: 'svg'});
       } catch (error) {

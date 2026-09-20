@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": "Owners reporting pet insurance, by species",
+  "description": "AMA 2025 survey response; this is owner-reported participation, not an insurer market-share estimate.",
+  "data": {
+    "url": "web_data/ama_insurance_2025.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "species",
+      "type": "nominal",
+      "title": "Species",
+      "sort": ["Dogs", "Cats"]
+    },
+    "y": {
+      "field": "owners_reporting_insurance_pct",
+      "type": "quantitative",
+      "title": "Owners reporting insurance (%)",
+      "scale": {
+        "domain": [0, 100]
+      }
+    },
+    "color": {
+      "field": "species",
+      "type": "nominal",
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "species",
+        "type": "nominal",
+        "title": "Species"
+      },
+      {
+        "field": "owners_reporting_insurance_pct",
+        "type": "quantitative",
+        "title": "Owners reporting insurance (%)",
+        "format": ".1f"
+      },
+      {
+        "field": "avg_annual_pet_insurance_spend_per_owning_household_aud",
+        "type": "quantitative",
+        "title": "Average annual household spend (AUD)",
+        "format": ",.0f"
+      }
+    ]
+  }
+}

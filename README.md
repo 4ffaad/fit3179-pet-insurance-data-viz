@@ -27,9 +27,10 @@ The source register in `DV2_Pet_Insurance_Data_and_Viz_Plan.xlsx` contains the s
 2. Read the `START_HERE` sheet.
 3. Read `Source_Register`, `Map_Plan`, `Viz_Plan` and `VegaLite_Guide`.
 4. Open `Vega_Lite_Beginner_Guide.md`.
-5. Run the draft page locally using the instructions below.
-6. Open `index.html` and inspect the four rendered starter visualisations. The fifth JSON file is a standalone state-population context template.
-7. Replace the starter page with your final story gradually. Do not try to build all charts at once.
+5. Open `docs/01-vegalite-from-tableau.md` for the Tableau-to-Vega-Lite translation.
+6. Run the draft page locally using the instructions below.
+7. Open `index.html` and inspect the five rendered starter visualisations. The sixth JSON file is a standalone state-population context template.
+8. Replace the starter page with your final story gradually. Do not try to build all charts at once.
 
 ## Repository structure
 
@@ -41,6 +42,7 @@ The source register in `DV2_Pet_Insurance_Data_and_Viz_Plan.xlsx` contains the s
 │   └── sa_lga_simplified.topojson
 ├── web_data/                          # small CSV files used by Vega-Lite
 ├── specs/                             # human-readable Vega-Lite JSON files
+├── docs/                              # beginner lessons and project notes
 ├── DV2_Pet_Insurance_Data_and_Viz_Plan.xlsx
 ├── Vega_Lite_Beginner_Guide.md
 └── pet-insurance-dataset-audit.md
@@ -156,7 +158,7 @@ After editing the page or specifications:
 
 ```bash
 git status
-git add index.html specs web_data data README.md
+git add index.html specs web_data data docs README.md
 git commit -m "Build FIT3179 visualisation draft"
 git push
 ```
