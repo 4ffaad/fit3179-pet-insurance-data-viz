@@ -1,0 +1,355 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A connected-dot comparison of veterinary bills and insurance payouts across six selected Oyen-published cases. Click a point to highlight that case.",
+  "title": "Veterinary bills and insurance payouts",
+  "data": {
+    "url": "../data/insurance_evidence.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.record_type === 'claim_example'"
+    },
+    {
+      "calculate": "toNumber(datum.vet_bill_rm)",
+      "as": "bill_ringgit"
+    },
+    {
+      "calculate": "toNumber(datum.insurance_payout_rm)",
+      "as": "payout_ringgit"
+    },
+    {
+      "calculate": "replace(datum.condition, ' (IMHA)', '')",
+      "as": "condition_label"
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 19,
+      "fontWeight": 700,
+      "anchor": "start",
+      "color": "#1D4F7A",
+      "offset": 10
+    },
+    "text": {
+      "font": "Arial",
+      "color": "#24364B"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 14,
+      "titleFontSize": 14,
+      "labelColor": "#536678",
+      "titleColor": "#24364B",
+      "domainColor": "#D8E0E7",
+      "tickColor": "#D8E0E7",
+      "gridColor": "#E8EDF2",
+      "gridOpacity": 0.68
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#536678",
+      "titleColor": "#24364B"
+    }
+  },
+  "hconcat": [
+    {
+      "width": 220,
+      "height": 320,
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "count",
+              "as": "label_count"
+            },
+            {
+              "op": "max",
+              "field": "bill_ringgit",
+              "as": "bill_ringgit"
+            }
+          ],
+          "groupby": [
+            "pet_name"
+          ]
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "font": "Arial",
+        "fontSize": 14,
+        "color": "#536678",
+        "limit": 216
+      },
+      "encoding": {
+        "x": {
+          "value": 0
+        },
+        "y": {
+          "field": "pet_name",
+          "type": "nominal",
+          "sort": {
+            "field": "bill_ringgit",
+            "order": "descending"
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "pet_name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "width": 884,
+      "height": 320,
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "stroke": "#aab3b6",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "x": {
+              "field": "payout_ringgit",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  10000
+                ],
+                "nice": false
+              }
+            },
+            "x2": {
+              "field": "bill_ringgit"
+            },
+            "y": {
+              "field": "pet_name",
+              "type": "nominal",
+              "sort": {
+                "field": "bill_ringgit",
+                "order": "descending"
+              },
+              "axis": null
+            },
+            "opacity": {
+              "condition": {
+                "param": "selected_claim",
+                "value": 1
+              },
+              "value": 0.55
+            },
+            "tooltip": [
+              {
+                "field": "pet_name",
+                "type": "nominal",
+                "title": "Published case"
+              },
+              {
+                "field": "condition_label",
+                "type": "nominal",
+                "title": "Reported condition"
+              },
+              {
+                "field": "vet_bill_rm",
+                "type": "quantitative",
+                "title": "Veterinary bill (ringgit)",
+                "format": ",.2f"
+              },
+              {
+                "field": "insurance_payout_rm",
+                "type": "quantitative",
+                "title": "Insurance payout (ringgit)",
+                "format": ",.2f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "fold": [
+                "bill_ringgit",
+                "payout_ringgit"
+              ],
+              "as": [
+                "amount_type",
+                "amount_ringgit"
+              ]
+            },
+            {
+              "calculate": "datum.amount_type === 'bill_ringgit' ? 'Veterinary bill' : 'Insurance payout'",
+              "as": "series"
+            }
+          ],
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "size": 125,
+            "stroke": "#ffffff",
+            "strokeWidth": 1
+          },
+          "params": [
+            {
+              "name": "selected_claim",
+              "select": {
+                "type": "point",
+                "fields": [
+                  "pet_name"
+                ],
+                "toggle": false,
+                "on": "click",
+                "clear": false
+              },
+              "value": {
+                "pet_name": "Mochi"
+              }
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "amount_ringgit",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  10000
+                ],
+                "nice": false
+              },
+              "axis": {
+                "title": "Reported amount (ringgit)",
+                "format": ",.0f",
+                "tickCount": 5
+              }
+            },
+            "y": {
+              "field": "pet_name",
+              "type": "nominal",
+              "sort": {
+                "field": "bill_ringgit",
+                "order": "descending"
+              },
+              "axis": null
+            },
+            "color": {
+              "field": "series",
+              "type": "nominal",
+              "title": "Amount type",
+              "scale": {
+                "domain": [
+                  "Veterinary bill",
+                  "Insurance payout"
+                ],
+                "range": [
+                  "#1D4F7A",
+                  "#D99A32"
+                ]
+              },
+              "legend": {
+                "orient": "bottom",
+                "direction": "horizontal"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "pet_name",
+                "type": "nominal",
+                "title": "Published case"
+              },
+              {
+                "field": "condition_label",
+                "type": "nominal",
+                "title": "Reported condition"
+              },
+              {
+                "field": "series",
+                "type": "nominal",
+                "title": "Amount type"
+              },
+              {
+                "field": "amount_ringgit",
+                "type": "quantitative",
+                "title": "Reported amount (ringgit)",
+                "format": ",.2f"
+              }
+            ],
+            "opacity": {
+              "condition": {
+                "param": "selected_claim",
+                "value": 1
+              },
+              "value": 0.55
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "dx": 9,
+            "fontSize": 12,
+            "fontWeight": 600,
+            "color": "#1D4F7A"
+          },
+          "encoding": {
+            "x": {
+              "field": "bill_ringgit",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  10000
+                ],
+                "nice": false
+              }
+            },
+            "y": {
+              "field": "pet_name",
+              "type": "nominal",
+              "sort": {
+                "field": "bill_ringgit",
+                "order": "descending"
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "bill_ringgit",
+              "type": "quantitative",
+              "format": ",.0f"
+            },
+            "opacity": {
+              "condition": {
+                "param": "selected_claim",
+                "value": 1
+              },
+              "value": 0.55
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "spacing": 16,
+  "resolve": {
+    "scale": {
+      "y": "shared"
+    }
+  }
+}

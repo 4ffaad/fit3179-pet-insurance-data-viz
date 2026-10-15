@@ -1,0 +1,311 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A butterfly chart compares current annual MSIG Direct premiums for cats and dogs across three plans.",
+  "title": "Annual premiums by plan and pet type",
+  "data": {
+    "url": "../data/insurance_evidence.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.record_type === 'policy_detail'"
+    },
+    {
+      "filter": "datum.provider === 'MSIG Direct' && datum.benefit === 'Annual premium'"
+    },
+    {
+      "calculate": "toNumber(datum.value_numeric)",
+      "as": "premium_ringgit"
+    },
+    {
+      "calculate": "datum.pet_type === 'Cat' ? -datum.premium_ringgit : datum.premium_ringgit",
+      "as": "mirrored_premium"
+    },
+    {
+      "calculate": "datum.pet_type === 'Cat' ? datum.mirrored_premium - 55 : datum.mirrored_premium + 55",
+      "as": "label_position"
+    },
+    {
+      "calculate": "format(datum.premium_ringgit, ',.2f')",
+      "as": "premium_label"
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 19,
+      "fontWeight": 700,
+      "anchor": "start",
+      "color": "#1D4F7A",
+      "offset": 10
+    },
+    "text": {
+      "font": "Arial",
+      "color": "#24364B"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 14,
+      "titleFontSize": 14,
+      "labelColor": "#536678",
+      "titleColor": "#24364B",
+      "domainColor": "#D8E0E7",
+      "tickColor": "#D8E0E7",
+      "gridColor": "#E8EDF2",
+      "gridOpacity": 0.68
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#536678",
+      "titleColor": "#24364B"
+    }
+  },
+  "hconcat": [
+    {
+      "width": 92,
+      "height": 320,
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "count",
+              "as": "label_count"
+            }
+          ],
+          "groupby": [
+            "plan"
+          ]
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "font": "Arial",
+        "fontSize": 14,
+        "color": "#536678",
+        "limit": 88
+      },
+      "encoding": {
+        "x": {
+          "value": 0
+        },
+        "y": {
+          "field": "plan",
+          "type": "ordinal",
+          "sort": [
+            "Plan 1",
+            "Plan 2",
+            "Plan 3"
+          ],
+          "axis": null
+        },
+        "text": {
+          "field": "plan",
+          "type": "ordinal"
+        }
+      }
+    },
+    {
+      "width": 416,
+      "height": 320,
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "height": 28,
+            "cornerRadius": 2
+          },
+          "encoding": {
+            "x": {
+              "field": "mirrored_premium",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  -1800,
+                  1800
+                ],
+                "nice": false
+              },
+              "axis": {
+                "title": "Annual premium (ringgit)",
+                "values": [
+                  -1200,
+                  -600,
+                  0,
+                  600,
+                  1200
+                ],
+                "labelExpr": "format(abs(datum.value), ',.0f')",
+                "grid": true
+              }
+            },
+            "y": {
+              "field": "plan",
+              "type": "ordinal",
+              "sort": [
+                "Plan 1",
+                "Plan 2",
+                "Plan 3"
+              ],
+              "axis": null
+            },
+            "color": {
+              "field": "pet_type",
+              "type": "nominal",
+              "title": "Pet type",
+              "scale": {
+                "domain": [
+                  "Cat",
+                  "Dog"
+                ],
+                "range": [
+                  "#D99A32",
+                  "#3976A8"
+                ]
+              },
+              "legend": {
+                "orient": "bottom",
+                "direction": "horizontal"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "provider",
+                "type": "nominal",
+                "title": "Provider"
+              },
+              {
+                "field": "plan",
+                "type": "nominal",
+                "title": "Plan"
+              },
+              {
+                "field": "pet_type",
+                "type": "nominal",
+                "title": "Pet"
+              },
+              {
+                "field": "premium_ringgit",
+                "type": "quantitative",
+                "title": "Annual premium (ringgit)",
+                "format": ",.2f"
+              },
+              {
+                "field": "premium_basis",
+                "type": "nominal",
+                "title": "Price basis"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.pet_type === 'Cat'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "fontSize": 12,
+            "fontWeight": 600,
+            "color": "#24364B"
+          },
+          "encoding": {
+            "x": {
+              "field": "label_position",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  -1800,
+                  1800
+                ],
+                "nice": false
+              }
+            },
+            "y": {
+              "field": "plan",
+              "type": "ordinal",
+              "sort": [
+                "Plan 1",
+                "Plan 2",
+                "Plan 3"
+              ],
+              "axis": null
+            },
+            "text": {
+              "field": "premium_label",
+              "type": "nominal"
+            },
+            "opacity": {
+              "value": 1
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.pet_type === 'Dog'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "fontSize": 12,
+            "fontWeight": 600,
+            "color": "#24364B"
+          },
+          "encoding": {
+            "x": {
+              "field": "label_position",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  -1800,
+                  1800
+                ],
+                "nice": false
+              }
+            },
+            "y": {
+              "field": "plan",
+              "type": "ordinal",
+              "sort": [
+                "Plan 1",
+                "Plan 2",
+                "Plan 3"
+              ],
+              "axis": null
+            },
+            "text": {
+              "field": "premium_label",
+              "type": "nominal"
+            },
+            "opacity": {
+              "value": 1
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "spacing": 12,
+  "resolve": {
+    "scale": {
+      "y": "shared"
+    }
+  }
+}

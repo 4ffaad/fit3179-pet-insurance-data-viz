@@ -1,0 +1,407 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bivariate choropleth comparing normalized poor-practice share in the Selangor study sample with separately sourced 2024 median household income by district. This district-level comparison is contextual and does not pair individual survey respondents with households.",
+  "title": "Practice share and household income",
+  "params": [
+    {
+      "name": "selected_district",
+      "value": "All districts"
+    }
+  ],
+  "background": "#FFFFFF",
+  "spacing": 24,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "grid": false,
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelColor": "#536678",
+      "titleColor": "#24364B",
+      "domainColor": "#D8E0E7",
+      "tickColor": "#D8E0E7"
+    },
+    "font": "Arial",
+    "title": {
+      "font": "Georgia",
+      "fontSize": 19,
+      "fontWeight": 700,
+      "anchor": "start",
+      "color": "#1D4F7A",
+      "offset": 10
+    }
+  },
+  "hconcat": [
+    {
+      "projection": {
+        "type": "mercator",
+        "center": [
+          101.5,
+          3.2
+        ],
+        "scale": 15000
+      },
+      "width": 650,
+      "height": 500,
+      "layer": [
+        {
+          "data": {
+            "url": "../data/selangor_districts.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "selangor_districts"
+            }
+          },
+          "transform": [
+            {
+              "lookup": "properties.district_join",
+              "from": {
+                "data": {
+                  "url": "../data/district_context.csv",
+                  "format": {
+                    "type": "csv"
+                  }
+                },
+                "key": "district",
+                "fields": [
+                  "respondents_n",
+                  "poor_practice_rate_pct",
+                  "median_gross_monthly_rm",
+                  "year"
+                ]
+              }
+            },
+            {
+              "calculate": "toNumber(datum.respondents_n)",
+              "as": "survey_count"
+            },
+            {
+              "calculate": "toNumber(datum.poor_practice_rate_pct)",
+              "as": "poor_rate"
+            },
+            {
+              "calculate": "toNumber(datum.median_gross_monthly_rm)",
+              "as": "household_income"
+            },
+            {
+              "calculate": "datum.poor_rate <= 60 ? 'Low' : datum.poor_rate < 80 ? 'Moderate' : 'High'",
+              "as": "practice_band"
+            },
+            {
+              "calculate": "datum.household_income < 8500 ? 'Lower' : datum.household_income < 10500 ? 'Middle' : 'Higher'",
+              "as": "income_band"
+            },
+            {
+              "calculate": "datum.practice_band + '|' + datum.income_band",
+              "as": "bivariate_key"
+            },
+            {
+              "calculate": "datum.survey_count === 0 ? 'No survey responses' : format(datum.poor_rate, '.1f') + '%'",
+              "as": "practice_label"
+            }
+          ],
+          "layer": [
+            {
+              "mark": {
+                "type": "geoshape"
+              },
+              "encoding": {
+                "color": {
+                  "condition": {
+                    "test": "datum.survey_count === 0",
+                    "value": "#D8DEE6"
+                  },
+                  "field": "bivariate_key",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "Low|Lower",
+                      "Low|Middle",
+                      "Low|Higher",
+                      "Moderate|Lower",
+                      "Moderate|Middle",
+                      "Moderate|Higher",
+                      "High|Lower",
+                      "High|Middle",
+                      "High|Higher"
+                    ],
+                    "range": [
+                      "#E8EEF4",
+                      "#B9D7D8",
+                      "#69ABB0",
+                      "#D3C3D0",
+                      "#ADAFBD",
+                      "#6B8FA9",
+                      "#D89A76",
+                      "#B86F65",
+                      "#7F4E68"
+                    ]
+                  },
+                  "legend": null
+                },
+                "opacity": {
+                  "condition": {
+                    "test": "selected_district === 'All districts' || datum.properties.district_join === selected_district",
+                    "value": 1
+                  },
+                  "value": 0.3
+                },
+                "stroke": {
+                  "condition": {
+                    "test": "selected_district !== 'All districts' && datum.properties.district_join === selected_district",
+                    "value": "#1D4F7A"
+                  },
+                  "value": "#FFFFFF"
+                },
+                "strokeWidth": {
+                  "condition": {
+                    "test": "selected_district !== 'All districts' && datum.properties.district_join === selected_district",
+                    "value": 2.4
+                  },
+                  "value": 1.3
+                },
+                "tooltip": [
+                  {
+                    "field": "properties.district_join",
+                    "type": "nominal",
+                    "title": "District"
+                  },
+                  {
+                    "field": "survey_count",
+                    "type": "quantitative",
+                    "title": "Study respondents",
+                    "format": "d"
+                  },
+                  {
+                    "field": "practice_label",
+                    "type": "nominal",
+                    "title": "Poor-practice share in study sample"
+                  },
+                  {
+                    "field": "household_income",
+                    "type": "quantitative",
+                    "title": "2024 median household income (ringgit)",
+                    "format": ",.0f"
+                  }
+                ]
+              }
+            },
+            {
+              "transform": [
+                {
+                  "filter": "datum.survey_count === 0"
+                },
+                {
+                  "calculate": "datum.properties.centroid_lon",
+                  "as": "label_longitude"
+                },
+                {
+                  "calculate": "datum.properties.centroid_lat",
+                  "as": "label_latitude"
+                }
+              ],
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "middle",
+                "dy": -10,
+                "fontSize": 12,
+                "fontWeight": 700,
+                "color": "#24364B"
+              },
+              "encoding": {
+                "longitude": {
+                  "field": "label_longitude",
+                  "type": "quantitative"
+                },
+                "latitude": {
+                  "field": "label_latitude",
+                  "type": "quantitative"
+                },
+                "text": {
+                  "value": "No survey data"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "width": 230,
+          "height": 205,
+          "data": {
+            "values": [
+              {
+                "practice_band": "High",
+                "income_band": "Lower",
+                "bivariate_key": "High|Lower"
+              },
+              {
+                "practice_band": "High",
+                "income_band": "Middle",
+                "bivariate_key": "High|Middle"
+              },
+              {
+                "practice_band": "High",
+                "income_band": "Higher",
+                "bivariate_key": "High|Higher"
+              },
+              {
+                "practice_band": "Moderate",
+                "income_band": "Lower",
+                "bivariate_key": "Moderate|Lower"
+              },
+              {
+                "practice_band": "Moderate",
+                "income_band": "Middle",
+                "bivariate_key": "Moderate|Middle"
+              },
+              {
+                "practice_band": "Moderate",
+                "income_band": "Higher",
+                "bivariate_key": "Moderate|Higher"
+              },
+              {
+                "practice_band": "Low",
+                "income_band": "Lower",
+                "bivariate_key": "Low|Lower"
+              },
+              {
+                "practice_band": "Low",
+                "income_band": "Middle",
+                "bivariate_key": "Low|Middle"
+              },
+              {
+                "practice_band": "Low",
+                "income_band": "Higher",
+                "bivariate_key": "Low|Higher"
+              }
+            ]
+          },
+          "mark": {
+            "type": "rect",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "x": {
+              "field": "income_band",
+              "type": "ordinal",
+              "sort": [
+                "Lower",
+                "Middle",
+                "Higher"
+              ],
+              "axis": {
+              "title": "Median household income",
+                "labelAngle": 0
+              }
+            },
+            "y": {
+              "field": "practice_band",
+              "type": "ordinal",
+              "sort": [
+                "High",
+                "Moderate",
+                "Low"
+              ],
+              "axis": {
+              "title": "Poor-practice share"
+              }
+            },
+            "color": {
+              "field": "bivariate_key",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Low|Lower",
+                  "Low|Middle",
+                  "Low|Higher",
+                  "Moderate|Lower",
+                  "Moderate|Middle",
+                  "Moderate|Higher",
+                  "High|Lower",
+                  "High|Middle",
+                  "High|Higher"
+                ],
+                "range": [
+                  "#E8EEF4",
+                  "#B9D7D8",
+                  "#69ABB0",
+                  "#D3C3D0",
+                  "#ADAFBD",
+                  "#6B8FA9",
+                  "#D89A76",
+                  "#B86F65",
+                  "#7F4E68"
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": null
+          }
+        },
+        {
+          "width": 155,
+          "height": 125,
+          "data": {
+            "values": [
+              {
+                "note": "Grey: no survey data",
+                "row": "No data"
+              },
+              {
+                "note": "Hover for district values",
+                "row": "Details"
+              },
+              {
+                "note": "Separate source datasets",
+                "row": "Sources"
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "fontSize": 12,
+            "color": "#536678"
+          },
+          "encoding": {
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "axis": null,
+              "sort": [
+                "No data",
+                "Details",
+                "Sources"
+              ]
+            },
+            "text": {
+              "field": "note",
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "spacing": 18,
+      "resolve": {
+        "scale": {
+          "color": "independent"
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    }
+  }
+}

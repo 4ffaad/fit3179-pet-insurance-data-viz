@@ -1,0 +1,276 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Poor practice share by district",
+  "description": "Selangor choropleth of the normalized poor-practice share among surveyed district respondents. Select a district on the page to highlight it across all four map views.",
+  "params": [
+    {
+      "name": "selected_district",
+      "value": "All districts"
+    }
+  ],
+  "background": "#FFFFFF",
+  "projection": {
+    "type": "mercator",
+    "center": [
+      101.5,
+      3.2
+    ],
+    "scale": 18000
+  },
+  "width": 600,
+  "height": 420,
+  "layer": [
+    {
+      "data": {
+        "url": "../data/ne_110m_admin_0_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "properties.ADMIN",
+            "oneOf": [
+              "Malaysia",
+              "Thailand",
+              "Indonesia",
+              "Brunei"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F0F2F4",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.7
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "extent": [
+            [
+              100,
+              2
+            ],
+            [
+              103,
+              4.5
+            ]
+          ],
+          "step": [
+            1,
+            1
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#B8C6D5",
+        "strokeWidth": 0.55,
+        "strokeDash": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "../data/selangor_districts.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "selangor_districts"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.district_join",
+          "from": {
+            "data": {
+              "url": "../data/district_context.csv",
+              "format": {
+                "type": "csv"
+              }
+            },
+            "key": "district",
+            "fields": [
+              "respondents_n",
+              "poor_practice_count",
+              "poor_practice_rate_pct"
+            ]
+          }
+        },
+        {
+          "calculate": "toNumber(datum.respondents_n)",
+          "as": "survey_count"
+        },
+        {
+          "calculate": "toNumber(datum.poor_practice_count)",
+          "as": "poor_count"
+        },
+        {
+          "calculate": "toNumber(datum.poor_practice_rate_pct)",
+          "as": "poor_rate"
+        },
+        {
+          "calculate": "datum.survey_count === 0 ? 'No data' : format(datum.poor_rate, '.1f') + '%'",
+          "as": "rate_label"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "geoshape"
+          },
+          "encoding": {
+            "color": {
+              "condition": {
+                "test": "datum.survey_count === 0",
+                "value": "#D8DEE6"
+              },
+              "field": "poor_rate",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  100
+                ],
+                "scheme": "blues"
+              },
+              "legend": {
+                "title": "Poor-practice share (%)",
+                "format": ".0f",
+                "orient": "bottom"
+              }
+            },
+            "opacity": {
+              "condition": {
+                "test": "selected_district === 'All districts' || datum.properties.district_join === selected_district",
+                "value": 1
+              },
+              "value": 0.28
+            },
+            "stroke": {
+              "condition": {
+                "test": "selected_district !== 'All districts' && datum.properties.district_join === selected_district",
+                "value": "#1D4F7A"
+              },
+              "value": "#ffffff"
+            },
+            "strokeWidth": {
+              "condition": {
+                "test": "selected_district !== 'All districts' && datum.properties.district_join === selected_district",
+                "value": 2.2
+              },
+              "value": 1.3
+            },
+            "tooltip": [
+              {
+                "field": "properties.district_join",
+                "type": "nominal",
+                "title": "District"
+              },
+              {
+                "field": "survey_count",
+                "type": "quantitative",
+                "title": "Study respondents",
+                "format": "d"
+              },
+              {
+                "field": "poor_count",
+                "type": "quantitative",
+                "title": "Poor-practice classifications",
+                "format": "d"
+              },
+              {
+                "field": "rate_label",
+                "type": "nominal",
+                "title": "Poor-practice share"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.survey_count === 0"
+            },
+            {
+              "calculate": "datum.properties.centroid_lon",
+              "as": "label_longitude"
+            },
+            {
+              "calculate": "datum.properties.centroid_lat",
+              "as": "label_latitude"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "dy": -10,
+            "fontSize": 12,
+            "fontWeight": 700,
+            "color": "#24364B"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_longitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_latitude",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "rate_label",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 19,
+      "fontWeight": 700,
+      "anchor": "start",
+      "color": "#1D4F7A",
+      "offset": 10
+    },
+    "text": {
+      "font": "Arial",
+      "color": "#24364B"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 14,
+      "titleFontSize": 14,
+      "labelColor": "#536678",
+      "titleColor": "#24364B",
+      "domainColor": "#D8E0E7",
+      "tickColor": "#D8E0E7",
+      "gridColor": "#E8EDF2",
+      "gridOpacity": 0.68
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#536678",
+      "titleColor": "#24364B"
+    }
+  }
+}
