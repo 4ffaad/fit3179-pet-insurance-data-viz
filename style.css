@@ -100,6 +100,11 @@ main { width: min(calc(100% - 48px), var(--content-width)); margin: 0 auto; }
 
 .chart-grid { display: grid; gap: 24px; row-gap: 32px; align-items: stretch; min-width: 0; }
 .two-up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.chart-option-list { display: grid; gap: 28px; }
+.chart-option-intro { max-width: 72ch; margin: 0 0 22px; color: var(--muted); }
+.chart-option-label { margin-bottom: 6px; color: var(--accent); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.chart-option-card h2 { margin-bottom: 8px; font-size: clamp(1.5rem, 2vw, 1.9rem); }
+.chart-option-card > p { max-width: 72ch; margin-bottom: 12px; color: var(--muted); }
 .chart-figure {
   display: flex;
   flex-direction: column;
@@ -212,6 +217,8 @@ main { width: min(calc(100% - 48px), var(--content-width)); margin: 0 auto; }
   color: #f7fbfa;
   font-size: 0.8rem;
 }
+.page-footer a { color: #f7fbfa; }
+.page-footer a:hover { color: #f1c77a; }
 .page-footer p { margin: 0; }
 
 @media (max-width: 1200px) {

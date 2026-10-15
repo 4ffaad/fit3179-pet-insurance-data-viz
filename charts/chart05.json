@@ -13,7 +13,7 @@
       "filter": "datum.source_id === 'S01' && datum.section === 'knowledge'"
     },
     {
-      "calculate": "datum.metric === 'Financial role' ? 'Knew insurance could help financially' : datum.metric === 'Exposure' ? 'Saw pet insurance advertising or articles' : datum.metric === 'Eligibility' ? 'Knew cat and dog cover was available' : datum.metric === 'Insurance availability' ? 'Knew pet insurance was available' : 'Knew how the claims process works'",
+      "calculate": "datum.metric === 'Financial role' ? 'Insurance helps financially' : datum.metric === 'Exposure' ? 'Saw insurance information' : datum.metric === 'Eligibility' ? 'Cat and dog cover available' : datum.metric === 'Insurance availability' ? 'Pet insurance available' : 'Claims process known'",
       "as": "metric_label"
     },
     {
@@ -61,7 +61,7 @@
   },
   "hconcat": [
     {
-      "width": 265,
+      "width": 170,
       "height": 320,
       "transform": [
         {
@@ -86,9 +86,9 @@
         "align": "left",
         "baseline": "middle",
         "font": "Arial",
-        "fontSize": 14,
+        "fontSize": 12,
         "color": "#536678",
-        "limit": 261
+        "limit": 168
       },
       "encoding": {
         "x": {
@@ -110,7 +110,7 @@
       }
     },
     {
-      "width": 243,
+      "width": 390,
       "height": 320,
       "layer": [
         {

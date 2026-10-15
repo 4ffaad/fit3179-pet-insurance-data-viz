@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Four Vega-Lite alternatives for comparing published benefits and limits across Malaysian pet insurance plans." />
+    <title>Chart 09 options · Malaysia's Pet Insurance Landscape</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/vega@5.22.1/build/vega.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.0/build/vega-lite.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0/build/vega-embed.min.js"></script>
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to chart options</a>
+    <header class="masthead">
+      <div class="topline"><span>FIT3179 · Data Visualisation 2</span></div>
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Chart 09 · Alternative designs</p>
+          <h1>Comparing <span>plan benefits</span></h1>
+        </div>
+      </div>
+      <div class="byline"><a href="./index.html#cover-and-cost">Back to the visual story</a></div>
+    </header>
+
+    <main id="main">
+      <section class="story-section" aria-labelledby="options-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Same source records · four different views</p>
+            <h2 id="options-title">Chart 09 design options</h2>
+            <p>These views use published policy details. “Not listed” means the product page is silent; it does not mean the benefit is excluded.</p>
+          </div>
+        </div>
+
+        <div class="chart-option-list">
+          <article class="chart-option-card">
+            <p class="chart-option-label">Option 1 · Small multiples</p>
+            <h2>Compare plan status for each benefit</h2>
+            <p>Six panels keep the benefit names visible while showing each plan’s published status.</p>
+            <figure class="chart-figure chart-figure-wide">
+              <div class="chart-host" data-spec="./charts/chart09_1.json" aria-label="Benefit-level small-multiple status dot plots" aria-busy="true"></div>
+              <figcaption>Hover a point for the product-page wording; click a plan to focus it.</figcaption>
+            </figure>
+          </article>
+
+          <article class="chart-option-card">
+            <p class="chart-option-label">Option 2 · Stacked bars</p>
+            <h2>Summarise each plan’s listed status mix</h2>
+            <p>Each bar counts how many of the six benefit items fall into each published status.</p>
+            <figure class="chart-figure chart-figure-wide">
+              <div class="chart-host" data-spec="./charts/chart09_2.json" aria-label="Stacked bars counting the published benefit statuses for each insurance plan" aria-busy="true"></div>
+              <figcaption>Counts summarise product-page wording; “not listed” is kept separate from “not covered.”</figcaption>
+            </figure>
+          </article>
+
+          <article class="chart-option-card">
+            <p class="chart-option-label">Option 3 · Monetary dot plots</p>
+            <h2>Compare the published cover limits</h2>
+            <p>Small multiples use the stated ringgit limits. A zero marks an explicit exclusion; no point means no limit was listed.</p>
+            <figure class="chart-figure chart-figure-wide">
+              <div class="chart-host" data-spec="./charts/chart09_3.json" aria-label="Small-multiple dot plots of published monetary benefit limits by plan" aria-busy="true"></div>
+              <figcaption>Independent horizontal scales let each benefit’s limits remain readable.</figcaption>
+            </figure>
+          </article>
+
+          <article class="chart-option-card">
+            <p class="chart-option-label">Option 4 · Bipartite network</p>
+            <h2>Connect plans to their published status mix</h2>
+            <p>Links join each plan to its recorded status; thicker links mean more benefit items in that status.</p>
+            <figure class="chart-figure chart-figure-wide">
+              <div class="chart-host" data-spec="./charts/chart09_4.json" aria-label="Bipartite network linking each insurance plan to the count of benefits in each published status" aria-busy="true"></div>
+              <figcaption>Links count published benefit records; they do not represent customer movement or money flows.</figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>Protecting Our Pets · FIT3179 Data Visualisation 2</p>
+      <p><a href="./index.html#cover-and-cost">Return to the visual story</a></p>
+    </footer>
+  </body>
+</html>

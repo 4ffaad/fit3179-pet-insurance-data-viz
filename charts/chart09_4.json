@@ -1,0 +1,150 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bipartite network linking each insurance plan to its counts of listed benefit statuses. Link width counts benefit records; it does not represent customer movement or money flow.",
+  "title": "Plan links to published benefit status",
+  "width": 1000,
+  "height": 430,
+  "layer": [
+    {
+      "data": {"url": "../data/insurance_evidence.csv", "format": {"type": "csv"}},
+      "transform": [
+        {"filter": "datum.record_type === 'coverage_cell'"},
+        {
+          "calculate": "datum.provider === 'MSIG Direct' ? 'MSIG Direct ' + datum.plan : datum.provider + ' ' + datum.plan",
+          "as": "policy_label"
+        },
+        {
+          "calculate": "datum.coverage_status === 'Partial' ? 'Varies by pet' : datum.coverage_status",
+          "as": "status_label"
+        },
+        {
+          "calculate": "datum.plan === 'Basic' ? 6 : datum.plan === 'Plus' ? 5 : datum.plan === 'Champion' ? 4 : datum.plan === 'Plan 1' ? 3 : datum.plan === 'Plan 2' ? 2 : 1",
+          "as": "plan_position"
+        },
+        {
+          "calculate": "datum.status_label === 'Included' ? 6 : datum.status_label === 'Varies by pet' ? 4.5 : datum.status_label === 'Not covered' ? 3 : 1.5",
+          "as": "status_position"
+        },
+        {"calculate": "0.22", "as": "plan_x"},
+        {"calculate": "0.78", "as": "status_x"},
+        {
+          "aggregate": [{"op": "count", "as": "benefit_count"}],
+          "groupby": ["policy_label", "status_label", "plan_position", "status_position", "plan_x", "status_x"]
+        }
+      ],
+      "mark": {"type": "rule", "strokeCap": "round", "opacity": 0.5},
+      "encoding": {
+        "x": {"field": "plan_x", "type": "quantitative", "scale": {"domain": [0, 1]}, "axis": null},
+        "x2": {"field": "status_x"},
+        "y": {"field": "plan_position", "type": "quantitative", "scale": {"domain": [0.5, 6.5]}, "axis": null},
+        "y2": {"field": "status_position"},
+        "strokeWidth": {
+          "field": "benefit_count",
+          "type": "quantitative",
+          "scale": {"domain": [1, 6], "range": [1, 5]},
+          "legend": null
+        },
+        "color": {
+          "field": "status_label",
+          "type": "nominal",
+          "title": "Published status",
+          "scale": {
+            "domain": ["Included", "Varies by pet", "Not covered", "Not listed"],
+            "range": ["#3976A8", "#D99A32", "#7A8792", "#D8DEE6"]
+          },
+          "legend": {"orient": "bottom", "direction": "horizontal", "symbolSize": 130}
+        },
+        "tooltip": [
+          {"field": "policy_label", "type": "nominal", "title": "Plan"},
+          {"field": "status_label", "type": "nominal", "title": "Published status"},
+          {"field": "benefit_count", "type": "quantitative", "title": "Benefit items", "format": "d"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"policy_label": "Oyen Basic", "position": 6, "node_x": 0.22},
+          {"policy_label": "Oyen Plus", "position": 5, "node_x": 0.22},
+          {"policy_label": "Oyen Champion", "position": 4, "node_x": 0.22},
+          {"policy_label": "MSIG Direct Plan 1", "position": 3, "node_x": 0.22},
+          {"policy_label": "MSIG Direct Plan 2", "position": 2, "node_x": 0.22},
+          {"policy_label": "MSIG Direct Plan 3", "position": 1, "node_x": 0.22}
+        ]
+      },
+      "mark": {"type": "point", "filled": true, "size": 145, "color": "#1D4F7A"},
+      "encoding": {
+        "x": {"field": "node_x", "type": "quantitative", "scale": {"domain": [0, 1]}, "axis": null},
+        "y": {"field": "position", "type": "quantitative", "scale": {"domain": [0.5, 6.5]}, "axis": null},
+        "tooltip": {"field": "policy_label", "type": "nominal", "title": "Plan"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"policy_label": "Oyen Basic", "position": 6, "node_x": 0.22},
+          {"policy_label": "Oyen Plus", "position": 5, "node_x": 0.22},
+          {"policy_label": "Oyen Champion", "position": 4, "node_x": 0.22},
+          {"policy_label": "MSIG Direct Plan 1", "position": 3, "node_x": 0.22},
+          {"policy_label": "MSIG Direct Plan 2", "position": 2, "node_x": 0.22},
+          {"policy_label": "MSIG Direct Plan 3", "position": 1, "node_x": 0.22}
+        ]
+      },
+      "mark": {"type": "text", "align": "right", "dx": -14, "fontSize": 13, "fontWeight": 600, "color": "#24364B"},
+      "encoding": {
+        "x": {"field": "node_x", "type": "quantitative", "scale": {"domain": [0, 1]}, "axis": null},
+        "y": {"field": "position", "type": "quantitative", "scale": {"domain": [0.5, 6.5]}, "axis": null},
+        "text": {"field": "policy_label", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"status_label": "Included", "position": 6, "node_x": 0.78},
+          {"status_label": "Varies by pet", "position": 4.5, "node_x": 0.78},
+          {"status_label": "Not covered", "position": 3, "node_x": 0.78},
+          {"status_label": "Not listed", "position": 1.5, "node_x": 0.78}
+        ]
+      },
+      "mark": {"type": "point", "filled": true, "size": 180, "stroke": "#FFFFFF", "strokeWidth": 1.5},
+      "encoding": {
+        "x": {"field": "node_x", "type": "quantitative", "scale": {"domain": [0, 1]}, "axis": null},
+        "y": {"field": "position", "type": "quantitative", "scale": {"domain": [0.5, 6.5]}, "axis": null},
+        "color": {
+          "field": "status_label",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Included", "Varies by pet", "Not covered", "Not listed"],
+            "range": ["#3976A8", "#D99A32", "#7A8792", "#D8DEE6"]
+          },
+          "legend": null
+        },
+        "tooltip": {"field": "status_label", "type": "nominal", "title": "Published status"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"status_label": "Included", "position": 6, "node_x": 0.78},
+          {"status_label": "Varies by pet", "position": 4.5, "node_x": 0.78},
+          {"status_label": "Not covered", "position": 3, "node_x": 0.78},
+          {"status_label": "Not listed", "position": 1.5, "node_x": 0.78}
+        ]
+      },
+      "mark": {"type": "text", "align": "left", "dx": 14, "fontSize": 13, "fontWeight": 600, "color": "#24364B"},
+      "encoding": {
+        "x": {"field": "node_x", "type": "quantitative", "scale": {"domain": [0, 1]}, "axis": null},
+        "y": {"field": "position", "type": "quantitative", "scale": {"domain": [0.5, 6.5]}, "axis": null},
+        "text": {"field": "status_label", "type": "nominal"}
+      }
+    }
+  ],
+  "resolve": {"scale": {"color": "shared", "x": "shared", "y": "shared"}},
+  "config": {
+    "font": "Arial",
+    "view": {"stroke": null},
+    "axis": {"labelFont": "Arial", "titleFont": "Arial", "labelFontSize": 13, "titleFontSize": 13, "labelColor": "#536678", "titleColor": "#24364B", "gridColor": "#E8EDF2", "domainColor": "#D8E0E7", "tickColor": "#D8E0E7"},
+    "legend": {"labelFont": "Arial", "titleFont": "Arial", "labelFontSize": 12, "titleFontSize": 12, "labelColor": "#536678", "titleColor": "#24364B"},
+    "title": {"font": "Georgia", "fontSize": 19, "fontWeight": 700, "anchor": "start", "color": "#1D4F7A", "offset": 10}
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Small multiples compare the published coverage status of six insurance plans for each benefit. Product-page silence is labelled not listed, not treated as excluded cover.",
+  "title": "Published benefit status by plan",
+  "data": {
+    "url": "../data/insurance_evidence.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"filter": "datum.record_type === 'coverage_cell'"},
+    {
+      "calculate": "datum.provider === 'MSIG Direct' ? 'MSIG Direct ' + datum.plan : datum.provider + ' ' + datum.plan",
+      "as": "policy_label"
+    },
+    {
+      "calculate": "datum.benefit === 'Veterinary / surgery limit' ? 'Veterinary and surgery' : datum.benefit === 'Burial / cremation' ? 'Burial and cremation' : datum.benefit === 'Missing-pet reward' ? 'Reward for missing pet' : datum.benefit === 'Third-party liability' ? 'Third-party liability' : datum.benefit",
+      "as": "benefit_label"
+    },
+    {
+      "calculate": "datum.coverage_status === 'Partial' ? 'Varies by pet' : datum.coverage_status",
+      "as": "status_label"
+    }
+  ],
+  "params": [
+    {
+      "name": "plan_focus",
+      "select": {"type": "point", "fields": ["policy_label"], "on": "click", "toggle": true}
+    }
+  ],
+  "facet": {
+    "field": "benefit_label",
+    "type": "nominal",
+    "sort": [
+      "Veterinary and surgery",
+      "Death benefit",
+      "Burial and cremation",
+      "Reward for missing pet",
+      "Boarding",
+      "Third-party liability"
+    ],
+    "header": {
+      "title": null,
+      "labelFont": "Georgia",
+      "labelFontSize": 16,
+      "labelFontWeight": 700,
+      "labelColor": "#1D4F7A",
+      "labelPadding": 8,
+      "labelOrient": "top"
+    }
+  },
+  "columns": 2,
+  "spec": {
+    "width": 510,
+    "height": 145,
+    "mark": {"type": "point", "filled": true, "size": 210, "stroke": "#FFFFFF", "strokeWidth": 1.5},
+    "encoding": {
+      "x": {
+        "field": "status_label",
+        "type": "nominal",
+        "sort": ["Not listed", "Not covered", "Varies by pet", "Included"],
+        "axis": {
+          "title": null,
+          "labelAngle": 0,
+          "labelLimit": 100,
+          "labelPadding": 5,
+          "labelFontSize": 11,
+          "ticks": false,
+          "domain": false
+        }
+      },
+      "y": {
+        "field": "policy_label",
+        "type": "nominal",
+        "sort": ["Oyen Basic", "Oyen Plus", "Oyen Champion", "MSIG Direct Plan 1", "MSIG Direct Plan 2", "MSIG Direct Plan 3"],
+        "axis": {"title": null, "labelFontSize": 12, "labelLimit": 150, "labelPadding": 5, "ticks": false, "domain": false}
+      },
+      "color": {
+        "field": "status_label",
+        "type": "nominal",
+        "title": "Product-page status",
+        "sort": ["Included", "Varies by pet", "Not covered", "Not listed"],
+        "scale": {
+          "domain": ["Included", "Varies by pet", "Not covered", "Not listed"],
+          "range": ["#3976A8", "#D99A32", "#7A8792", "#D8DEE6"]
+        },
+        "legend": {"orient": "bottom", "direction": "horizontal", "symbolSize": 130, "titleFont": "Arial", "labelFont": "Arial"}
+      },
+      "opacity": {"condition": {"param": "plan_focus", "empty": true, "value": 1}, "value": 0.18},
+      "tooltip": [
+        {"field": "policy_label", "type": "nominal", "title": "Plan"},
+        {"field": "benefit_label", "type": "nominal", "title": "Benefit"},
+        {"field": "status_label", "type": "nominal", "title": "Product-page status"},
+        {"field": "display", "type": "nominal", "title": "Published wording"}
+      ]
+    }
+  },
+  "resolve": {"scale": {"x": "shared", "y": "shared", "color": "shared"}},
+  "config": {
+    "font": "Arial",
+    "view": {"stroke": null},
+    "axis": {"labelColor": "#536678", "titleColor": "#24364B", "gridColor": "#E8EDF2", "domainColor": "#D8E0E7", "tickColor": "#D8E0E7"},
+    "legend": {"labelFont": "Arial", "titleFont": "Arial", "labelFontSize": 12, "titleFontSize": 12, "labelColor": "#536678", "titleColor": "#24364B"},
+    "title": {"font": "Georgia", "fontSize": 19, "fontWeight": 700, "anchor": "start", "color": "#1D4F7A", "offset": 10}
+  }
+}
