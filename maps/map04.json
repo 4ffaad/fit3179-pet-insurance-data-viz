@@ -17,7 +17,7 @@
     ],
     "scale": 5200
   },
-  "width": 1080,
+  "width": "container",
   "height": 610,
   "layer": [
     {

@@ -9,7 +9,7 @@
     }
   ],
   "background": "#FFFFFF",
-  "spacing": 12,
+  "spacing": 16,
   "config": {
     "view": {
       "stroke": null
@@ -227,119 +227,152 @@
       ]
     },
     {
-      "width": 280,
-      "height": 250,
-      "data": {
-        "values": [
-          {
-            "practice_band": "High",
-            "income_band": "Lower",
-            "bivariate_key": "High|Lower"
-          },
-          {
-            "practice_band": "High",
-            "income_band": "Middle",
-            "bivariate_key": "High|Middle"
-          },
-          {
-            "practice_band": "High",
-            "income_band": "Higher",
-            "bivariate_key": "High|Higher"
-          },
-          {
-            "practice_band": "Moderate",
-            "income_band": "Lower",
-            "bivariate_key": "Moderate|Lower"
-          },
-          {
-            "practice_band": "Moderate",
-            "income_band": "Middle",
-            "bivariate_key": "Moderate|Middle"
-          },
-          {
-            "practice_band": "Moderate",
-            "income_band": "Higher",
-            "bivariate_key": "Moderate|Higher"
-          },
-          {
-            "practice_band": "Low",
-            "income_band": "Lower",
-            "bivariate_key": "Low|Lower"
-          },
-          {
-            "practice_band": "Low",
-            "income_band": "Middle",
-            "bivariate_key": "Low|Middle"
-          },
-          {
-            "practice_band": "Low",
-            "income_band": "Higher",
-            "bivariate_key": "Low|Higher"
-          }
-        ]
-      },
-      "mark": {
-        "type": "rect",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 2
-      },
-      "encoding": {
-        "x": {
-          "field": "income_band",
-          "type": "ordinal",
-          "sort": [
-            "Lower",
-            "Middle",
-            "Higher"
-          ],
-          "axis": {
-            "title": "Median household income",
-            "labelAngle": 0
-          }
-        },
-        "y": {
-          "field": "practice_band",
-          "type": "ordinal",
-          "sort": [
-            "High",
-            "Moderate",
-            "Low"
-          ],
-          "axis": {
-            "title": "Poor-practice share"
-          }
-        },
-        "color": {
-          "field": "bivariate_key",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "Low|Lower",
-              "Low|Middle",
-              "Low|Higher",
-              "Moderate|Lower",
-              "Moderate|Middle",
-              "Moderate|Higher",
-              "High|Lower",
-              "High|Middle",
-              "High|Higher"
-            ],
-            "range": [
-              "#E8EEF4",
-              "#B9D7D8",
-              "#69ABB0",
-              "#D3C3D0",
-              "#ADAFBD",
-              "#6B8FA9",
-              "#D89A76",
-              "#B86F65",
-              "#7F4E68"
+      "vconcat": [
+        {
+          "data": {
+            "values": [
+              {}
             ]
           },
-          "legend": null
+          "mark": {
+            "type": "point",
+            "opacity": 0,
+            "size": 1
+          },
+          "width": 360,
+          "height": 80
         },
-        "tooltip": null
-      }
+        {
+          "width": 360,
+          "height": 400,
+          "data": {
+            "values": [
+              {
+                "practice_band": "High",
+                "income_band": "Lower",
+                "bivariate_key": "High|Lower"
+              },
+              {
+                "practice_band": "High",
+                "income_band": "Middle",
+                "bivariate_key": "High|Middle"
+              },
+              {
+                "practice_band": "High",
+                "income_band": "Higher",
+                "bivariate_key": "High|Higher"
+              },
+              {
+                "practice_band": "Moderate",
+                "income_band": "Lower",
+                "bivariate_key": "Moderate|Lower"
+              },
+              {
+                "practice_band": "Moderate",
+                "income_band": "Middle",
+                "bivariate_key": "Moderate|Middle"
+              },
+              {
+                "practice_band": "Moderate",
+                "income_band": "Higher",
+                "bivariate_key": "Moderate|Higher"
+              },
+              {
+                "practice_band": "Low",
+                "income_band": "Lower",
+                "bivariate_key": "Low|Lower"
+              },
+              {
+                "practice_band": "Low",
+                "income_band": "Middle",
+                "bivariate_key": "Low|Middle"
+              },
+              {
+                "practice_band": "Low",
+                "income_band": "Higher",
+                "bivariate_key": "Low|Higher"
+              }
+            ]
+          },
+          "mark": {
+            "type": "rect",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "x": {
+              "field": "income_band",
+              "type": "ordinal",
+              "sort": [
+                "Lower",
+                "Middle",
+                "Higher"
+              ],
+              "axis": {
+                "title": "Median household income",
+                "labelAngle": 0
+              }
+            },
+            "y": {
+              "field": "practice_band",
+              "type": "ordinal",
+              "sort": [
+                "High",
+                "Moderate",
+                "Low"
+              ],
+              "axis": {
+                "title": "Poor-practice share"
+              }
+            },
+            "color": {
+              "field": "bivariate_key",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Low|Lower",
+                  "Low|Middle",
+                  "Low|Higher",
+                  "Moderate|Lower",
+                  "Moderate|Middle",
+                  "Moderate|Higher",
+                  "High|Lower",
+                  "High|Middle",
+                  "High|Higher"
+                ],
+                "range": [
+                  "#E8EEF4",
+                  "#B9D7D8",
+                  "#69ABB0",
+                  "#D3C3D0",
+                  "#ADAFBD",
+                  "#6B8FA9",
+                  "#D89A76",
+                  "#B86F65",
+                  "#7F4E68"
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": null
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {}
+            ]
+          },
+          "mark": {
+            "type": "point",
+            "opacity": 0,
+            "size": 1
+          },
+          "width": 360,
+          "height": 80
+        }
+      ],
+      "spacing": 0
     }
   ],
   "resolve": {

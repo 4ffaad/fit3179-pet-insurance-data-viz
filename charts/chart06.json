@@ -110,8 +110,8 @@
   },
   "hconcat": [
     {
-      "width": 200,
-      "height": 320,
+      "width": 260,
+      "height": 380,
       "transform": [
         {
           "aggregate": [
@@ -132,7 +132,7 @@
         "font": "Arial",
         "fontSize": 14,
         "color": "#536678",
-        "limit": 196
+        "limit": 258
       },
       "encoding": {
         "x": {
@@ -158,8 +158,8 @@
       }
     },
     {
-      "width": 308,
-      "height": 320,
+      "width": 820,
+      "height": 380,
       "mark": {
         "type": "bar",
         "height": 19
