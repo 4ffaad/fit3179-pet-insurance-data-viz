@@ -1,6 +1,6 @@
 # Pet insurance in Malaysia
 
-A FIT3179 Data Visualisation 2 project about pet insurance awareness, published policy terms, price expectations, selected claim examples and Selangor district context.
+A FIT3179 Data Visualisation 2 story about veterinary costs, financial preparedness, pet-insurance budgets and the geographic limits of a Selangor study.
 
 **Author:** Daffa Fariq Prasetyo · **Unit:** FIT3179 Data Visualisation 2 · **Updated:** 15 October 2026
 
@@ -19,12 +19,12 @@ To preview an individual `.json` spec in VS Code, use **Vega: Preview Vega Graph
 ## Project files
 
 - `index.html`, `style.css`, `main.js`: the responsive story and chart interactions.
-- `charts/`: six Vega-Lite chart specifications.
-- `maps/`: four Vega-Lite map specifications.
+- `charts/`: eight Vega-Lite chart specifications, one idiom per file.
+- `maps/`: three Vega-Lite maps: a Peninsular Malaysia locator and two Selangor district views.
 - `data/`: three shared CSV tables and the geographic boundary files used by the charts.
 - `.github/workflows/pages.yml`: deploys the static site when a commit reaches `main`.
 
-The ten visualisations use Vega-Lite 5 specifications. Each spec reads the local source tables; source links and limitations are listed in the page. The Peninsular Malaysia overview uses the cylindrical Mercator projection and nearby country boundaries. The Selangor maps show district-level study context only.
+The eleven visualisations use Vega-Lite 5 specifications. Each spec reads the shared local source tables; source links and limitations are listed in the page. The Peninsular Malaysia overview uses the cylindrical Mercator projection and nearby country boundaries. The Selangor maps show district-level study context only. A bivariate mosaic is omitted because its combined key obscured the small and uneven survey samples.
 
 ## GitHub Pages
 

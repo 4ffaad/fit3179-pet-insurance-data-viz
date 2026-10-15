@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Interactive dumbbell chart comparing the published veterinary bill and insurer payout for six selected examples.",
+  "title": "Veterinary bills and insurer payouts",
+  "data": { "url": "../data/insurance_evidence.csv", "format": { "type": "csv" } },
+  "transform": [
+    { "filter": "datum.source_id === 'S06' && datum.record_type === 'claim_example'" },
+    { "calculate": "toNumber(datum.vet_bill_rm)", "as": "bill_rm" },
+    { "calculate": "toNumber(datum.insurance_payout_rm)", "as": "payout_rm" },
+    { "calculate": "datum.bill_rm - datum.payout_rm", "as": "owner_balance_rm" },
+    { "calculate": "datum.pet_name + ' · ' + lower(datum.species)", "as": "pet_label" }
+  ],
+  "resolve": { "scale": { "y": "shared" } },
+  "hconcat": [
+    {
+      "width": 150,
+      "height": 390,
+      "transform": [{ "aggregate": [{ "op": "count", "as": "case_count" }], "groupby": ["pet_label"] }],
+      "mark": { "type": "text", "align": "left", "baseline": "middle", "font": "Arial", "fontSize": 14, "color": "#394F64", "limit": 145 },
+      "encoding": {
+        "x": { "value": 0 },
+        "y": { "field": "pet_label", "type": "nominal", "sort": ["Mochi · dog", "Rocky · dog", "Lucky · dog", "Snowy · cat", "Ginger · cat", "Theo · cat"], "axis": null },
+        "text": { "field": "pet_label", "type": "nominal" }
+      }
+    },
+    {
+      "width": 1060,
+      "height": 390,
+      "layer": [
+        {
+          "mark": { "type": "rule", "color": "#AAB8C4", "strokeWidth": 4 },
+          "encoding": {
+            "x": { "field": "payout_rm", "type": "quantitative", "scale": { "domain": [0, 9500], "nice": false }, "axis": { "title": "Ringgit (RM)", "format": ",.0f", "tickCount": 6, "labelFontSize": 14, "titleFontSize": 15 } },
+            "x2": { "field": "bill_rm" },
+            "y": { "field": "pet_label", "type": "nominal", "sort": ["Mochi · dog", "Rocky · dog", "Lucky · dog", "Snowy · cat", "Ginger · cat", "Theo · cat"], "axis": null },
+            "tooltip": [
+              { "field": "pet_name", "type": "nominal", "title": "Pet" },
+              { "field": "condition", "type": "nominal", "title": "Published condition" },
+              { "field": "bill_rm", "type": "quantitative", "title": "Veterinary bill (RM)", "format": ",.2f" },
+              { "field": "payout_rm", "type": "quantitative", "title": "Insurance payout (RM)", "format": ",.2f" },
+              { "field": "owner_balance_rm", "type": "quantitative", "title": "Bill minus payout (RM)", "format": ",.2f" }
+            ]
+          }
+        },
+        {
+          "params": [{ "name": "selected_claim", "select": { "type": "point", "fields": ["pet_name"], "on": "click", "clear": "dblclick" } }],
+          "transform": [
+            { "fold": ["bill_rm", "payout_rm"], "as": ["amount_type", "amount_rm"] },
+            { "calculate": "datum.amount_type === 'bill_rm' ? 'Veterinary bill' : 'Insurer payout'", "as": "amount_label" }
+          ],
+          "mark": { "type": "point", "filled": true, "size": 180, "stroke": "#FFFFFF", "strokeWidth": 1.5 },
+          "encoding": {
+            "x": { "field": "amount_rm", "type": "quantitative", "scale": { "domain": [0, 9500], "nice": false } },
+            "y": { "field": "pet_label", "type": "nominal", "sort": ["Mochi · dog", "Rocky · dog", "Lucky · dog", "Snowy · cat", "Ginger · cat", "Theo · cat"] },
+            "color": { "field": "amount_label", "type": "nominal", "title": "Amount", "scale": { "domain": ["Veterinary bill", "Insurer payout"], "range": ["#1D4F7A", "#D99A32"] }, "legend": { "orient": "bottom", "direction": "horizontal" } },
+            "opacity": { "condition": { "param": "selected_claim", "empty": true, "value": 1 }, "value": 0.32 },
+            "tooltip": [
+              { "field": "pet_name", "type": "nominal", "title": "Pet" },
+              { "field": "condition", "type": "nominal", "title": "Published condition" },
+              { "field": "amount_label", "type": "nominal", "title": "Amount" },
+              { "field": "amount_rm", "type": "quantitative", "title": "Ringgit (RM)", "format": ",.2f" },
+              { "field": "owner_balance_rm", "type": "quantitative", "title": "Bill minus payout (RM)", "format": ",.2f" }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "axis": { "labelFont": "Arial", "titleFont": "Arial", "labelColor": "#536678", "titleColor": "#24364B", "domainColor": "#D8E0E7", "tickColor": "#D8E0E7", "gridColor": "#E8EDF2", "gridOpacity": 0.75 },
+    "title": { "font": "Georgia", "fontSize": 21, "fontWeight": 700, "anchor": "start", "color": "#1D4F7A", "offset": 12 },
+    "legend": { "labelFont": "Arial", "titleFont": "Arial", "labelFontSize": 13, "titleFontSize": 13, "labelColor": "#536678", "titleColor": "#24364B" },
+    "view": { "stroke": null }
+  }
+}

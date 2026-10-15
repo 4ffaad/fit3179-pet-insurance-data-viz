@@ -1,283 +1,49 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Diverging Likert chart of the five published response levels for six pet-insurance attitude statements in a Selangor study with 116 participants. Neutral responses straddle zero.",
-  "title": "Attitudes toward pet insurance",
-  "data": {
-    "url": "../data/survey_observations.csv",
-    "format": {
-      "type": "csv"
-    }
-  },
+  "description": "Connected scatterplot of current annual MSIG Direct premiums and veterinary or surgery cover limits for cat and dog plans.",
+  "title": "Annual MSIG premium and veterinary cover",
+  "data": { "url": "../data/insurance_evidence.csv", "format": { "type": "csv" } },
   "transform": [
-    {
-      "filter": "datum.source_id === 'S01' && datum.section === 'attitude_distribution'"
-    },
-    {
-      "calculate": "datum.category === 'Strongly disagree' ? 0 : datum.category === 'Disagree' ? 1 : datum.category === 'Neutral' ? 2 : datum.category === 'Agree' ? 3 : 4",
-      "as": "response_order"
-    },
-    {
-      "calculate": "if(datum.category === 'Strongly disagree' || datum.category === 'Disagree', datum.percentage, 0) + if(datum.category === 'Neutral', datum.percentage / 2, 0)",
-      "as": "center_offset"
-    },
-    {
-      "stack": "percentage",
-      "groupby": [
-        "metric"
-      ],
-      "sort": [
-        {
-          "field": "response_order",
-          "order": "ascending"
-        }
-      ],
-      "as": [
-        "stack_start",
-        "stack_end"
-      ]
-    },
-    {
-      "joinaggregate": [
-        {
-          "field": "center_offset",
-          "op": "sum",
-          "as": "center_offset_total"
-        }
-      ],
-      "groupby": [
-        "metric"
-      ]
-    },
-    {
-      "calculate": "datum.stack_start - datum.center_offset_total",
-      "as": "x_start"
-    },
-    {
-      "calculate": "datum.stack_end - datum.center_offset_total",
-      "as": "x_end"
-    }
+    { "filter": "datum.source_id === 'S07' && datum.record_type === 'policy_detail' && datum.provider === 'MSIG Direct' && datum.benefit === 'Annual premium'" },
+    { "calculate": "datum.plan === 'Plan 1' ? 1 : datum.plan === 'Plan 2' ? 2 : 3", "as": "plan_order" },
+    { "calculate": "toNumber(datum.value_numeric)", "as": "annual_premium" },
+    { "calculate": "datum.plan === 'Plan 1' ? 2000 : datum.plan === 'Plan 2' ? 3500 : 5000", "as": "annual_vet_limit" }
   ],
-  "params": [
+  "width": "container",
+  "height": 430,
+  "layer": [
     {
-      "name": "attitude_selection",
-      "select": {
-        "type": "point",
-        "fields": [
-          "metric"
-        ],
-        "on": "click",
-        "clear": "dblclick"
-      }
-    }
-  ],
-  "config": {
-    "axis": {
-      "gridColor": "#E8EDF2",
-      "gridOpacity": 0.68,
-      "labelFont": "Arial",
-      "titleFont": "Arial",
-      "labelFontSize": 14,
-      "titleFontSize": 14,
-      "labelColor": "#536678",
-      "titleColor": "#24364B",
-      "domainColor": "#D8E0E7",
-      "tickColor": "#D8E0E7"
-    },
-    "view": {
-      "stroke": null
-    },
-    "font": "Arial",
-    "title": {
-      "font": "Georgia",
-      "fontSize": 19,
-      "fontWeight": 700,
-      "anchor": "start",
-      "color": "#1D4F7A",
-      "offset": 10
-    },
-    "text": {
-      "font": "Arial",
-      "color": "#24364B"
-    },
-    "legend": {
-      "labelFont": "Arial",
-      "titleFont": "Arial",
-      "labelFontSize": 13,
-      "titleFontSize": 13,
-      "labelColor": "#536678",
-      "titleColor": "#24364B"
-    }
-  },
-  "hconcat": [
-    {
-      "width": 260,
-      "height": 380,
-      "transform": [
-        {
-          "aggregate": [
-            {
-              "op": "count",
-              "as": "label_count"
-            }
-          ],
-          "groupby": [
-            "metric"
-          ]
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "middle",
-        "font": "Arial",
-        "fontSize": 14,
-        "color": "#536678",
-        "limit": 258
-      },
+      "mark": { "type": "line", "strokeWidth": 3 },
       "encoding": {
-        "x": {
-          "value": 0
-        },
-        "y": {
-          "field": "metric",
-          "type": "nominal",
-          "sort": [
-            "Ready for medical costs",
-            "Better treatment choices",
-            "Insurance is affordable",
-            "Claims process is easy",
-            "Provider help is accessible",
-            "Information is transparent"
-          ],
-          "axis": null
-        },
-        "text": {
-          "field": "metric",
-          "type": "nominal"
-        }
+        "x": { "field": "annual_premium", "type": "quantitative", "scale": { "domain": [500, 1275], "nice": false }, "axis": { "title": "Annual premium (ringgit)", "format": ",.0f", "tickCount": 6, "labelFontSize": 14, "titleFontSize": 15 } },
+        "y": { "field": "annual_vet_limit", "type": "quantitative", "scale": { "domain": [1500, 5500], "nice": false }, "axis": { "title": "Annual veterinary and surgery limit (ringgit)", "format": ",.0f", "tickCount": 5, "labelFontSize": 14, "titleFontSize": 15 } },
+        "color": { "field": "pet_type", "type": "nominal", "title": "Pet type", "scale": { "domain": ["Cat", "Dog"], "range": ["#3976A8", "#D99A32"] }, "legend": { "orient": "bottom", "direction": "horizontal" } },
+        "detail": { "field": "pet_type" },
+        "order": { "field": "plan_order", "type": "quantitative" }
       }
     },
     {
-      "width": 820,
-      "height": 380,
-      "mark": {
-        "type": "bar",
-        "height": 19
-      },
+      "mark": { "type": "point", "filled": true, "size": 190, "stroke": "#FFFFFF", "strokeWidth": 1.5 },
       "encoding": {
-        "x": {
-          "field": "x_start",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -90,
-              90
-            ],
-            "nice": false
-          },
-          "axis": {
-            "title": "Response share, centred on neutral (%)",
-            "format": ".0f",
-            "values": [
-              -80,
-              -40,
-              0,
-              40,
-              80
-            ],
-            "grid": true,
-            "labelFontSize": 13,
-            "titleFontSize": 13
-          }
-        },
-        "x2": {
-          "field": "x_end"
-        },
-        "y": {
-          "field": "metric",
-          "type": "nominal",
-          "sort": [
-            "Ready for medical costs",
-            "Better treatment choices",
-            "Insurance is affordable",
-            "Claims process is easy",
-            "Provider help is accessible",
-            "Information is transparent"
-          ],
-          "axis": null
-        },
-        "color": {
-          "field": "category",
-          "type": "nominal",
-          "title": "Response",
-          "sort": [
-            "Strongly disagree",
-            "Disagree",
-            "Neutral",
-            "Agree",
-            "Strongly agree"
-          ],
-          "scale": {
-            "domain": [
-              "Strongly disagree",
-              "Disagree",
-              "Neutral",
-              "Agree",
-              "Strongly agree"
-            ],
-            "range": [
-              "#D99A32",
-              "#F0D9A5",
-              "#E9EEF3",
-              "#8FB7D2",
-              "#1D4F7A"
-            ]
-          },
-          "legend": {
-            "orient": "bottom",
-            "direction": "horizontal",
-            "labelLimit": 115,
-            "labelFontSize": 13,
-            "titleFontSize": 13
-          }
-        },
-        "opacity": {
-          "condition": {
-            "param": "attitude_selection",
-            "value": 1
-          },
-          "value": 0.35
-        },
+        "x": { "field": "annual_premium", "type": "quantitative", "scale": { "domain": [500, 1275], "nice": false } },
+        "y": { "field": "annual_vet_limit", "type": "quantitative", "scale": { "domain": [1500, 5500], "nice": false } },
+        "color": { "field": "pet_type", "type": "nominal", "title": "Pet type", "scale": { "domain": ["Cat", "Dog"], "range": ["#3976A8", "#D99A32"] } },
+        "shape": { "field": "plan", "type": "nominal", "title": "Plan tier", "sort": ["Plan 1", "Plan 2", "Plan 3"], "scale": { "domain": ["Plan 1", "Plan 2", "Plan 3"], "range": ["circle", "square", "diamond"] }, "legend": { "orient": "bottom", "direction": "horizontal" } },
         "tooltip": [
-          {
-            "field": "metric",
-            "type": "nominal",
-            "title": "Attitude item"
-          },
-          {
-            "field": "category",
-            "type": "nominal",
-            "title": "Response"
-          },
-          {
-            "field": "percentage",
-            "type": "quantitative",
-            "title": "Respondents (%)",
-            "format": ".1f"
-          },
-          {
-            "field": "count",
-            "type": "quantitative",
-            "title": "Respondents"
-          }
+          { "field": "pet_type", "type": "nominal", "title": "Pet type" },
+          { "field": "plan", "type": "nominal", "title": "Plan" },
+          { "field": "annual_premium", "type": "quantitative", "title": "Annual premium (RM)", "format": ",.2f" },
+          { "field": "annual_vet_limit", "type": "quantitative", "title": "Annual veterinary and surgery limit (RM)", "format": ",.0f" }
         ]
       }
     }
   ],
-  "spacing": 12,
-  "resolve": {
-    "scale": {
-      "y": "shared"
-    }
+  "resolve": { "scale": { "color": "shared" } },
+  "config": {
+    "font": "Arial",
+    "axis": { "labelFont": "Arial", "titleFont": "Arial", "labelColor": "#536678", "titleColor": "#24364B", "domainColor": "#D8E0E7", "tickColor": "#D8E0E7", "gridColor": "#E8EDF2", "gridOpacity": 0.75 },
+    "title": { "font": "Georgia", "fontSize": 21, "fontWeight": 700, "anchor": "start", "color": "#1D4F7A", "offset": 12 },
+    "legend": { "labelFont": "Arial", "titleFont": "Arial", "labelFontSize": 13, "titleFontSize": 13, "labelColor": "#536678", "titleColor": "#24364B" },
+    "view": { "stroke": null }
   }
 }

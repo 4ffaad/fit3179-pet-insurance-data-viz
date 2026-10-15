@@ -3,183 +3,154 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A Malaysian visual story about pet insurance awareness, emergency veterinary costs, policy cover and selected claim examples." />
+    <meta name="description" content="A visual story about veterinary costs, pet insurance budgets and evidence from Malaysia and Selangor." />
     <meta name="author" content="Daffa Fariq Prasetyo 34076492" />
-    <title>Malaysia's Pet Insurance Landscape</title>
+    <title>Pet care costs and insurance in Malaysia</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./style.css?v=20261015-3" />
+    <link rel="stylesheet" href="./style.css?v=20261015-4" />
     <script defer src="https://cdn.jsdelivr.net/npm/vega@5.22.1/build/vega.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.0/build/vega-lite.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0/build/vega-embed.min.js"></script>
-    <script defer src="./main.js"></script>
+    <script defer src="./main.js?v=20261015-4"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to story</a>
     <header class="masthead">
-      <div class="topline">
-        <span>FIT3179 · Data Visualisation 2</span>
-      </div>
+      <div class="topline"><span>FIT3179 · Data Visualisation 2</span></div>
       <div class="hero">
         <div class="hero-copy">
-          <h1>Pet insurance <span>in Malaysia</span></h1>
+          <h1>Pet care costs <span>in Malaysia</span></h1>
+          <p>When a veterinary bill arrives, how prepared are pet owners?</p>
         </div>
       </div>
-      <div class="byline">
-        <span>By Daffa Fariq Prasetyo 34076492</span>
-      </div>
+      <div class="byline"><span>By Daffa Fariq Prasetyo · 34076492</span></div>
     </header>
 
     <main id="main">
-      <section class="story-section" id="insurance-awareness" aria-labelledby="section-one">
+      <section class="story-section" id="financial-preparedness" aria-labelledby="section-one">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow"><span class="section-number">01</span></p>
-            <h2 id="section-one">Awareness shapes protection</h2>
-            <p>Insurance knowledge and attitudes in one Selangor study.</p>
-          </div>
-        </div>
-        <div class="chart-grid awareness-grid">
-          <figure class="chart-figure chart-figure-wide">
-            <div class="chart-host" data-spec="./charts/chart05.json?v=2" aria-label="Lollipop chart of insurance knowledge items among Selangor study participants" aria-busy="true"></div>
-            <figcaption>116 participants · claims-process knowledge was least common.</figcaption>
-          </figure>
-          <figure class="chart-figure chart-figure-wide">
-            <div class="chart-host" data-spec="./charts/chart06.json?v=2" aria-label="Diverging Likert chart showing attitudes toward pet insurance among Selangor study participants" aria-busy="true"></div>
-            <figcaption>116 participants · click a statement to focus its response pattern.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="story-section" id="cover-and-cost" aria-labelledby="section-two">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow"><span class="section-number">02</span></p>
-            <h2 id="section-two">Cover and cost</h2>
-            <p>Published policy limits beside survey price expectations.</p>
-          </div>
+          <p class="eyebrow"><span class="section-number">01</span> · Financial preparedness</p>
+          <h2 id="section-one">Most owners lack a dedicated pet emergency fund</h2>
+          <p>Two questions from a 2026 Malaysia survey show how owners prepare for veterinary costs.</p>
         </div>
         <figure class="chart-figure chart-figure-wide">
-          <div class="chart-host" data-spec="./charts/chart09_3.json" aria-label="Small-multiple dot plots comparing published monetary benefit limits across six insurance plans" aria-busy="true"></div>
-          <figcaption>Each panel compares stated limits for one benefit. A zero is an explicit exclusion; no point means the product page did not list a limit. <a href="./chart09-options.html">Compare four chart designs</a>.</figcaption>
+          <div class="chart-host" data-spec="./charts/chart01.json?v=1" aria-label="Percentage tile chart showing that 63 percent of 4,872 pet owners reported no dedicated financial buffer for pet emergencies" aria-busy="true"></div>
+          <figcaption>Each tile represents one percentage point. Survey base: 4,872 pet owners.</figcaption>
         </figure>
-        <div class="chart-grid two-up policy-price-grid">
-          <figure class="chart-figure">
-            <div class="chart-host" data-spec="./charts/chart10.json?v=2" aria-label="Butterfly chart comparing current annual MSIG Direct premiums for cats and dogs across three plans" aria-busy="true"></div>
-            <figcaption>Current tax-inclusive annual premiums · cats and dogs shown separately.</figcaption>
-          </figure>
-          <figure class="chart-figure">
-            <div class="chart-host" data-spec="./charts/chart12.json" aria-label="Distribution of annual pet-insurance price expectations among Selangor study participants" aria-busy="true"></div>
-            <figcaption>Survey responses describe intended budgets, not purchased policies.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="story-section" id="claim-examples" aria-labelledby="section-three">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow"><span class="section-number">03</span></p>
-            <h2 id="section-three">Bills and example payouts</h2>
-            <p>Six insurer-published cases show how bills compared with payouts.</p>
-          </div>
-        </div>
-        <figure class="chart-figure chart-figure-wide claims-figure">
-          <div class="chart-host" data-spec="./charts/chart11.json" data-sync="claim" aria-label="Connected-dot chart comparing veterinary bills and insurance payouts across six published cases; click a case for details" aria-busy="true"></div>
-          <figcaption>These selected examples are not typical or representative claims.</figcaption>
+        <figure class="chart-figure chart-figure-wide">
+          <div class="chart-host" data-spec="./charts/chart02.json?v=1" aria-label="One hundred percent stacked bar showing personal savings, a dedicated pet fund and pet insurance as funding for the latest veterinary emergency" aria-busy="true"></div>
+          <figcaption>Funding source for respondents’ latest veterinary emergency; this question has a separate, unreported base.</figcaption>
         </figure>
       </section>
 
-      <section class="story-section map-story-section" id="geography-and-context" aria-labelledby="section-four">
+      <section class="story-section" id="selangor-study" aria-labelledby="section-two">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow"><span class="section-number">04</span></p>
-            <h2 id="section-four">Selangor in geographic context</h2>
-            <p>Selangor study rates and counts, with separate household context.</p>
-          </div>
+          <p class="eyebrow"><span class="section-number">02</span> · Selangor study</p>
+          <h2 id="section-two">Knowledge and practice do not move together</h2>
+          <p>One convenience sample of 116 participants; these results are not Malaysia-wide estimates.</p>
         </div>
-        <div class="map-grid">
-          <article class="map-panel map-panel--overview">
-            <div class="story-copy map-copy">
-              <p class="eyebrow">Geographic context</p>
-            </div>
-            <figure class="chart-figure map-figure">
-              <div class="chart-host" data-spec="./maps/map04.json?v=3" data-sync="district" aria-label="Full-width Mercator map focused on Peninsular Malaysia and nearby land and water, with Selangor highlighted" aria-busy="true"></div>
-              <figcaption>Survey findings are shown only for Selangor districts.</figcaption>
-            </figure>
-          </article>
-          <article class="map-panel">
-            <div class="story-copy map-copy">
-              <p class="eyebrow">Map 1 · Choropleth</p>
-            </div>
-            <figure class="chart-figure map-figure">
-              <div class="chart-host" data-spec="./maps/map01.json?v=2" data-sync="district" aria-label="Choropleth of the normalized poor-practice share among surveyed respondents in Selangor districts" aria-busy="true"></div>
-              <figcaption>Share of each district sample · grey means no data.</figcaption>
-            </figure>
-          </article>
-          <article class="map-panel">
-            <div class="story-copy map-copy">
-              <p class="eyebrow">Map 2 · Proportional symbols</p>
-            </div>
-            <figure class="chart-figure map-figure">
-              <div class="chart-host" data-spec="./maps/map02.json?v=2" data-sync="district" aria-label="Proportional-symbol map of insurance-study participants by Selangor district, with circle area encoding counts" aria-busy="true"></div>
-              <figcaption>Circle area shows participant count · district counts sum to 116.</figcaption>
-            </figure>
-          </article>
-          <article class="map-panel map-panel--bivariate">
-            <div class="story-copy map-copy">
-              <p class="eyebrow">Map 3 · Bivariate choropleth</p>
-            </div>
-            <figure class="chart-figure map-figure">
-              <div class="chart-host" data-spec="./maps/map03.json?v=8" data-sync="district" aria-label="Full-width bivariate choropleth with a vertically centred key, combining normalized study-sample poor-practice shares and median household income by Selangor district; source datasets are separate" aria-busy="true"></div>
-              <figcaption>Study sample share and household income; grey means no data.</figcaption>
-            </figure>
-          </article>
+        <figure class="chart-figure chart-figure-wide">
+          <div class="chart-host" data-spec="./charts/chart03.json?v=1" aria-label="Ternary plot comparing poor, moderate and good knowledge, attitude and practice shares in a Selangor study" aria-busy="true"></div>
+          <figcaption>Each point is one study domain. Hover to read its poor, moderate and good shares.</figcaption>
+        </figure>
+        <figure class="chart-figure chart-figure-wide">
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart04.json?v=2" data-sync="attitude" aria-label="Diverging stacked Likert chart of six attitudes toward pet insurance among 116 Selangor study participants; click a statement to focus it" aria-busy="true"></div>
+          <figcaption>Click a statement to focus its response pattern; double-click to reset.</figcaption>
+        </figure>
+      </section>
+
+      <section class="story-section" id="budget-and-cover" aria-labelledby="section-three">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="section-number">03</span> · Budget and cover</p>
+          <h2 id="section-three">Stated budgets sit below many listed premiums</h2>
+          <p>Study participants’ price expectations beside current MSIG Direct prices and veterinary limits.</p>
         </div>
+        <figure class="chart-figure chart-figure-wide">
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart05.json?v=2" aria-label="Ordered bar chart of annual pet insurance budgets stated by 116 Selangor study participants" aria-busy="true"></div>
+          <figcaption>Stated acceptable annual price, not policy purchases. Study sample: 116.</figcaption>
+        </figure>
+        <figure class="chart-figure chart-figure-wide">
+          <div class="chart-host" data-spec="./charts/chart06.json?v=1" aria-label="Connected scatterplot comparing current annual MSIG premiums with annual veterinary and surgery limits for cat and dog plans" aria-busy="true"></div>
+          <figcaption>Current tax-inclusive prices checked 8 October 2026. Survey budgets and insurer prices come from different sources and populations.</figcaption>
+        </figure>
+      </section>
+
+      <section class="story-section" id="claim-examples" aria-labelledby="section-four">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="section-number">04</span> · Published examples</p>
+          <h2 id="section-four">A payout can still leave an unpaid balance</h2>
+          <p>These six published cases compare each veterinary bill with its reported insurer payout.</p>
+        </div>
+        <figure class="chart-figure chart-figure-wide">
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart07.json?v=2" data-sync="claim" aria-label="Dumbbell chart comparing veterinary bills and insurer payouts for six selected published claims; click a case to focus it" aria-busy="true"></div>
+          <figcaption>Selected insurer-published examples, not a representative claims sample. Hover or click a case for details.</figcaption>
+        </figure>
+      </section>
+
+      <section class="story-section geography-section" id="geography" aria-labelledby="section-five">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="section-number">05</span> · Geographic context</p>
+          <h2 id="section-five">District patterns describe the Selangor study sample</h2>
+          <p>The study covers Selangor. District income adds context; it is not linked to each participant.</p>
+        </div>
+        <figure class="chart-figure chart-figure-wide map-overview-figure">
+          <div class="chart-host" data-spec="./maps/map04.json?v=4" data-sync="district" aria-label="Large Mercator map of Peninsular Malaysia and nearby countries, with Selangor highlighted" aria-busy="true"></div>
+          <figcaption>Mercator projection; neighbouring countries and seas provide geographic orientation only.</figcaption>
+        </figure>
+        <div class="chart-grid two-up map-pair">
+          <figure class="chart-figure map-figure">
+            <div class="chart-host" data-spec="./maps/map01.json?v=3" data-sync="district" aria-label="Selangor choropleth map of poor-practice share within each district study sample; no-sample districts are grey" aria-busy="true"></div>
+            <figcaption>Share within each district sample; grey means no survey responses.</figcaption>
+          </figure>
+          <figure class="chart-figure map-figure">
+            <div class="chart-host" data-spec="./maps/map02.json?v=3" data-sync="district" aria-label="Selangor proportional symbol map with circle area showing study participants by district" aria-busy="true"></div>
+            <figcaption>Circle area shows respondents; district counts total 116.</figcaption>
+          </figure>
+        </div>
+        <figure class="chart-figure chart-figure-wide">
+          <div class="chart-host" data-spec="./charts/chart08.json?v=1" aria-label="Bubble scatterplot comparing district median household income with the poor-practice share in each district study sample; bubble area shows respondent count" aria-busy="true"></div>
+          <figcaption>District-level comparison only. Sample sizes range from 2 to 42; it cannot show how an individual’s income relates to their pet-care spending.</figcaption>
+        </figure>
       </section>
 
       <section class="method-section" id="sources-methodology" aria-labelledby="sources-title">
         <details class="method-details">
-          <summary id="sources-title">Sources, methods and limitations</summary>
-          <h2>About this visualisation</h2>
-        <div class="method-grid">
-          <div>
-            <h3>Domain, audience and method</h3>
-            <dl class="framework-list">
-              <div><dt>Domain</dt><dd>Pet health and insurance in Malaysia.</dd></div>
-              <div><dt>What</dt><dd>Survey evidence, published policy terms, selected claims and Selangor district context.</dd></div>
-              <div><dt>Why</dt><dd>Help pet owners compare cover, costs and evidence gaps.</dd></div>
-              <div><dt>Who</dt><dd>Pet owners in Malaysia, including first-time insurance readers.</dd></div>
-              <div><dt>How</dt><dd>Vega-Lite charts and maps; shared plan, claim and district selections; hover for details.</dd></div>
-            </dl>
+          <summary id="sources-title">Sources and methods</summary>
+          <div class="method-grid">
+            <div>
+              <h2>How to read this story</h2>
+              <p>Malaysia survey results, Selangor study findings, insurer prices and district income are separate sources. They are shown side by side for context, not treated as one linked dataset.</p>
+              <p>The Selangor pet-insurance study recruited 116 participants by convenience sampling in July–October 2024. The national emergency-fund survey reports 4,872 pet owners for the dedicated-buffer question.</p>
+            </div>
+            <div>
+              <h2>Limits</h2>
+              <ul class="limit-list">
+                <li>District practice shares describe only people in the study sample, not district populations.</li>
+                <li>Price expectations and current premiums are not matched to the same people or time.</li>
+                <li>Published claim examples are selected cases and do not estimate typical reimbursements.</li>
+              </ul>
+            </div>
           </div>
-          <div>
-          <h3>Limits</h3>
-            <ul class="limit-list">
-              <li>The Malaysia map gives geographic context only; survey findings are limited to the named study samples.</li>
-              <li>The insurance study is a convenience sample of 116 Selangor participants; it is not a Malaysian prevalence estimate.</li>
-              <li>The six Oyen cases are selected examples, not representative claims data or a ranking of common Malaysian illnesses.</li>
-            </ul>
-          </div>
-        </div>
-        <details class="source-details">
-          <summary>Source register</summary>
-          <ol>
-            <li><a href="https://www.mdpi.com/2813-9372/3/1/10">Koh and colleagues, “Knowledge, Attitudes, and Practices of Pet Owners Regarding Pet Insurance in Selangor, Malaysia,” <em>Pets</em>, 2026.</a> Fieldwork July to October 2024; sample size 116; convenience sample.</li>
-            <li><a href="https://www.oyen.my/knowledge-base-article/understand-your-oyen-pet-insurance-coverage?2901fe84_page=2">Oyen policy terms</a> and <a href="https://www.msig.com.my/products/personal/lifestyle/pet">MSIG Malaysia Pet Insurance</a>, checked 8 October 2026.</li>
-            <li><a href="https://www.oyen.my/post/is-pet-insurance-worth-it-malaysia-2026">Oyen, six selected claim examples, published 28 September 2026.</a></li>
-            <li><a href="https://www.dosm.gov.my/uploads/release-content/file_20260312152657.pdf">Department of Statistics Malaysia, Selangor district household incomes, 2024.</a></li>
-            <li><a href="https://raw.githubusercontent.com/dosm-malaysia/data-open/main/datasets/geodata/administrative_2_district.geojson">Department of Statistics Malaysia administrative district GeoJSON</a> and its <a href="https://github.com/dosm-malaysia/data-open/blob/main/LICENSE.md">Open Data License</a>. The maps use the nine Selangor district features.</li>
-            <li><a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/">Natural Earth, 1:110m country boundaries.</a> Muted neighbouring land provides context; no national survey values are encoded.</li>
-            <li><a href="https://www.malaysia.gov.my/en/government/kenali-malaysia/lokasi">Government of Malaysia, location overview.</a> Geographic context only.</li>
-          </ol>
-        </details>
-        <p class="method-note">Survey microdata and policy source records are summarized in the published CSV files; no individual-level responses are shown.</p>
-        <p class="ai-credit"><strong>AI acknowledgement:</strong> Codex assisted with source review, data preparation and chart specifications.</p>
+          <details class="source-details">
+            <summary>Source register</summary>
+            <ol>
+              <li><a href="https://www.malaymail.com/news/life/2026/08/11/pets-are-family-to-91pc-of-malaysian-owners-yet-most-lack-emergency-funds-survey-finds/230926">Malay Mail, Malaysian pet-owner survey, August 2026.</a></li>
+              <li><a href="https://www.mdpi.com/2813-9372/3/1/10">Koh and colleagues, “Knowledge, Attitudes, and Practices of Pet Owners Regarding Pet Insurance in Selangor, Malaysia,” <em>Pets</em>, 2026.</a> Fieldwork July to October 2024; convenience sample of 116.</li>
+              <li><a href="https://discol.umk.edu.my/id/eprint/14875/1/AUDREY%20KOH%20RUI%20PING%20D20B0082.pdf">Koh, UMK thesis, Table 6.</a> Annual price expectation bands for the same Selangor study.</li>
+              <li><a href="https://www.msig.com.my/products/personal/lifestyle/pet">MSIG Malaysia Pet Insurance.</a> Current annual premiums and veterinary limits checked 8 October 2026.</li>
+              <li><a href="https://www.oyen.my/post/is-pet-insurance-worth-it-malaysia-2026">Oyen, six selected claim examples, 28 September 2026.</a></li>
+              <li><a href="https://www.dosm.gov.my/uploads/release-content/file_20260312152657.pdf">Department of Statistics Malaysia, Selangor district household incomes, 2024.</a></li>
+              <li><a href="https://raw.githubusercontent.com/dosm-malaysia/data-open/main/datasets/geodata/administrative_2_district.geojson">DOSM administrative district boundaries</a> and <a href="https://github.com/dosm-malaysia/data-open/blob/main/LICENSE.md">Open Data License</a>.</li>
+              <li><a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/">Natural Earth, 1:110m country boundaries</a> and <a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/">1:10m country boundaries.</a></li>
+            </ol>
+          </details>
+          <p class="ai-credit"><strong>AI acknowledgement:</strong> AI tools assisted with source review, data preparation and chart specifications.</p>
         </details>
       </section>
     </main>
 
     <footer class="page-footer">
-      <p>Protecting Our Pets · FIT3179 Data Visualisation 2</p>
+      <p>Pet care costs in Malaysia · FIT3179 Data Visualisation 2</p>
       <p>Daffa Fariq Prasetyo · Updated 15 October 2026</p>
     </footer>
   </body>

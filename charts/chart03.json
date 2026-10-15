@@ -1,0 +1,109 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Ternary plot of the poor, moderate and good classification shares for knowledge, attitude and practice in a Selangor convenience sample of 116 participants.",
+  "title": "Knowledge, attitude and practice profiles",
+  "width": "container",
+  "height": 510,
+  "layer": [
+    {
+      "data": {
+        "values": [
+          { "x": 10, "y": 17.32, "x2": 90, "y2": 17.32 },
+          { "x": 20, "y": 34.64, "x2": 80, "y2": 34.64 },
+          { "x": 30, "y": 51.96, "x2": 70, "y2": 51.96 },
+          { "x": 40, "y": 69.28, "x2": 60, "y2": 69.28 },
+          { "x": 20, "y": 0, "x2": 60, "y2": 69.28 },
+          { "x": 40, "y": 0, "x2": 70, "y2": 51.96 },
+          { "x": 60, "y": 0, "x2": 80, "y2": 34.64 },
+          { "x": 80, "y": 0, "x2": 90, "y2": 17.32 },
+          { "x": 40, "y": 69.28, "x2": 80, "y2": 0 },
+          { "x": 30, "y": 51.96, "x2": 60, "y2": 0 },
+          { "x": 20, "y": 34.64, "x2": 40, "y2": 0 },
+          { "x": 10, "y": 17.32, "x2": 20, "y2": 0 }
+        ]
+      },
+      "mark": { "type": "rule", "color": "#D8E0E7", "strokeWidth": 1 },
+      "encoding": {
+        "x": { "field": "x", "type": "quantitative", "scale": { "domain": [-8, 108], "nice": false }, "axis": null },
+        "x2": { "field": "x2" },
+        "y": { "field": "y", "type": "quantitative", "scale": { "domain": [-10, 98], "nice": false }, "axis": null },
+        "y2": { "field": "y2" }
+      }
+    },
+    {
+      "data": { "values": [{ "x": 0, "y": 0, "order": 0 }, { "x": 100, "y": 0, "order": 1 }, { "x": 50, "y": 86.6, "order": 2 }, { "x": 0, "y": 0, "order": 3 }] },
+      "mark": { "type": "line", "color": "#6F899E", "strokeWidth": 2 },
+      "encoding": {
+        "x": { "field": "x", "type": "quantitative", "scale": { "domain": [-8, 108], "nice": false }, "axis": null },
+        "y": { "field": "y", "type": "quantitative", "scale": { "domain": [-10, 98], "nice": false }, "axis": null },
+        "order": { "field": "order", "type": "quantitative" }
+      }
+    },
+    {
+      "data": { "values": [
+        { "x": -3, "y": -5, "label": "Poor" },
+        { "x": 103, "y": -5, "label": "Moderate" },
+        { "x": 50, "y": 92, "label": "Good" }
+      ] },
+      "mark": { "type": "text", "font": "Arial", "fontSize": 14, "fontWeight": 700, "color": "#24364B" },
+      "encoding": {
+        "x": { "field": "x", "type": "quantitative", "scale": { "domain": [-8, 108], "nice": false }, "axis": null },
+        "y": { "field": "y", "type": "quantitative", "scale": { "domain": [-10, 98], "nice": false }, "axis": null },
+        "text": { "field": "label", "type": "nominal" }
+      }
+    },
+    {
+      "data": { "url": "../data/survey_observations.csv", "format": { "type": "csv" } },
+      "transform": [
+        { "filter": "datum.source_id === 'S01' && datum.section === 'kap_level'" },
+        { "pivot": "category", "value": "percentage", "groupby": ["metric"] },
+        { "calculate": "toNumber(datum.Poor)", "as": "poor_share" },
+        { "calculate": "toNumber(datum.Moderate)", "as": "moderate_share" },
+        { "calculate": "toNumber(datum.Good)", "as": "good_share" },
+        { "calculate": "datum.moderate_share + datum.good_share / 2", "as": "ternary_x" },
+        { "calculate": "datum.good_share * 0.8660254", "as": "ternary_y" },
+        { "calculate": "datum.metric === 'Knowledge level' ? 'Knowledge' : datum.metric === 'Attitude level' ? 'Attitude' : 'Practice'", "as": "domain_label" }
+      ],
+      "mark": { "type": "point", "filled": true, "size": 210, "stroke": "#FFFFFF", "strokeWidth": 1.5 },
+      "encoding": {
+        "x": { "field": "ternary_x", "type": "quantitative", "scale": { "domain": [-8, 108], "nice": false }, "axis": null },
+        "y": { "field": "ternary_y", "type": "quantitative", "scale": { "domain": [-10, 98], "nice": false }, "axis": null },
+        "color": { "field": "domain_label", "type": "nominal", "title": "Study domain", "scale": { "domain": ["Knowledge", "Attitude", "Practice"], "range": ["#3976A8", "#1D4F7A", "#D99A32"] }, "legend": { "orient": "top", "direction": "horizontal" } },
+        "tooltip": [
+          { "field": "domain_label", "type": "nominal", "title": "Study domain" },
+          { "field": "poor_share", "type": "quantitative", "title": "Poor (%)", "format": ".1f" },
+          { "field": "moderate_share", "type": "quantitative", "title": "Moderate (%)", "format": ".1f" },
+          { "field": "good_share", "type": "quantitative", "title": "Good (%)", "format": ".1f" },
+          { "value": "Each domain is a separate classification; shares sum to 100% after rounding." }
+        ]
+      }
+    },
+    {
+      "data": { "url": "../data/survey_observations.csv", "format": { "type": "csv" } },
+      "transform": [
+        { "filter": "datum.source_id === 'S01' && datum.section === 'kap_level'" },
+        { "pivot": "category", "value": "percentage", "groupby": ["metric"] },
+        { "calculate": "toNumber(datum.Poor)", "as": "poor_share" },
+        { "calculate": "toNumber(datum.Moderate)", "as": "moderate_share" },
+        { "calculate": "toNumber(datum.Good)", "as": "good_share" },
+        { "calculate": "datum.moderate_share + datum.good_share / 2", "as": "ternary_x" },
+        { "calculate": "datum.good_share * 0.8660254", "as": "ternary_y" },
+        { "calculate": "datum.metric === 'Knowledge level' ? 'Knowledge' : datum.metric === 'Attitude level' ? 'Attitude' : 'Practice'", "as": "domain_label" }
+      ],
+      "mark": { "type": "text", "font": "Arial", "fontSize": 14, "fontWeight": 700, "color": "#24364B", "baseline": "middle", "align": "left", "dx": 12 },
+      "encoding": {
+        "x": { "field": "ternary_x", "type": "quantitative", "scale": { "domain": [-8, 108], "nice": false }, "axis": null },
+        "y": { "field": "ternary_y", "type": "quantitative", "scale": { "domain": [-10, 98], "nice": false }, "axis": null },
+        "text": { "field": "domain_label", "type": "nominal" },
+        "tooltip": { "field": "domain_label", "type": "nominal", "title": "Study domain" }
+      }
+    }
+  ],
+  "resolve": { "scale": { "x": "shared", "y": "shared" } },
+  "config": {
+    "font": "Arial",
+    "title": { "font": "Georgia", "fontSize": 21, "fontWeight": 700, "anchor": "start", "color": "#1D4F7A", "offset": 12 },
+    "legend": { "labelFont": "Arial", "titleFont": "Arial", "labelFontSize": 14, "titleFontSize": 13, "labelColor": "#536678", "titleColor": "#24364B" },
+    "view": { "stroke": null }
+  }
+}

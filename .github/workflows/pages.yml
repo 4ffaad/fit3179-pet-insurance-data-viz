@@ -29,7 +29,6 @@ jobs:
         run: |
           mkdir site
           cp index.html style.css main.js site/
-          cp chart09-options.html site/
           cp -R charts maps data site/
           touch site/.nojekyll
       - name: Upload the Pages artifact

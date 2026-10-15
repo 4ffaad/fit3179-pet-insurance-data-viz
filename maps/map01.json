@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Poor practice share by district",
-  "description": "Selangor choropleth of the normalized poor-practice share among surveyed district respondents. Select a district on the page to highlight it across all four map views.",
+  "description": "Selangor choropleth of the normalized poor-practice share among surveyed district respondents. Select a district on the page to highlight it across the district maps.",
   "params": [
     {
       "name": "selected_district",
@@ -15,10 +15,10 @@
       101.5,
       3.2
     ],
-    "scale": 18000
+    "scale": 22000
   },
-  "width": 600,
-  "height": 420,
+  "width": "container",
+  "height": 460,
   "layer": [
     {
       "data": {

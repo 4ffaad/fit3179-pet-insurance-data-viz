@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Interactive diverging stacked Likert chart of six pet-insurance attitude statements from a Selangor convenience sample of 116 participants.",
+  "title": "Attitudes toward pet insurance",
+  "data": { "url": "../data/survey_observations.csv", "format": { "type": "csv" } },
+  "transform": [
+    { "filter": "datum.source_id === 'S01' && datum.section === 'attitude_distribution'" },
+    { "calculate": "toNumber(datum.percentage)", "as": "share" },
+    { "calculate": "datum.category === 'Strongly disagree' ? 0 : datum.category === 'Disagree' ? 1 : datum.category === 'Neutral' ? 2 : datum.category === 'Agree' ? 3 : 4", "as": "response_order" },
+    { "calculate": "if(datum.category === 'Strongly disagree' || datum.category === 'Disagree', datum.share, 0) + if(datum.category === 'Neutral', datum.share / 2, 0)", "as": "center_offset" },
+    { "stack": "share", "groupby": ["metric"], "sort": [{ "field": "response_order", "order": "ascending" }], "as": ["stack_start", "stack_end"] },
+    { "joinaggregate": [{ "field": "center_offset", "op": "sum", "as": "center_offset_total" }], "groupby": ["metric"] },
+    { "calculate": "datum.stack_start - datum.center_offset_total", "as": "x_start" },
+    { "calculate": "datum.stack_end - datum.center_offset_total", "as": "x_end" }
+  ],
+  "resolve": { "scale": { "y": "shared" } },
+  "hconcat": [
+    {
+      "width": 250,
+      "height": 405,
+      "transform": [{ "aggregate": [{ "op": "count", "as": "label_count" }], "groupby": ["metric"] }],
+      "mark": { "type": "text", "align": "left", "baseline": "middle", "font": "Arial", "fontSize": 14, "color": "#394F64", "limit": 245 },
+      "encoding": {
+        "x": { "value": 0 },
+        "y": { "field": "metric", "type": "nominal", "sort": ["Ready for medical costs", "Better treatment choices", "Insurance is affordable", "Claims process is easy", "Provider help is accessible", "Information is transparent"], "axis": null },
+        "text": { "field": "metric", "type": "nominal" }
+      }
+    },
+    {
+      "width": 960,
+      "height": 405,
+      "params": [{ "name": "attitude_selection", "select": { "type": "point", "fields": ["metric"], "on": "click", "clear": "dblclick" } }],
+      "mark": { "type": "bar", "height": 33, "stroke": "#FFFFFF", "strokeWidth": 0.5 },
+      "encoding": {
+        "x": {
+          "field": "x_start", "type": "quantitative", "scale": { "domain": [-100, 100], "nice": false },
+          "axis": { "title": "Response share, centred on neutral (%)", "values": [-100, -50, 0, 50, 100], "labelFontSize": 14, "titleFontSize": 15, "grid": true }
+        },
+        "x2": { "field": "x_end" },
+        "y": { "field": "metric", "type": "nominal", "sort": ["Ready for medical costs", "Better treatment choices", "Insurance is affordable", "Claims process is easy", "Provider help is accessible", "Information is transparent"], "axis": null },
+        "color": {
+          "field": "category", "type": "nominal", "title": "Response",
+          "sort": ["Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly agree"],
+          "scale": { "domain": ["Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly agree"], "range": ["#D99A32", "#F0D69B", "#E7EDF2", "#8FB7D2", "#1D4F7A"] },
+          "legend": { "orient": "bottom", "direction": "horizontal", "symbolType": "square" }
+        },
+        "opacity": { "condition": { "param": "attitude_selection", "value": 1 }, "value": 0.38 },
+        "tooltip": [
+          { "field": "metric", "type": "nominal", "title": "Statement" },
+          { "field": "category", "type": "nominal", "title": "Response" },
+          { "field": "share", "type": "quantitative", "title": "Share", "format": ".1f" },
+          { "field": "count", "type": "quantitative", "title": "Participants", "format": "d" }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "axis": { "labelFont": "Arial", "titleFont": "Arial", "labelColor": "#536678", "titleColor": "#24364B", "domainColor": "#D8E0E7", "tickColor": "#D8E0E7", "gridColor": "#E8EDF2", "gridOpacity": 0.75 },
+    "title": { "font": "Georgia", "fontSize": 21, "fontWeight": 700, "anchor": "start", "color": "#1D4F7A", "offset": 12 },
+    "legend": { "labelFont": "Arial", "titleFont": "Arial", "labelFontSize": 13, "titleFontSize": 13, "labelColor": "#536678", "titleColor": "#24364B" },
+    "view": { "stroke": null }
+  }
+}

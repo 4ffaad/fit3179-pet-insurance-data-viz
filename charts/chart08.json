@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "District-level bubble scatterplot comparing median household income with the poor-practice share among district study respondents; bubble area encodes sample size.",
+  "title": "District income and practice in the Selangor sample",
+  "data": { "url": "../data/district_context.csv", "format": { "type": "csv" } },
+  "transform": [
+    { "filter": "toNumber(datum.respondents_n) > 0" },
+    { "calculate": "toNumber(datum.median_gross_monthly_rm)", "as": "median_income" },
+    { "calculate": "toNumber(datum.poor_practice_rate_pct)", "as": "poor_practice_share" },
+    { "calculate": "toNumber(datum.respondents_n)", "as": "study_n" },
+    { "calculate": "datum.district === 'Gombak' ? datum.poor_practice_share + 3.2 : datum.district === 'Petaling' ? datum.poor_practice_share - 3.2 : datum.poor_practice_share", "as": "label_y" }
+  ],
+  "width": "container",
+  "height": 430,
+  "layer": [
+    {
+      "mark": { "type": "circle", "filled": true, "color": "#3976A8", "opacity": 0.82, "stroke": "#FFFFFF", "strokeWidth": 1.5 },
+      "encoding": {
+        "x": { "field": "median_income", "type": "quantitative", "scale": { "domain": [6500, 12000], "nice": false }, "axis": { "title": "Median monthly household income (ringgit, 2024)", "format": ",.0f", "tickCount": 6, "labelFontSize": 14, "titleFontSize": 15 } },
+        "y": { "field": "poor_practice_share", "type": "quantitative", "scale": { "domain": [25, 90], "nice": false }, "axis": { "title": "Poor-practice share in study sample (%)", "format": ".0f", "values": [30, 40, 50, 60, 70, 80, 90], "labelFontSize": 14, "titleFontSize": 15 } },
+        "size": { "field": "study_n", "type": "quantitative", "scale": { "domain": [0, 42], "range": [60, 900] }, "legend": { "title": "Study respondents", "values": [2, 13, 25, 42], "orient": "top", "direction": "horizontal", "symbolType": "circle" } },
+        "tooltip": [
+          { "field": "district", "type": "nominal", "title": "Selangor district" },
+          { "field": "median_income", "type": "quantitative", "title": "Median household income (RM/month)", "format": ",.0f" },
+          { "field": "poor_practice_share", "type": "quantitative", "title": "Poor-practice share in sample (%)", "format": ".1f" },
+          { "field": "study_n", "type": "quantitative", "title": "Study respondents", "format": "d" }
+        ]
+      }
+    },
+    {
+      "transform": [{ "filter": "datum.district !== 'Sabak Bernam'" }],
+      "mark": { "type": "text", "align": "left", "baseline": "middle", "dx": 9, "font": "Arial", "fontSize": 12, "fontWeight": 700, "color": "#24364B" },
+      "encoding": {
+        "x": { "field": "median_income", "type": "quantitative", "scale": { "domain": [6500, 12000], "nice": false }, "axis": null },
+        "y": { "field": "label_y", "type": "quantitative", "scale": { "domain": [25, 90], "nice": false }, "axis": null },
+        "text": { "field": "district", "type": "nominal" }
+      }
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "axis": { "labelFont": "Arial", "titleFont": "Arial", "labelColor": "#536678", "titleColor": "#24364B", "domainColor": "#D8E0E7", "tickColor": "#D8E0E7", "gridColor": "#E8EDF2", "gridOpacity": 0.75 },
+    "title": { "font": "Georgia", "fontSize": 21, "fontWeight": 700, "anchor": "start", "color": "#1D4F7A", "offset": 12 },
+    "legend": { "labelFont": "Arial", "titleFont": "Arial", "labelFontSize": 13, "titleFontSize": 13, "labelColor": "#536678", "titleColor": "#24364B" },
+    "view": { "stroke": null }
+  }
+}

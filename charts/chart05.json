@@ -1,257 +1,59 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Lollipop chart comparing five pet-insurance awareness and information items reported by 116 participants in a Selangor study.",
-  "title": "Insurance knowledge",
-  "data": {
-    "url": "../data/survey_observations.csv",
-    "format": {
-      "type": "csv"
-    }
-  },
+  "description": "Ordered horizontal bars of acceptable annual pet-insurance price bands reported by 116 participants in a Selangor study.",
+  "title": "Annual pet insurance budget stated in the Selangor study",
+  "data": { "url": "../data/survey_observations.csv", "format": { "type": "csv" } },
   "transform": [
-    {
-      "filter": "datum.source_id === 'S01' && datum.section === 'knowledge'"
-    },
-    {
-      "calculate": "datum.metric === 'Financial role' ? 'Insurance helps financially' : datum.metric === 'Exposure' ? 'Saw insurance information' : datum.metric === 'Eligibility' ? 'Cat and dog cover available' : datum.metric === 'Insurance availability' ? 'Pet insurance available' : 'Claims process known'",
-      "as": "metric_label"
-    },
-    {
-      "calculate": "format(datum.percentage, '.1f') + '%'",
-      "as": "share_label"
-    }
+    { "filter": "datum.source_id === 'S01T' && datum.section === 'price'" },
+    { "calculate": "toNumber(datum.percentage)", "as": "share" },
+    { "calculate": "datum.category === 'Not willing to spend' ? 'Not willing' : datum.category === 'Less than RM200 per year' ? 'Under RM200' : datum.category === 'RM200–399 per year' ? 'RM200–399' : datum.category === 'RM400–599 per year' ? 'RM400–599' : datum.category === 'RM600–799 per year' ? 'RM600–799' : 'Above RM800'", "as": "price_band" },
+    { "calculate": "format(datum.share, '.1f') + '%'", "as": "share_label" }
   ],
-  "config": {
-    "font": "Arial",
-    "view": {
-      "stroke": null
-    },
-    "title": {
-      "font": "Georgia",
-      "fontSize": 19,
-      "fontWeight": 700,
-      "anchor": "start",
-      "color": "#1D4F7A",
-      "offset": 10
-    },
-    "text": {
-      "font": "Arial",
-      "color": "#24364B"
-    },
-    "axis": {
-      "labelFont": "Arial",
-      "titleFont": "Arial",
-      "labelFontSize": 14,
-      "titleFontSize": 14,
-      "labelColor": "#536678",
-      "titleColor": "#24364B",
-      "domainColor": "#D8E0E7",
-      "tickColor": "#D8E0E7",
-      "gridColor": "#E8EDF2",
-      "gridOpacity": 0.68
-    },
-    "legend": {
-      "labelFont": "Arial",
-      "titleFont": "Arial",
-      "labelFontSize": 13,
-      "titleFontSize": 13,
-      "labelColor": "#536678",
-      "titleColor": "#24364B"
-    }
-  },
+  "resolve": { "scale": { "y": "shared" } },
   "hconcat": [
     {
-      "width": 260,
-      "height": 380,
-      "transform": [
-        {
-          "aggregate": [
-            {
-              "op": "count",
-              "as": "label_count"
-            },
-            {
-              "op": "max",
-              "field": "percentage",
-              "as": "percentage"
-            }
-          ],
-          "groupby": [
-            "metric_label"
-          ]
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "middle",
-        "font": "Arial",
-        "fontSize": 12,
-        "color": "#536678",
-        "limit": 258
-      },
+      "width": 230,
+      "height": 355,
+      "transform": [{ "aggregate": [{ "op": "count", "as": "label_count" }], "groupby": ["price_band"] }],
+      "mark": { "type": "text", "align": "left", "baseline": "middle", "font": "Arial", "fontSize": 14, "color": "#394F64", "limit": 225 },
       "encoding": {
-        "x": {
-          "value": 0
-        },
-        "y": {
-          "field": "metric_label",
-          "type": "nominal",
-          "sort": {
-            "field": "percentage",
-            "order": "descending"
-          },
-          "axis": null
-        },
-        "text": {
-          "field": "metric_label",
-          "type": "nominal"
-        }
+        "x": { "value": 0 },
+        "y": { "field": "price_band", "type": "nominal", "sort": ["Not willing", "Under RM200", "RM200–399", "RM400–599", "RM600–799", "Above RM800"], "axis": null },
+        "text": { "field": "price_band", "type": "nominal" }
       }
     },
     {
-      "width": 820,
-      "height": 380,
+      "width": 980,
+      "height": 355,
       "layer": [
         {
-          "mark": {
-            "type": "rule",
-            "strokeWidth": 2,
-            "color": "#6E9FC3"
-          },
+          "mark": { "type": "bar", "color": "#3976A8", "cornerRadiusEnd": 3, "height": 30 },
           "encoding": {
-            "x": {
-              "field": "percentage",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  65
-                ],
-                "nice": false
-              }
-            },
-            "x2": {
-              "datum": 0
-            },
-            "y": {
-              "field": "metric_label",
-              "type": "nominal",
-              "sort": {
-                "field": "percentage",
-                "order": "descending"
-              },
-              "axis": null
-            }
-          }
-        },
-        {
-          "mark": {
-            "type": "point",
-            "filled": true,
-            "size": 110,
-            "color": "#3976A8"
-          },
-          "encoding": {
-            "x": {
-              "field": "percentage",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  65
-                ],
-                "nice": false
-              },
-              "axis": {
-                "title": "Share of respondents (%)",
-                "format": ".0f",
-                "tickCount": 4
-              }
-            },
-            "y": {
-              "field": "metric_label",
-              "type": "nominal",
-              "sort": {
-                "field": "percentage",
-                "order": "descending"
-              },
-              "axis": null
-            },
+            "x": { "field": "share", "type": "quantitative", "scale": { "domain": [0, 45], "nice": false }, "axis": { "title": "Share of study participants (%)", "values": [0, 10, 20, 30, 40], "labelFontSize": 14, "titleFontSize": 15 } },
+            "y": { "field": "price_band", "type": "nominal", "sort": ["Not willing", "Under RM200", "RM200–399", "RM400–599", "RM600–799", "Above RM800"], "axis": null },
             "tooltip": [
-              {
-                "field": "category",
-                "type": "nominal",
-                "title": "Survey item"
-              },
-              {
-                "field": "percentage",
-                "type": "quantitative",
-                "title": "Share",
-                "format": ".1f"
-              },
-              {
-                "field": "count",
-                "type": "quantitative",
-                "title": "Study respondents"
-              },
-              {
-                "field": "base_n",
-                "type": "quantitative",
-                "title": "Study sample size"
-              },
-              {
-                "field": "note",
-                "type": "nominal",
-                "title": "Calculation note"
-              }
+              { "field": "category", "type": "nominal", "title": "Annual budget" },
+              { "field": "share", "type": "quantitative", "title": "Share", "format": ".1f" },
+              { "field": "count", "type": "quantitative", "title": "Participants", "format": "d" },
+              { "field": "base_n", "type": "quantitative", "title": "Study base", "format": "d" }
             ]
           }
         },
         {
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "middle",
-            "dx": 8,
-            "fontSize": 12,
-            "fontWeight": 600,
-            "color": "#253844"
-          },
+          "mark": { "type": "text", "align": "left", "baseline": "middle", "dx": 8, "fontSize": 14, "fontWeight": 700, "color": "#24364B" },
           "encoding": {
-            "x": {
-              "field": "percentage",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  65
-                ],
-                "nice": false
-              }
-            },
-            "y": {
-              "field": "metric_label",
-              "type": "nominal",
-              "sort": {
-                "field": "percentage",
-                "order": "descending"
-              },
-              "axis": null
-            },
-            "text": {
-              "field": "share_label",
-              "type": "nominal"
-            }
+            "x": { "field": "share", "type": "quantitative", "scale": { "domain": [0, 45], "nice": false } },
+            "y": { "field": "price_band", "type": "nominal", "sort": ["Not willing", "Under RM200", "RM200–399", "RM400–599", "RM600–799", "Above RM800"], "axis": null },
+            "text": { "field": "share_label", "type": "nominal" }
           }
         }
       ]
     }
   ],
-  "spacing": 12,
-  "resolve": {
-    "scale": {
-      "y": "shared"
-    }
+  "config": {
+    "font": "Arial",
+    "axis": { "labelFont": "Arial", "titleFont": "Arial", "labelColor": "#536678", "titleColor": "#24364B", "domainColor": "#D8E0E7", "tickColor": "#D8E0E7", "gridColor": "#E8EDF2", "gridOpacity": 0.8 },
+    "title": { "font": "Georgia", "fontSize": 21, "fontWeight": 700, "anchor": "start", "color": "#1D4F7A", "offset": 12 },
+    "view": { "stroke": null }
   }
 }
