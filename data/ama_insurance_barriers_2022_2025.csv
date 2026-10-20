@@ -1,0 +1,21 @@
+reason,pet_type,year,share_pct,uninsured_owner_base_n,multiple_response
+Too expensive,Dog,2022,43,1013,Yes
+Too expensive,Dog,2025,50,903,Yes
+Too expensive,Cat,2022,44,735,Yes
+Too expensive,Cat,2025,49,667,Yes
+Don’t see the value,Dog,2022,33,1013,Yes
+Don’t see the value,Dog,2025,37,903,Yes
+Don’t see the value,Cat,2022,33,735,Yes
+Don’t see the value,Cat,2025,44,667,Yes
+Haven’t looked / don’t know much,Dog,2022,26,1013,Yes
+Haven’t looked / don’t know much,Dog,2025,24,903,Yes
+Haven’t looked / don’t know much,Cat,2022,26,735,Yes
+Haven’t looked / don’t know much,Cat,2025,25,667,Yes
+Didn’t know it was available,Dog,2022,10,1013,Yes
+Didn’t know it was available,Dog,2025,9,903,Yes
+Didn’t know it was available,Cat,2022,9,735,Yes
+Didn’t know it was available,Cat,2025,8,667,Yes
+Other,Dog,2022,4,1013,Yes
+Other,Dog,2025,5,903,Yes
+Other,Cat,2022,4,735,Yes
+Other,Cat,2025,3,667,Yes

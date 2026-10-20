@@ -1,0 +1,74 @@
+{
+  "sources": [
+    {
+      "id": "AMA2025",
+      "title": "Pets in Australia: A national survey of pets and people 2025",
+      "publisher": "Animal Medicines Australia",
+      "url": "https://animalmedicinesaustralia.org.au/resources/pets-in-australia-a-national-survey-of-pets-and-people-3/",
+      "period": "Survey fieldwork February–March 2025; national estimates refer to 2025",
+      "notes": "National estimates are weighted and extrapolated using ABS households/population. The 2025 report also publishes comparable historical dog/cat ownership shares for 2019 and 2022 (rounded to whole percentages); no complete state-by-state ownership or expenditure table is published in this edition."
+    },
+    {
+      "id": "PET2025",
+      "title": "Gastroenteritis in cats & dogs: What you need to know",
+      "publisher": "PetSure",
+      "url": "https://petsure.com.au/knowledge-hub/gastro-in-pets/",
+      "period": "Treatment years 2014–2024; PetSure claims data",
+      "notes": "Average treatment cost is the amount claimed per policy over 12 months. Values are nominal and are not adjusted for inflation. A dog-only 2025 value is excluded from the comparable dog/cat series."
+    },
+    {
+      "id": "PET2026",
+      "title": "Australian Pet Health Monitor 2026",
+      "publisher": "PetSure",
+      "url": "https://petsure.com.au/pet-health-monitor/",
+      "period": "2025 PetSure claims; report published in 2026",
+      "notes": "Claims are from PetSure insured pets, not all Australian pets."
+    },
+    {
+      "id": "PETROAD2025",
+      "title": "Australian Pet Health Monitor 2025 – Pets & Road Safety",
+      "publisher": "PetSure",
+      "url": "https://petsure.com.au/wp-content/uploads/2024/07/PHM-2025_VD-03-1.pdf",
+      "period": "Road-incident claims in 2024; report published in 2025",
+      "notes": "The state labels sum to 1,303 claims while report prose says 1,304. The publisher includes both motor-vehicle and bike incidents."
+    },
+    {
+      "id": "CMT2026",
+      "title": "Pet insurance prices across Australia / surgery bills",
+      "publisher": "Compare the Market Australia",
+      "url": "https://www.comparethemarket.com.au/pet-insurance/features/pet-surgery-bills/",
+      "period": "Quote sample collected March 2025–March 2026",
+      "notes": "The page reports average dog/cat quotes by state from 16,652 quote records; these are quote-panel prices, not the insurance market or state uptake."
+    },
+    {
+      "id": "ABS2026",
+      "title": "Australian Statistical Geography Standard, Edition 4, State and Territory boundaries",
+      "publisher": "Australian Bureau of Statistics",
+      "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2026/STE/MapServer",
+      "period": "2026 boundaries",
+      "notes": "Simplified official state/territory boundaries, excluding Other Territories; the compact GeoJSON splits disconnected exterior rings and attaches enclosed holes for Vega/D3 rendering."
+    },
+    {
+      "id": "ABSPOP2026",
+      "title": "National, state and territory population, March 2026",
+      "publisher": "Australian Bureau of Statistics",
+      "url": "https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/mar-2026",
+      "period": "Estimated resident population at 31 March 2026; release published 17 September 2026",
+      "notes": "The 31 March 2026 estimated resident population allocates 520 equal-area hexagons across the eight states and territories using largest-remainder rounding; each hex represents about 53,700 people. The tile map generalizes geography, while the standard state map retains geographic boundaries. Population is not used as a denominator for PetSure insured claims or AMA household estimates."
+    },
+    {
+      "id": "ASICIDR2026",
+      "title": "Internal dispute resolution data dashboard and downloadable file",
+      "publisher": "Australian Securities and Investments Commission",
+      "url": "https://www.asic.gov.au/regulatory-resources/financial-services/dispute-resolution/internal-dispute-resolution-data-dashboard",
+      "period": "Released 3 June 2026; data to 31 December 2025",
+      "notes": "The filtered product is “Personal and domestic property - Domestic pet/horse”. The chart aggregates reported issue counts by half-year from the Product & Issue Relationship sheet and ranks selected issue categories against all issue types in each period. Firm-reported complaint data are deduplicated within categories; one complaint can include up to three issues, so counts across issue categories must not be summed as unique complaints. The original workbook is 48.8 MB and is not included; the chart uses a compact derived CSV."
+    }
+  ],
+  "measure_policy": [
+    "Do not map AMA state ownership rates: the report does not publish a complete comparable state table.",
+    "PetSure state incident counts are shown as insured-claim counts, never as rates or per-pet risk.",
+    "Compare the Market state values are averages from its quoted panel, not statewide market prices or take-up.",
+    "The 2025 AMA report publishes national pet ownership estimates but no complete comparable state ownership table; use sourced state-level quote sample prices and insured-claim counts for state views, with limitations stated."
+  ]
+}

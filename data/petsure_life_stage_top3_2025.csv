@@ -1,0 +1,19 @@
+species,life_stage,stage_order,condition,condition_short,rank,average_cost_aud,highest_cost_aud,period
+Dog,Under 1,0,Gastrointestinal conditions,Gastrointestinal,1,787,31008,2025 PetSure claims; report published 2026
+Dog,Under 1,0,Skin infections / allergies,Skin / allergies,2,384,9945,2025 PetSure claims; report published 2026
+Dog,Under 1,0,Ear infections,Ear infections,3,342,6161,2025 PetSure claims; report published 2026
+Dog,1–8,1,Skin infections / allergies,Skin / allergies,1,771,23437,2025 PetSure claims; report published 2026
+Dog,1–8,1,Gastrointestinal conditions,Gastrointestinal,2,983,36497,2025 PetSure claims; report published 2026
+Dog,1–8,1,Ear infections,Ear infections,3,473,24393,2025 PetSure claims; report published 2026
+Dog,8+,2,Skin infections / allergies,Skin / allergies,1,994,21285,2025 PetSure claims; report published 2026
+Dog,8+,2,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,2025 PetSure claims; report published 2026
+Dog,8+,2,Osteoarthritis,Osteoarthritis,3,839,15963,2025 PetSure claims; report published 2026
+Cat,Under 1,0,Gastrointestinal conditions,Gastrointestinal,1,694,14141,2025 PetSure claims; report published 2026
+Cat,Under 1,0,Respiratory tract conditions,Respiratory,2,969,3874,2025 PetSure claims; report published 2026
+Cat,Under 1,0,Eye conditions,Eye conditions,3,442,9831,2025 PetSure claims; report published 2026
+Cat,1–8,1,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,2025 PetSure claims; report published 2026
+Cat,1–8,1,Urinary tract disorders,Urinary tract,2,1448,50700,2025 PetSure claims; report published 2026
+Cat,1–8,1,Dental conditions,Dental conditions,3,1016,6452,2025 PetSure claims; report published 2026
+Cat,8+,2,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,2025 PetSure claims; report published 2026
+Cat,8+,2,Urinary tract disorders,Urinary tract,2,1627,24706,2025 PetSure claims; report published 2026
+Cat,8+,2,Dental conditions,Dental conditions,3,1140,9045,2025 PetSure claims; report published 2026

@@ -1,0 +1,29 @@
+condition_axis,species,condition,average_cost_aud,highest_cost_aud,rank,cell_status,value_label
+Gastrointestinal,Dog,Gastrointestinal conditions,956,33077,2,In top 10,AUD 956
+Gastrointestinal,Cat,Gastrointestinal conditions,956,21042,1,In top 10,AUD 956
+Urinary tract,Dog,,,,,Not in published top 10,Not listed
+Urinary tract,Cat,Urinary tract disorders,1497,41849,2,In top 10,"AUD 1,497"
+Dental,Dog,Dental conditions,884,16311,4,In top 10,AUD 884
+Dental,Cat,Dental conditions,1042,7064,3,In top 10,"AUD 1,042"
+Skin / allergies,Dog,Skin infections / allergies,700,15894,1,In top 10,AUD 700
+Skin / allergies,Cat,Skin infections / allergies,473,11757,4,In top 10,AUD 473
+Fight / bite wounds,Dog,Wounds from traumatic injuries and fights / bites,873,21266,8,In top 10,AUD 873
+Fight / bite wounds,Cat,Fight or bite wounds,632,32268,5,In top 10,AUD 632
+Mass lesions,Dog,Mass lesions,1014,21285,5,In top 10,"AUD 1,014"
+Mass lesions,Cat,,,,,Not in published top 10,Not listed
+Musculoskeletal,Dog,Musculoskeletal conditions (limping),668,21672,6,In top 10,AUD 668
+Musculoskeletal,Cat,,,,,Not in published top 10,Not listed
+Osteoarthritis,Dog,Osteoarthritis,828,21157,7,In top 10,AUD 828
+Osteoarthritis,Cat,Osteoarthritis,865,11214,10,In top 10,AUD 865
+Ear infections,Dog,Ear infections,459,22142,3,In top 10,AUD 459
+Ear infections,Cat,Ear infections,425,9770,9,In top 10,AUD 425
+Behavioural,Dog,,,,,Not in published top 10,Not listed
+Behavioural,Cat,Behavioural problems,131,1295,6,In top 10,AUD 131
+Respiratory,Dog,,,,,Not in published top 10,Not listed
+Respiratory,Cat,Respiratory tract conditions,525,15574,7,In top 10,AUD 525
+Heart / circulatory,Dog,,,,,Not in published top 10,Not listed
+Heart / circulatory,Cat,Circulatory / heart conditions,1621,34025,8,In top 10,"AUD 1,621"
+Anal sac,Dog,Anal sac disorders,389,15087,9,In top 10,AUD 389
+Anal sac,Cat,,,,,Not in published top 10,Not listed
+Eye conditions,Dog,Eye conditions,490,18869,10,In top 10,AUD 490
+Eye conditions,Cat,,,,,Not in published top 10,Not listed

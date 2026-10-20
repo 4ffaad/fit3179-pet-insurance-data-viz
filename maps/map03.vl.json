@@ -1,0 +1,218 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Dog quotes exceed cat quotes across all eight jurisdictions",
+    "subtitle": "Sample gap colours the population tiles · about 53,700 residents per hex."
+  },
+  "description": "A contiguous tile cartogram built from equal-area hexagons in Australian Albers coordinates. Each state receives a whole-number tile count using largest-remainder apportionment of ABS estimated resident population at 31 March 2026; each hex represents about 53,700 residents. The cell layout generalizes state shape and is not a replacement for geographic boundaries. Fill shows the difference between Compare the Market Australia average annual dog and cat quote prices from a 16,652-quote sample collected March 2025–March 2026. These sample prices are not state-wide market averages or measures of insurance uptake.",
+  "background": "#FBFAF7",
+  "width": 1000,
+  "height": 620,
+  "projection": {
+    "type": "albers",
+    "rotate": [
+      -134,
+      0
+    ],
+    "center": [
+      0,
+      -27
+    ],
+    "parallels": [
+      -18,
+      -36
+    ],
+    "scale": 1000
+  },
+  "data": {
+    "url": "../data/australia_population_hex_cartogram_2026.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.properties.kind === 'tile'"
+        },
+        {
+          "lookup": "properties.state",
+          "from": {
+            "data": {
+              "url": "../data/compare_market_state_quotes_2026.csv",
+              "format": {
+                "type": "csv"
+              }
+            },
+            "key": "state",
+            "fields": [
+              "annual_dog_quote_aud",
+              "annual_cat_quote_aud",
+              "dog_minus_cat_aud",
+              "period",
+              "scope"
+            ]
+          }
+        },
+        {
+          "calculate": "toNumber(datum.dog_minus_cat_aud)",
+          "as": "quote_gap"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "color": {
+          "field": "quote_gap",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              520,
+              680
+            ],
+            "range": [
+              "#EFF3FF",
+              "#BDD7E7",
+              "#6BAED6",
+              "#3182BD",
+              "#08519C"
+            ]
+          },
+          "legend": {
+            "title": "Dog–cat quote gap (AUD)",
+            "orient": "top",
+            "format": "$,d",
+            "values": [
+              525,
+              550,
+              575,
+              600,
+              625,
+              650,
+              675
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.state",
+            "type": "nominal",
+            "title": "State or territory"
+          },
+          {
+            "field": "properties.population_people",
+            "type": "quantitative",
+            "title": "ABS residents · 31 Mar 2026",
+            "format": ",.0f"
+          },
+          {
+            "field": "properties.population_share_pct",
+            "type": "quantitative",
+            "title": "Population share",
+            "format": ".1f"
+          },
+          {
+            "field": "properties.tile_count",
+            "type": "quantitative",
+            "title": "Equal-area hexes",
+            "format": "d"
+          },
+          {
+            "field": "properties.residents_per_tile_estimate",
+            "type": "quantitative",
+            "title": "Residents represented per hex · approx.",
+            "format": ",.0f"
+          },
+          {
+            "field": "quote_gap",
+            "type": "quantitative",
+            "title": "Dog minus cat quote (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "annual_dog_quote_aud",
+            "type": "quantitative",
+            "title": "Average dog quote (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "annual_cat_quote_aud",
+            "type": "quantitative",
+            "title": "Average cat quote (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "period",
+            "type": "nominal",
+            "title": "Quote sample period"
+          },
+          {
+            "field": "scope",
+            "type": "nominal",
+            "title": "Interpretation"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.properties.kind === 'outline'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#102B40",
+        "strokeWidth": 2.4
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.state",
+            "type": "nominal",
+            "title": "State or territory"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "background": "#FBFAF7",
+    "title": {
+      "font": "Georgia",
+      "fontSize": 22,
+      "fontWeight": "normal",
+      "anchor": "start",
+      "color": "#20394B",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 13,
+      "subtitleColor": "#687988",
+      "offset": 14
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelColor": "#536979",
+      "titleColor": "#314A5D",
+      "orient": "top",
+      "direction": "horizontal",
+      "padding": 4
+    },
+    "view": {
+      "stroke": null
+    },
+    "text": {
+      "font": "Arial",
+      "color": "#20394B"
+    }
+  }
+}

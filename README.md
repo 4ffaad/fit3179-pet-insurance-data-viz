@@ -1,8 +1,8 @@
-# Pet insurance in Malaysia
+# Australia’s pets: care, costs and insurance evidence
 
-A FIT3179 Data Visualisation 2 story about veterinary costs, financial preparedness, pet-insurance budgets and the geographic limits of a Selangor study.
+A FIT3179 Data Visualisation 2 story about pet ownership, household care costs, insurance barriers, reported complaints and insured-pet claims in Australia.
 
-**Author:** Daffa Fariq Prasetyo · **Unit:** FIT3179 Data Visualisation 2 · **Updated:** 15 October 2026
+**Author:** Daffa Fariq Prasetyo · **Unit:** FIT3179 Data Visualisation 2 · **Updated:** 20 October 2026
 
 ## Preview locally
 
@@ -12,20 +12,19 @@ From this folder, run:
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open [http://localhost:8000/](http://localhost:8000/). Vega, Vega-Lite and Vega-Embed load from public CDNs, so the first load needs an internet connection. The same page can be opened with VS Code Live Server.
-
-To preview an individual `.json` spec in VS Code, use **Vega: Preview Vega Graph** from the **Vega Viewer** extension. The specs use Vega-Lite 5 and local `../data/` paths. Use the page preview for coordinated interactions across charts and maps.
+Open [http://localhost:8000/](http://localhost:8000/). The chart libraries load from public CDNs, so the first load needs an internet connection. Use the **Vega Viewer** extension by RandomFractals with these Vega-Lite 5 specifications: open a `.vl.json` file and run **Vega: Preview Vega Graph** from the Command Palette. Specs load local observations from `data/` using relative paths. The separate, older **Vega Preview** extension bundles Vega-Lite 2.5.2 and may reject these v5 specs.
 
 ## Project files
 
-- `index.html`, `style.css`, `main.js`: the responsive story and chart interactions.
-- `charts/`: eight Vega-Lite chart specifications, one idiom per file.
-- `maps/`: three Vega-Lite maps: a Peninsular Malaysia locator and two Selangor district views.
-- `data/`: three shared CSV tables and the geographic boundary files used by the charts.
-- `.github/workflows/pages.yml`: deploys the static site when a commit reaches `main`.
+- `index.html`, `style.css`, `main.js`: the single-page visual story and Vega-Lite rendering.
+- `charts/`: eleven numbered Vega-Lite chart specifications.
+- `maps/`: three thematic map specifications: choropleth, proportional symbols and population tile cartogram.
+- `data/`: source observations and compact geographic assets loaded by the specifications.
+- `data/australia_data_sources.json`: source periods, caveats and measure decisions.
+- `.github/workflows/pages.yml`: static-site deployment workflow.
 
-The eleven visualisations use Vega-Lite 5 specifications. Each spec reads the shared local source tables; source links and limitations are listed in the page. The Peninsular Malaysia overview uses the cylindrical Mercator projection and nearby country boundaries. The Selangor maps show district-level study context only. A bivariate mosaic is omitted because its combined key obscured the small and uneven survey samples.
+The story combines five source owners: Animal Medicines Australia, PetSure, ASIC, Compare the Market Australia and the ABS. It keeps household survey results, insured claims, insurer complaints, quote-panel prices and population estimates separate. No national pet-insurance uptake or policy-mix series was found for this draft, so the page does not claim to measure industry growth or compare coverage tiers.
 
 ## GitHub Pages
 
-In the repository's **Settings → Pages**, set **Source** to **GitHub Actions**. The workflow publishes the HTML, styles, JavaScript, chart specs, maps and data after a push to `main`.
+In the repository’s **Settings → Pages**, set **Source** to **GitHub Actions**. The workflow publishes the static page when a change is pushed to `main`.

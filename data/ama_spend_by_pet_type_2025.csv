@@ -1,0 +1,97 @@
+pet_type,spend_category,category_label,annual_spend_aud,value_label,sample_n,period,source
+Dogs,Food,Food,1090,"$1,090",1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Veterinary services,Veterinary services,168,$168,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Products or accessories,Products / accessories,117,$117,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Pet insurance,Pet insurance,145,$145,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Flea/worming and tick treatments,Flea / worm / tick,122,$122,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Dietary supplements,Supplements,124,$124,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Clipping/grooming,Grooming,139,$139,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Training/behaviour/therapy,Training / behaviour,117,$117,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Competitions/memberships,Competitions / memberships,97,$97,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Veterinary medicines,Veterinary medicines,102,$102,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Walking,Walking,119,$119,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Alternative healthcare treatments,Alternative healthcare,84,$84,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Boarding/minding,Boarding / minding,46,$46,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Transport,Transport,50,$50,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Pet healthcare products,Pet healthcare products,,Not reported,1188,12 months to March 2025,AMA Pets in Australia 2025
+Dogs,Anything else,Anything else,1,$1,1188,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Food,Food,884,$884,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Veterinary services,Veterinary services,154,$154,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Products or accessories,Products / accessories,87,$87,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Pet insurance,Pet insurance,70,$70,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Flea/worming and tick treatments,Flea / worm / tick,102,$102,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Dietary supplements,Supplements,84,$84,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Clipping/grooming,Grooming,58,$58,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Training/behaviour/therapy,Training / behaviour,61,$61,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Competitions/memberships,Competitions / memberships,19,$19,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Veterinary medicines,Veterinary medicines,45,$45,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Walking,Walking,,Not reported,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Alternative healthcare treatments,Alternative healthcare,35,$35,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Boarding/minding,Boarding / minding,34,$34,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Transport,Transport,21,$21,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Pet healthcare products,Pet healthcare products,,Not reported,779,12 months to March 2025,AMA Pets in Australia 2025
+Cats,Anything else,Anything else,2,$2,779,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Food,Food,172,$172,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Veterinary services,Veterinary services,92,$92,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Products or accessories,Products / accessories,123,$123,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Pet insurance,Pet insurance,,Not reported,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Flea/worming and tick treatments,Flea / worm / tick,,Not reported,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Dietary supplements,Supplements,,Not reported,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Clipping/grooming,Grooming,,Not reported,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Training/behaviour/therapy,Training / behaviour,,Not reported,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Competitions/memberships,Competitions / memberships,49,$49,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Veterinary medicines,Veterinary medicines,,Not reported,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Walking,Walking,,Not reported,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Alternative healthcare treatments,Alternative healthcare,,Not reported,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Boarding/minding,Boarding / minding,,Not reported,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Transport,Transport,,Not reported,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Pet healthcare products,Pet healthcare products,35,$35,275,12 months to March 2025,AMA Pets in Australia 2025
+Fish,Anything else,Anything else,5,$5,275,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Food,Food,285,$285,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Veterinary services,Veterinary services,82,$82,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Products or accessories,Products / accessories,95,$95,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Pet insurance,Pet insurance,,Not reported,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Flea/worming and tick treatments,Flea / worm / tick,,Not reported,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Dietary supplements,Supplements,,Not reported,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Clipping/grooming,Grooming,,Not reported,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Training/behaviour/therapy,Training / behaviour,,Not reported,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Competitions/memberships,Competitions / memberships,32,$32,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Veterinary medicines,Veterinary medicines,,Not reported,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Walking,Walking,,Not reported,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Alternative healthcare treatments,Alternative healthcare,,Not reported,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Boarding/minding,Boarding / minding,,Not reported,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Transport,Transport,,Not reported,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Pet healthcare products,Pet healthcare products,61,$61,207,12 months to March 2025,AMA Pets in Australia 2025
+Birds,Anything else,Anything else,0,$0,207,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Food,Food,947,$947,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Veterinary services,Veterinary services,240,$240,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Products or accessories,Products / accessories,539,$539,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Pet insurance,Pet insurance,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Flea/worming and tick treatments,Flea / worm / tick,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Dietary supplements,Supplements,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Clipping/grooming,Grooming,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Training/behaviour/therapy,Training / behaviour,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Competitions/memberships,Competitions / memberships,77,$77,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Veterinary medicines,Veterinary medicines,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Walking,Walking,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Alternative healthcare treatments,Alternative healthcare,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Boarding/minding,Boarding / minding,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Transport,Transport,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Pet healthcare products,Pet healthcare products,292,$292,69,12 months to March 2025,AMA Pets in Australia 2025
+Small mammals,Anything else,Anything else,0,$0,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Food,Food,354,$354,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Veterinary services,Veterinary services,692,$692,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Products or accessories,Products / accessories,175,$175,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Pet insurance,Pet insurance,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Flea/worming and tick treatments,Flea / worm / tick,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Dietary supplements,Supplements,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Clipping/grooming,Grooming,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Training/behaviour/therapy,Training / behaviour,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Competitions/memberships,Competitions / memberships,24,$24,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Veterinary medicines,Veterinary medicines,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Walking,Walking,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Alternative healthcare treatments,Alternative healthcare,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Boarding/minding,Boarding / minding,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Transport,Transport,,Not reported,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Pet healthcare products,Pet healthcare products,73,$73,69,12 months to March 2025,AMA Pets in Australia 2025
+Reptiles,Anything else,Anything else,0,$0,69,12 months to March 2025,AMA Pets in Australia 2025

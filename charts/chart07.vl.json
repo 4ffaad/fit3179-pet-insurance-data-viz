@@ -1,0 +1,385 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FBFAF7",
+  "config": {
+    "font": "Arial",
+    "background": "#FBFAF7",
+    "title": {
+      "font": "Georgia",
+      "fontSize": 22,
+      "fontWeight": "normal",
+      "anchor": "start",
+      "color": "#173A52",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 13,
+      "subtitleColor": "#687988",
+      "offset": 14
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#5B6F7E",
+      "titleColor": "#334F63",
+      "domainColor": "#D4DEE4",
+      "tickColor": "#D4DEE4",
+      "gridColor": "#E8EDF0",
+      "gridOpacity": 0.9,
+      "labelLimit": 260,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 10,
+      "titleFontSize": 11,
+      "labelColor": "#536979",
+      "titleColor": "#334F63",
+      "orient": "top",
+      "direction": "horizontal",
+      "padding": 4
+    },
+    "view": {
+      "stroke": null
+    },
+    "text": {
+      "font": "Arial",
+      "color": "#173A52"
+    },
+    "facet": {
+      "spacing": 28
+    }
+  },
+  "title": {
+    "text": "Cost remains the leading reason for going uninsured",
+    "subtitle": "In 2025, 50% of dog owners and 49% of cat owners cited cost; low perceived value rose 11 points for cats."
+  },
+  "description": "Slope chart comparing reasons reported by uninsured dog and cat owners in the AMA 2022 and 2025 surveys. Multiple responses were allowed, so shares do not sum to 100%.",
+  "data": {
+    "url": "../data/ama_insurance_barriers_2022_2025.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "facet": {
+    "field": "pet_type",
+    "type": "nominal",
+    "sort": [
+      "Dog",
+      "Cat"
+    ],
+    "columns": 2,
+    "header": {
+      "title": null,
+      "labelFontSize": 15,
+      "labelFontWeight": "bold",
+      "labelColor": "#173A52"
+    }
+  },
+  "spec": {
+    "width": 420,
+    "height": 290,
+    "layer": [
+      {
+        "mark": {
+          "type": "line",
+          "strokeWidth": 2.5,
+          "opacity": 0.88
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                2021,
+                2026
+              ]
+            },
+            "axis": {
+              "title": "Survey year",
+              "values": [
+                2022,
+                2025
+              ],
+              "format": "d",
+              "grid": false,
+              "labelOverlap": false
+            }
+          },
+          "y": {
+            "field": "share_pct",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                60
+              ]
+            },
+            "axis": {
+              "title": "Uninsured owners (%)",
+              "values": [
+                0,
+                20,
+                40,
+                60
+              ],
+              "grid": true
+            }
+          },
+          "color": {
+            "field": "reason",
+            "type": "nominal",
+            "sort": [
+              "Too expensive",
+              "Don’t see the value",
+              "Haven’t looked / don’t know much",
+              "Didn’t know it was available",
+              "Other"
+            ],
+            "scale": {
+              "domain": [
+                "Too expensive",
+                "Don’t see the value",
+                "Haven’t looked / don’t know much",
+                "Didn’t know it was available",
+                "Other"
+              ],
+              "range": [
+                "#176B87",
+                "#79558D",
+                "#A45B7C",
+                "#A5864B",
+                "#688094"
+              ]
+            },
+            "legend": {
+              "title": "Reported reason",
+              "orient": "top",
+              "direction": "horizontal",
+              "columns": 3,
+              "labelLimit": 220
+            }
+          },
+          "detail": {
+            "field": "reason"
+          },
+          "order": {
+            "field": "year",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "pet_type",
+              "type": "nominal",
+              "title": "Pet type"
+            },
+            {
+              "field": "reason",
+              "type": "nominal",
+              "title": "Reason"
+            },
+            {
+              "field": "year",
+              "type": "quantitative",
+              "title": "Survey year",
+              "format": "d"
+            },
+            {
+              "field": "share_pct",
+              "type": "quantitative",
+              "title": "Share (%)",
+              "format": ".0f"
+            },
+            {
+              "field": "uninsured_owner_base_n",
+              "type": "quantitative",
+              "title": "Uninsured owner base (n)",
+              "format": "d"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "size": 80,
+          "stroke": "#FBFAF7",
+          "strokeWidth": 1.2
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                2021,
+                2026
+              ]
+            },
+            "axis": {
+              "title": "Survey year",
+              "values": [
+                2022,
+                2025
+              ],
+              "format": "d",
+              "grid": false,
+              "labelOverlap": false
+            }
+          },
+          "y": {
+            "field": "share_pct",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                60
+              ]
+            },
+            "axis": {
+              "title": "Uninsured owners (%)",
+              "values": [
+                0,
+                20,
+                40,
+                60
+              ],
+              "grid": true
+            }
+          },
+          "color": {
+            "field": "reason",
+            "type": "nominal",
+            "sort": [
+              "Too expensive",
+              "Don’t see the value",
+              "Haven’t looked / don’t know much",
+              "Didn’t know it was available",
+              "Other"
+            ],
+            "scale": {
+              "domain": [
+                "Too expensive",
+                "Don’t see the value",
+                "Haven’t looked / don’t know much",
+                "Didn’t know it was available",
+                "Other"
+              ],
+              "range": [
+                "#176B87",
+                "#79558D",
+                "#A45B7C",
+                "#A5864B",
+                "#688094"
+              ]
+            }
+          },
+          "tooltip": [
+            {
+              "field": "pet_type",
+              "type": "nominal",
+              "title": "Pet type"
+            },
+            {
+              "field": "reason",
+              "type": "nominal",
+              "title": "Reason"
+            },
+            {
+              "field": "year",
+              "type": "quantitative",
+              "title": "Survey year",
+              "format": "d"
+            },
+            {
+              "field": "share_pct",
+              "type": "quantitative",
+              "title": "Share (%)",
+              "format": ".0f"
+            },
+            {
+              "field": "uninsured_owner_base_n",
+              "type": "quantitative",
+              "title": "Uninsured owner base (n)",
+              "format": "d"
+            }
+          ]
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.year === 2025 && (datum.reason === 'Too expensive' || datum.reason === 'Don’t see the value')"
+          },
+          {
+            "calculate": "format(datum.share_pct, '.0f') + '%'",
+            "as": "label"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 7,
+          "dy": -2,
+          "fontSize": 10,
+          "fontWeight": "bold"
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                2021,
+                2026
+              ]
+            }
+          },
+          "y": {
+            "field": "share_pct",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                60
+              ]
+            }
+          },
+          "text": {
+            "field": "label",
+            "type": "nominal"
+          },
+          "color": {
+            "field": "reason",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Too expensive",
+                "Don’t see the value",
+                "Haven’t looked / don’t know much",
+                "Didn’t know it was available",
+                "Other"
+              ],
+              "range": [
+                "#176B87",
+                "#79558D",
+                "#A45B7C",
+                "#A5864B",
+                "#688094"
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  }
+}

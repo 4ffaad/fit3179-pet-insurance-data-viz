@@ -1,0 +1,305 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FBFAF7",
+  "config": {
+    "font": "Arial",
+    "background": "#FBFAF7",
+    "title": {
+      "font": "Georgia",
+      "fontSize": 22,
+      "fontWeight": "normal",
+      "anchor": "start",
+      "color": "#173A52",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 13,
+      "subtitleColor": "#687988",
+      "offset": 14
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#5B6F7E",
+      "titleColor": "#334F63",
+      "domainColor": "#D4DEE4",
+      "tickColor": "#D4DEE4",
+      "gridColor": "#E8EDF0",
+      "gridOpacity": 0.9,
+      "labelLimit": 260,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelColor": "#536979",
+      "titleColor": "#334F63",
+      "orient": "top",
+      "direction": "horizontal",
+      "padding": 4
+    },
+    "view": {
+      "stroke": null
+    },
+    "text": {
+      "font": "Arial",
+      "color": "#173A52"
+    },
+    "facet": {
+      "spacing": 28
+    }
+  },
+  "title": {
+    "text": "Dog-owning households report higher annual spend in shared categories",
+    "subtitle": "Dog minus cat mean difference at right · hover for each annual average (AUD)."
+  },
+  "description": "AMA averages include households that spent zero in a category. This compares the 13 shared categories; a source dash means no value was reported.",
+  "data": {
+    "url": "../data/ama_dog_cat_household_spend_dumbbell_2025.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "hconcat": [
+    {
+      "width": 620,
+      "height": 440,
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "strokeWidth": 3,
+            "opacity": 0.62,
+            "color": "#C4CFD5"
+          },
+          "encoding": {
+            "x": {
+              "field": "cats_num",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  1200
+                ],
+                "type": "symlog",
+                "constant": 100
+              },
+              "axis": {
+                "title": "Average annual household spend (AUD)",
+                "values": [
+                  0,
+                  25,
+                  50,
+                  100,
+                  200,
+                  500,
+                  1000
+                ],
+                "grid": true,
+                "format": "$,d",
+                "labelOverlap": false
+              }
+            },
+            "x2": {
+              "field": "dogs_num"
+            },
+            "y": {
+              "field": "category_label",
+              "type": "ordinal",
+              "sort": {
+                "field": "dogs_num",
+                "order": "descending"
+              },
+              "axis": {
+                "title": null,
+                "labelLimit": 235
+              }
+            },
+            "tooltip": [
+              {
+                "field": "spend_category",
+                "type": "nominal",
+                "title": "Category"
+              },
+              {
+                "field": "dogs_aud",
+                "type": "quantitative",
+                "title": "Dogs (AUD)",
+                "format": "$,d"
+              },
+              {
+                "field": "cats_aud",
+                "type": "quantitative",
+                "title": "Cats (AUD)",
+                "format": "$,d"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "fold": [
+                "cats_aud",
+                "dogs_aud"
+              ],
+              "as": [
+                "series",
+                "spend_aud"
+              ]
+            },
+            {
+              "calculate": "datum.series === \"dogs_aud\" ? \"Dogs\" : \"Cats\"",
+              "as": "pet_type"
+            }
+          ],
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "size": 105,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 1.2
+          },
+          "encoding": {
+            "x": {
+              "field": "spend_aud",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  1200
+                ],
+                "type": "symlog",
+                "constant": 100
+              }
+            },
+            "y": {
+              "field": "category_label",
+              "type": "ordinal",
+              "sort": {
+                "field": "dogs_num",
+                "order": "descending"
+              }
+            },
+            "color": {
+              "field": "pet_type",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Dogs",
+                  "Cats"
+                ],
+                "range": [
+                  "#1F5AA6",
+                  "#A33F73"
+                ]
+              },
+              "legend": {
+                "title": null,
+                "orient": "top"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "spend_category",
+                "type": "nominal",
+                "title": "Category"
+              },
+              {
+                "field": "pet_type",
+                "type": "nominal",
+                "title": "Pet type"
+              },
+              {
+                "field": "spend_aud",
+                "type": "quantitative",
+                "title": "Annual average (AUD)",
+                "format": "$,d"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "width": 84,
+      "height": 440,
+      "transform": [
+        {
+          "calculate": "toNumber(datum.dogs_num) >= toNumber(datum.cats_num) ? \"+$\" + format(toNumber(datum.dogs_num) - toNumber(datum.cats_num), \",d\") : \"−$\" + format(toNumber(datum.cats_num) - toNumber(datum.dogs_num), \",d\")",
+          "as": "difference_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#334F63"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0,
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "y": {
+          "field": "category_label",
+          "type": "ordinal",
+          "sort": {
+            "field": "dogs_num",
+            "order": "descending"
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "difference_label",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "spend_category",
+            "type": "nominal",
+            "title": "Category"
+          },
+          {
+            "field": "dogs_aud",
+            "type": "quantitative",
+            "title": "Dogs (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "cats_aud",
+            "type": "quantitative",
+            "title": "Cats (AUD)",
+            "format": "$,d"
+          }
+        ]
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "y": "shared"
+    }
+  },
+  "spacing": 12,
+  "transform": [
+    {
+      "calculate": "toNumber(datum.dogs_aud)",
+      "as": "dogs_num"
+    },
+    {
+      "calculate": "toNumber(datum.cats_aud)",
+      "as": "cats_num"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FBFAF7",
+  "config": {
+    "font": "Arial",
+    "background": "#FBFAF7",
+    "title": {
+      "font": "Georgia",
+      "fontSize": 22,
+      "fontWeight": "normal",
+      "anchor": "start",
+      "color": "#173A52",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 13,
+      "subtitleColor": "#687988",
+      "offset": 14
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#5B6F7E",
+      "titleColor": "#334F63",
+      "domainColor": "#D4DEE4",
+      "tickColor": "#D4DEE4",
+      "gridColor": "#E8EDF0",
+      "gridOpacity": 0.9,
+      "labelLimit": 260,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelColor": "#536979",
+      "titleColor": "#334F63",
+      "orient": "top",
+      "direction": "horizontal",
+      "padding": 4
+    },
+    "view": {
+      "stroke": null
+    },
+    "text": {
+      "font": "Arial",
+      "color": "#173A52"
+    },
+    "facet": {
+      "spacing": 28
+    }
+  },
+  "title": {
+    "text": "Some pet owners need help to pay for veterinary care",
+    "subtitle": "12% of current pet owners needed financial help in the past year; selected groups reported higher shares."
+  },
+  "description": "AMA 2025. Subgroup sample bases are not printed in the figure; groups overlap and are not additive. Overall base: 1,848 current pet owners.",
+  "data": {
+    "url": "../data/ama_financial_pressure_2025.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "width": 900,
+  "height": 410,
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 4,
+        "color": "#C5D0D7"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0,
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              35
+            ]
+          }
+        },
+        "x2": {
+          "field": "share_pct",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "cohort",
+          "type": "ordinal",
+          "sort": {
+            "field": "share_pct",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelLimit": 260
+          }
+        },
+        "tooltip": [
+          {
+            "field": "cohort",
+            "type": "nominal",
+            "title": "Group"
+          },
+          {
+            "field": "share_pct",
+            "type": "quantitative",
+            "title": "Needed financial assistance (%)",
+            "format": ".0f"
+          },
+          {
+            "field": "base_n",
+            "type": "nominal",
+            "title": "Base"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 145
+      },
+      "encoding": {
+        "x": {
+          "field": "share_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              35
+            ]
+          },
+          "axis": {
+            "title": "Needed financial assistance for vet care (%)",
+            "values": [
+              0,
+              5,
+              10,
+              15,
+              20,
+              25,
+              30,
+              35
+            ],
+            "grid": true
+          }
+        },
+        "y": {
+          "field": "cohort",
+          "type": "ordinal",
+          "sort": {
+            "field": "share_pct",
+            "order": "descending"
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "datum.cohort === 'All current pet owners'",
+            "value": "#176B87"
+          },
+          "value": "#79558D"
+        },
+        "tooltip": [
+          {
+            "field": "cohort",
+            "type": "nominal",
+            "title": "Group"
+          },
+          {
+            "field": "share_pct",
+            "type": "quantitative",
+            "title": "Share (%)",
+            "format": ".0f"
+          },
+          {
+            "field": "base_n",
+            "type": "nominal",
+            "title": "Base"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "format(datum.share_pct, \".0f\") + \"%\"",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 9,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "share_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              35
+            ]
+          }
+        },
+        "y": {
+          "field": "cohort",
+          "type": "ordinal",
+          "sort": {
+            "field": "share_pct",
+            "order": "descending"
+          }
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "#334F63"
+        }
+      }
+    }
+  ]
+}

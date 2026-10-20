@@ -14,14 +14,14 @@ const chartConfig = {
   background: "transparent",
   font: "Arial",
   view: { stroke: null },
-  title: { font: "Georgia", fontSize: 19, fontWeight: 700, anchor: "start", color: "#1D4F7A", offset: 10 },
-  text: { font: "Arial", color: "#24364B" },
+  title: { font: "Georgia", fontSize: 19, fontWeight: 500, anchor: "start", color: "#123B55", offset: 10 },
+  text: { font: "Arial", color: "#19394E" },
   axis: {
     labelFont: "Arial", titleFont: "Arial", labelFontSize: 14, titleFontSize: 14,
-    labelColor: "#536678", titleColor: "#24364B", domainColor: "#D8E0E7",
-    tickColor: "#D8E0E7", gridColor: "#E8EDF2", gridOpacity: 0.68,
+    labelColor: "#617483", titleColor: "#19394E", domainColor: "#D9E0E3",
+    tickColor: "#D9E0E3", gridColor: "#E8EDF0", gridOpacity: 0.68,
   },
-  legend: { labelFont: "Arial", titleFont: "Arial", labelFontSize: 13, titleFontSize: 13, labelColor: "#536678", titleColor: "#24364B" },
+  legend: { labelFont: "Arial", titleFont: "Arial", labelFontSize: 13, titleFontSize: 13, labelColor: "#617483", titleColor: "#19394E" },
 };
 
 function isLocalDevelopment() {
@@ -83,40 +83,6 @@ async function renderAllCharts() {
 
   // Two concurrent charts keep requests below the limit of simple local servers.
   await Promise.all(Array.from({ length: Math.min(2, containers.length) }, renderNext));
-
-  const claimChart = results.find(({ container, view }) => container.dataset.sync === "claim" && view);
-  if (claimChart && typeof claimChart.view.addSignalListener === "function") {
-    claimChart.view.addSignalListener("selected_claim", () => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      const svg = claimChart.container.querySelector(".vega-embed svg");
-      svg?.animate?.([{ opacity: 0.78 }, { opacity: 1 }], { duration: 180, easing: "ease-out" });
-    });
-  }
-
-  const districtViews = results.filter(({ container, view }) => container.dataset.sync === "district" && view).map(({ view }) => view);
-  if (districtViews.length) {
-    const districtNames = new Set(["Gombak", "Hulu Langat", "Hulu Selangor", "Klang", "Kuala Langat", "Kuala Selangor", "Petaling", "Sabak Bernam", "Sepang"]);
-    let selectedDistrict = "All districts";
-    let districtUpdate = Promise.resolve();
-    const updateDistrict = (district) => {
-      const selection = districtNames.has(district) ? district : "All districts";
-      selectedDistrict = selection;
-      districtUpdate = districtUpdate.then(async () => {
-        try {
-          await Promise.all(districtViews.map((view) => view.signal("selected_district", selection).runAsync()));
-        } catch (error) {
-          if (isLocalDevelopment()) console.error("District map selection failed:", safeErrorDetail(error));
-        }
-      });
-    };
-
-    districtViews.forEach((view) => view.addEventListener("click", (_event, item) => {
-      const district = item?.datum?.properties?.district_join ?? item?.datum?.district_join_label;
-      if (!districtNames.has(district)) return;
-      updateDistrict(selectedDistrict === district ? "All districts" : district);
-    }));
-
-  }
 
   if (isLocalDevelopment()) {
     const rendered = results.filter(({ view }) => view).length;

@@ -1,0 +1,285 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FBFAF7",
+  "config": {
+    "font": "Arial",
+    "background": "#FBFAF7",
+    "title": {
+      "font": "Georgia",
+      "fontSize": 22,
+      "fontWeight": "normal",
+      "anchor": "start",
+      "color": "#173A52",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 13,
+      "subtitleColor": "#687988",
+      "offset": 14
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#5B6F7E",
+      "titleColor": "#334F63",
+      "domainColor": "#D4DEE4",
+      "tickColor": "#D4DEE4",
+      "gridColor": "#E8EDF0",
+      "gridOpacity": 0.9,
+      "labelLimit": 260,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelColor": "#536979",
+      "titleColor": "#334F63",
+      "orient": "top",
+      "direction": "horizontal",
+      "padding": 4
+    },
+    "view": {
+      "stroke": null
+    },
+    "text": {
+      "font": "Arial",
+      "color": "#173A52"
+    },
+    "facet": {
+      "spacing": 28
+    }
+  },
+  "title": {
+    "text": "PetSure’s top-ten conditions differ by species",
+    "subtitle": "Average claim values in 2025 · grey crosses mean “not listed”, not zero."
+  },
+  "description": "Each column is one species and each row is a condition published in the PetSure top-ten lists. Cell color shows the reported average claim amount; the highest claim is available on hover. A grey cross means that condition is not in that species’ published top ten. It does not mean zero claims or clinical incidence. PetSure claims cover its insured pets only.",
+  "data": {
+    "url": "../data/petsure_condition_cost_matrix_2025.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.average_cost_aud === \"\" ? null : toNumber(datum.average_cost_aud)",
+      "as": "average_num"
+    }
+  ],
+  "width": 760,
+  "height": 520,
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#FBFAF7",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "species",
+          "type": "ordinal",
+          "sort": [
+            "Dog",
+            "Cat"
+          ],
+          "axis": {
+            "orient": "top",
+            "title": null,
+            "labelAngle": 0,
+            "labelFontWeight": "bold",
+            "labelFontSize": 13
+          }
+        },
+        "y": {
+          "field": "condition_axis",
+          "type": "ordinal",
+          "sort": [
+            "Heart / circulatory",
+            "Urinary tract",
+            "Dental",
+            "Mass lesions",
+            "Gastrointestinal",
+            "Osteoarthritis",
+            "Fight / bite wounds",
+            "Skin / allergies",
+            "Musculoskeletal",
+            "Respiratory",
+            "Eye conditions",
+            "Ear infections",
+            "Anal sac",
+            "Behavioural"
+          ],
+          "axis": {
+            "title": null,
+            "labelLimit": 190,
+            "labelFontSize": 11
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "isValid(datum.average_num)",
+            "field": "average_num",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                1700
+              ],
+              "range": [
+                "#F5F4F8",
+                "#D5D3E2",
+                "#AAA9CB",
+                "#7C80AE",
+                "#525F93",
+                "#2E456F"
+              ]
+            },
+            "legend": {
+              "title": "Average claim amount (AUD)",
+              "orient": "top",
+              "format": "$,d",
+              "values": [
+                0,
+                400,
+                800,
+                1200,
+                1600
+              ],
+              "gradientLength": 280
+            }
+          },
+          "value": "#D1D0CD"
+        },
+        "tooltip": [
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "condition",
+            "type": "nominal",
+            "title": "Condition"
+          },
+          {
+            "field": "value_label",
+            "type": "nominal",
+            "title": "Published average claim"
+          },
+          {
+            "field": "average_num",
+            "type": "quantitative",
+            "title": "Average claim amount (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "highest_cost_aud",
+            "type": "quantitative",
+            "title": "Highest single claim (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "rank",
+            "type": "quantitative",
+            "title": "Rank in species list",
+            "format": "d"
+          },
+          {
+            "field": "cell_status",
+            "type": "nominal",
+            "title": "Listing status"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.cell_status !== 'In top 10'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": "×",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "color": "#667681",
+        "baseline": "middle",
+        "align": "center"
+      },
+      "encoding": {
+        "x": {
+          "field": "species",
+          "type": "ordinal",
+          "sort": [
+            "Dog",
+            "Cat"
+          ]
+        },
+        "y": {
+          "field": "condition_axis",
+          "type": "ordinal",
+          "sort": [
+            "Heart / circulatory",
+            "Urinary tract",
+            "Dental",
+            "Mass lesions",
+            "Gastrointestinal",
+            "Osteoarthritis",
+            "Fight / bite wounds",
+            "Skin / allergies",
+            "Musculoskeletal",
+            "Respiratory",
+            "Eye conditions",
+            "Ear infections",
+            "Anal sac",
+            "Behavioural"
+          ]
+        },
+        "tooltip": [
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "condition",
+            "type": "nominal",
+            "title": "Condition"
+          },
+          {
+            "field": "value_label",
+            "type": "nominal",
+            "title": "Published average claim"
+          },
+          {
+            "field": "average_num",
+            "type": "quantitative",
+            "title": "Average claim amount (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "highest_cost_aud",
+            "type": "quantitative",
+            "title": "Highest single claim (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "rank",
+            "type": "quantitative",
+            "title": "Rank in species list",
+            "format": "d"
+          },
+          {
+            "field": "cell_status",
+            "type": "nominal",
+            "title": "Listing status"
+          }
+        ]
+      }
+    }
+  ]
+}

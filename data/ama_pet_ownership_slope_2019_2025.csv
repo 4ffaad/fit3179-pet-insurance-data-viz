@@ -1,0 +1,7 @@
+pet_type,year,household_penetration_pct,source_year,note
+Dogs,2019,40.0,2025,Historical household share reported in AMA 2025 report
+Dogs,2022,48,2025,Historical household share rounded to whole percent in AMA 2025 report
+Dogs,2025,49.3,2025,Current household share reported in AMA 2025 report
+Cats,2019,27.0,2025,Historical household share reported in AMA 2025 report
+Cats,2022,33,2025,Historical household share rounded to whole percent in AMA 2025 report
+Cats,2025,33.6,2025,Current household share reported in AMA 2025 report

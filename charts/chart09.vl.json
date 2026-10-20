@@ -1,0 +1,184 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FBFAF7",
+  "config": {
+    "font": "Arial",
+    "title": {
+      "font": "Georgia",
+      "fontSize": 22,
+      "fontWeight": "normal",
+      "anchor": "start",
+      "color": "#173A52",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 13,
+      "subtitleColor": "#687988",
+      "offset": 14
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#5B6F7E",
+      "titleColor": "#334F63",
+      "domainColor": "#D4DEE4",
+      "tickColor": "#D4DEE4",
+      "gridColor": "#E8EDF0",
+      "gridOpacity": 0.9,
+      "labelLimit": 260,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelColor": "#536979",
+      "titleColor": "#334F63",
+      "orient": "top",
+      "direction": "horizontal",
+      "padding": 4
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "title": {
+    "text": "Gastroenteritis claim averages rose in nominal AUD",
+    "subtitle": "PetSure average amount claimed per policy, 2014–2024 · not inflation-adjusted."
+  },
+  "description": "Annual average treatment costs for gastroenteritis claims among PetSure insured dogs and cats. Amounts are per policy over 12 months and are not adjusted for inflation. The comparable dog-and-cat series ends in 2024.",
+  "data": {
+    "url": "../data/petsure_gastroenteritis_cost_2014_2024.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.year)",
+      "as": "year_num"
+    },
+    {
+      "calculate": "toNumber(datum.average_cost_aud)",
+      "as": "cost_num"
+    }
+  ],
+  "width": 1000,
+  "height": 430,
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 95,
+      "stroke": "#FBFAF7",
+      "strokeWidth": 1.3
+    },
+    "strokeWidth": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "year_num",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          2014,
+          2024
+        ],
+        "nice": false
+      },
+      "axis": {
+        "title": "Treatment year",
+        "values": [
+          2014,
+          2016,
+          2018,
+          2020,
+          2022,
+          2024
+        ],
+        "format": "d",
+        "grid": false,
+        "labelOverlap": false,
+        "domain": true,
+        "ticks": true
+      }
+    },
+    "y": {
+      "field": "cost_num",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          850
+        ],
+        "nice": false
+      },
+      "axis": {
+        "title": "Average claimed per policy (AUD)",
+        "values": [
+          0,
+          200,
+          400,
+          600,
+          800
+        ],
+        "format": "$,d",
+        "grid": true,
+        "domain": true,
+        "ticks": true
+      }
+    },
+    "color": {
+      "field": "species",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Dog",
+          "Cat"
+        ],
+        "range": [
+          "#1F5AA6",
+          "#A33F73"
+        ]
+      },
+      "legend": {
+        "title": "Species",
+        "orient": "top",
+        "direction": "horizontal",
+        "symbolType": "stroke"
+      }
+    },
+    "detail": {
+      "field": "species"
+    },
+    "order": {
+      "field": "year_num",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "species",
+        "type": "nominal",
+        "title": "Species"
+      },
+      {
+        "field": "year_num",
+        "type": "quantitative",
+        "title": "Treatment year",
+        "format": "d"
+      },
+      {
+        "field": "cost_num",
+        "type": "quantitative",
+        "title": "Average claimed per policy (AUD)",
+        "format": "$,d"
+      },
+      {
+        "field": "scope",
+        "type": "nominal",
+        "title": "Measure"
+      }
+    ]
+  }
+}

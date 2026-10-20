@@ -1,147 +1,223 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A visual story about veterinary costs, pet insurance budgets and evidence from Malaysia and Selangor." />
+    <meta name="description" content="An evidence-led visual story about Australian pets, household costs, insurance and insured claims." />
     <meta name="author" content="Daffa Fariq Prasetyo 34076492" />
-    <title>Pet care costs and insurance in Malaysia</title>
+    <title>Australia’s pets: care, costs and cover</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./style.css?v=20261015-4" />
+    <link rel="stylesheet" href="./style.css?v=20261020-3" />
     <script defer src="https://cdn.jsdelivr.net/npm/vega@5.22.1/build/vega.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.0/build/vega-lite.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0/build/vega-embed.min.js"></script>
-    <script defer src="./main.js?v=20261015-4"></script>
+    <script defer src="./main.js?v=20261020-1"></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to story</a>
+    <a class="skip-link" href="#main">Skip to the visual story</a>
     <header class="masthead">
-      <div class="topline"><span>FIT3179 · Data Visualisation 2</span></div>
-      <div class="hero">
-        <div class="hero-copy">
-          <h1>Pet care costs <span>in Malaysia</span></h1>
-          <p>When a veterinary bill arrives, how prepared are pet owners?</p>
-        </div>
+      <div class="masthead-top">
+        <a class="course-mark" href="#top">FIT3179 <span>·</span> Data Visualisation 2</a>
+        <span class="edition">Australia · 2025–26 evidence</span>
       </div>
-      <div class="byline"><span>By Daffa Fariq Prasetyo · 34076492</span></div>
+      <div class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Pets, household costs and insurance</p>
+          <h1>Australia’s pets:<br /><em>care, costs and cover</em></h1>
+          <p class="hero-dek">Pet ownership is rising, but veterinary care can strain budgets.</p>
+        </div>
+        <aside class="hero-note" aria-label="Story summary">
+          <span class="note-label">The story in brief</span>
+          <p>More pets. Vet costs shape care. Insurance evidence is partial.</p>
+          <a href="#ownership">Explore the evidence <span aria-hidden="true">↓</span></a>
+        </aside>
+      </div>
     </header>
 
+    <div class="story-nav-band">
+      <nav class="story-nav" aria-label="Story sections">
+        <a href="#ownership">Pet ownership</a>
+        <a href="#household-costs">Household costs</a>
+        <a href="#insurance">Insurance and issues</a>
+        <a href="#claims">Veterinary claims</a>
+        <a href="#state-patterns">State patterns</a>
+      </nav>
+    </div>
+
     <main id="main">
-      <section class="story-section" id="financial-preparedness" aria-labelledby="section-one">
-        <div class="section-heading">
-          <p class="eyebrow"><span class="section-number">01</span> · Financial preparedness</p>
-          <h2 id="section-one">Most owners lack a dedicated pet emergency fund</h2>
-          <p>Two questions from a 2026 Malaysia survey show how owners prepare for veterinary costs.</p>
+      <section class="overview" aria-label="Key figures">
+        <div class="overview-intro">
+          <p class="eyebrow">At a glance</p>
+          <p>Three figures set the scale.</p>
         </div>
-        <figure class="chart-figure chart-figure-wide">
-          <div class="chart-host" data-spec="./charts/chart01.json?v=1" aria-label="Percentage tile chart showing that 63 percent of 4,872 pet owners reported no dedicated financial buffer for pet emergencies" aria-busy="true"></div>
-          <figcaption>Each tile represents one percentage point. Survey base: 4,872 pet owners.</figcaption>
-        </figure>
-        <figure class="chart-figure chart-figure-wide">
-          <div class="chart-host" data-spec="./charts/chart02.json?v=1" aria-label="One hundred percent stacked bar showing personal savings, a dedicated pet fund and pet insurance as funding for the latest veterinary emergency" aria-busy="true"></div>
-          <figcaption>Funding source for respondents’ latest veterinary emergency; this question has a separate, unreported base.</figcaption>
+        <article class="stat stat--households">
+          <span class="stat-value">73%</span>
+          <span class="stat-label">of Australian households have a pet</span>
+          <span class="stat-source">AMA · 2025</span>
+        </article>
+        <article class="stat stat--population">
+          <span class="stat-value">31.6m</span>
+          <span class="stat-label">pets across Australia</span>
+          <span class="stat-source">AMA · 2025</span>
+        </article>
+        <article class="stat stat--spend">
+          <span class="stat-value">A$2,520</span>
+          <span class="stat-label">average annual spend per dog household</span>
+          <span class="stat-source">AMA · year to March 2025</span>
+        </article>
+      </section>
+
+      <section class="story-section" id="ownership" aria-labelledby="ownership-title">
+        <div class="section-heading">
+          <div class="section-index">01 <span>·</span> The scale of pet ownership</div>
+          <h2 id="ownership-title">Pets are part of most Australian homes</h2>
+          <p>Explore the household share, animal mix and recent change.</p>
+        </div>
+        <div class="chart-grid opening-grid">
+          <figure class="chart-figure" id="chart-01">
+            <div class="figure-kicker"><span>Chart 01</span><span>Household share</span></div>
+            <div class="chart-host" data-spec="./charts/chart01.vl.json" aria-label="Waffle chart: 73 percent of Australian households have pets" aria-busy="true"></div>
+            <figcaption>Each tile represents one percentage point. Shares are rounded.</figcaption>
+          </figure>
+          <figure class="chart-figure" id="chart-02">
+            <div class="figure-kicker"><span>Chart 02</span><span>Population mix</span></div>
+            <div class="chart-host" data-spec="./charts/chart02.vl.json" aria-label="Treemap of Australia's estimated pet population by animal type" aria-busy="true"></div>
+            <figcaption>Tile area shows estimated animal counts. Household shares overlap across pet types.</figcaption>
+          </figure>
+        </div>
+        <figure class="chart-figure chart-figure-wide" id="chart-03">
+          <div class="figure-kicker"><span>Chart 03</span><span>2019, 2022 and 2025</span></div>
+          <div class="chart-host" data-spec="./charts/chart03.vl.json" aria-label="Line chart comparing dog and cat household ownership in the 2019, 2022 and 2025 AMA survey waves" aria-busy="true"></div>
+          <figcaption>Ownership growth slowed between 2022 and 2025.</figcaption>
         </figure>
       </section>
 
-      <section class="story-section" id="selangor-study" aria-labelledby="section-two">
+      <section class="story-section" id="household-costs" aria-labelledby="costs-title">
         <div class="section-heading">
-          <p class="eyebrow"><span class="section-number">02</span> · Selangor study</p>
-          <h2 id="section-two">Knowledge and practice do not move together</h2>
-          <p>One convenience sample of 116 participants; these results are not Malaysia-wide estimates.</p>
+          <div class="section-index">02 <span>·</span> Household spending and care pressure</div>
+          <h2 id="costs-title">Care spending differs by pet type</h2>
+          <p>Annual averages show where dog and cat budgets diverge.</p>
         </div>
-        <figure class="chart-figure chart-figure-wide">
-          <div class="chart-host" data-spec="./charts/chart03.json?v=1" aria-label="Ternary plot comparing poor, moderate and good knowledge, attitude and practice shares in a Selangor study" aria-busy="true"></div>
-          <figcaption>Each point is one study domain. Hover to read its poor, moderate and good shares.</figcaption>
-        </figure>
-        <figure class="chart-figure chart-figure-wide">
-          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart04.json?v=2" data-sync="attitude" aria-label="Diverging stacked Likert chart of six attitudes toward pet insurance among 116 Selangor study participants; click a statement to focus it" aria-busy="true"></div>
-          <figcaption>Click a statement to focus its response pattern; double-click to reset.</figcaption>
+        <div class="chart-grid two-up cost-grid">
+          <figure class="chart-figure" id="chart-04">
+            <div class="figure-kicker"><span>Chart 04</span><span>Dogs and cats</span></div>
+            <div class="chart-host chart-host--left-labels" data-spec="./charts/chart04.vl.json" aria-label="Dumbbell plot comparing dog and cat household spending in shared categories" aria-busy="true"></div>
+            <figcaption>Means include households reporting no spend in a category.</figcaption>
+          </figure>
+          <figure class="chart-figure" id="chart-05">
+            <div class="figure-kicker"><span>Chart 05</span><span>Spending by category</span></div>
+            <div class="chart-host chart-host--left-labels" data-spec="./charts/chart05.vl.json" aria-label="Heatmap of average household spending by pet type and category" aria-busy="true"></div>
+            <figcaption>Crosses mean no value was reported, not zero. Reptiles peak at A$692; n = 69.</figcaption>
+          </figure>
+        </div>
+        <figure class="chart-figure chart-figure-wide" id="chart-06">
+          <div class="figure-kicker"><span>Chart 06</span><span>Help with veterinary bills</span></div>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart06.vl.json" aria-label="Lollipop chart showing the share of pet owners needing financial help for veterinary care" aria-busy="true"></div>
+          <figcaption>Some subgroup sample sizes were not published.</figcaption>
         </figure>
       </section>
 
-      <section class="story-section" id="budget-and-cover" aria-labelledby="section-three">
+      <section class="story-section" id="insurance" aria-labelledby="insurance-title">
         <div class="section-heading">
-          <p class="eyebrow"><span class="section-number">03</span> · Budget and cover</p>
-          <h2 id="section-three">Stated budgets sit below many listed premiums</h2>
-          <p>Study participants’ price expectations beside current MSIG Direct prices and veterinary limits.</p>
+          <div class="section-index">03 <span>·</span> Insurance access and issues</div>
+          <h2 id="insurance-title">Affordability shapes insurance choices</h2>
+          <p>The survey and complaint charts measure different things.</p>
         </div>
-        <figure class="chart-figure chart-figure-wide">
-          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart05.json?v=2" aria-label="Ordered bar chart of annual pet insurance budgets stated by 116 Selangor study participants" aria-busy="true"></div>
-          <figcaption>Stated acceptable annual price, not policy purchases. Study sample: 116.</figcaption>
+        <figure class="chart-figure chart-figure-wide" id="chart-07">
+          <div class="figure-kicker"><span>Chart 07</span><span>Reasons owners go uninsured</span></div>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart07.vl.json" aria-label="Slope chart comparing reasons uninsured dog and cat owners reported in the 2022 and 2025 AMA surveys" aria-busy="true"></div>
+          <figcaption>Among uninsured owners; multiple responses were allowed.</figcaption>
         </figure>
-        <figure class="chart-figure chart-figure-wide">
-          <div class="chart-host" data-spec="./charts/chart06.json?v=1" aria-label="Connected scatterplot comparing current annual MSIG premiums with annual veterinary and surgery limits for cat and dog plans" aria-busy="true"></div>
-          <figcaption>Current tax-inclusive prices checked 8 October 2026. Survey budgets and insurer prices come from different sources and populations.</figcaption>
+        <figure class="chart-figure chart-figure-wide" id="chart-08">
+          <div class="figure-kicker"><span>Chart 08</span><span>Reported complaint ranks</span></div>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart08.vl.json" aria-label="Bump chart ranking pet and horse insurance issue categories in ASIC internal dispute data from 2023 to 2025" aria-busy="true"></div>
+          <figcaption>Premiums stay at rank 1; other issue lines are muted. One complaint may list several issues.</figcaption>
         </figure>
       </section>
 
-      <section class="story-section" id="claim-examples" aria-labelledby="section-four">
+      <section class="story-section" id="claims" aria-labelledby="claims-title">
         <div class="section-heading">
-          <p class="eyebrow"><span class="section-number">04</span> · Published examples</p>
-          <h2 id="section-four">A payout can still leave an unpaid balance</h2>
-          <p>These six published cases compare each veterinary bill with its reported insurer payout.</p>
+          <div class="section-index">04 <span>·</span> Insured claims and conditions</div>
+          <h2 id="claims-title">Claim costs vary across time and conditions</h2>
+          <p>PetSure claims describe its insured pets, not all Australian animals.</p>
         </div>
-        <figure class="chart-figure chart-figure-wide">
-          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart07.json?v=2" data-sync="claim" aria-label="Dumbbell chart comparing veterinary bills and insurer payouts for six selected published claims; click a case to focus it" aria-busy="true"></div>
-          <figcaption>Selected insurer-published examples, not a representative claims sample. Hover or click a case for details.</figcaption>
+        <figure class="chart-figure chart-figure-wide" id="chart-09">
+          <div class="figure-kicker"><span>Chart 09</span><span>Gastroenteritis costs</span></div>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart09.vl.json" aria-label="Line chart of average PetSure gastroenteritis treatment costs for dogs and cats from 2014 to 2024, with labeled axes and a species legend" aria-busy="true"></div>
+          <figcaption>Average amount claimed per policy; nominal AUD, not adjusted for inflation.</figcaption>
+        </figure>
+        <figure class="chart-figure chart-figure-wide" id="chart-10">
+          <div class="figure-kicker"><span>Chart 10</span><span>Conditions by species</span></div>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart10.vl.json" aria-label="Heatmap comparing average PetSure claim amounts for conditions listed in the 2025 dog and cat top tens" aria-busy="true"></div>
+          <figcaption>Colour shows average claim. Grey crosses mean the species’ top ten did not list that condition.</figcaption>
+        </figure>
+        <figure class="chart-figure chart-figure-wide" id="chart-11">
+          <div class="figure-kicker"><span>Chart 11</span><span>PetSure rankings by age and species</span></div>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart11.vl.json" aria-label="Alluvial diagram linking dog and cat species to life stage and the published top-three condition groups" aria-busy="true"></div>
+          <figcaption>Each ribbon links one published rank entry; the report does not track pets across life stages.</figcaption>
         </figure>
       </section>
 
-      <section class="story-section geography-section" id="geography" aria-labelledby="section-five">
+      <section class="story-section geography-section" id="state-patterns" aria-labelledby="state-title">
         <div class="section-heading">
-          <p class="eyebrow"><span class="section-number">05</span> · Geographic context</p>
-          <h2 id="section-five">District patterns describe the Selangor study sample</h2>
-          <p>The study covers Selangor. District income adds context; it is not linked to each participant.</p>
+          <div class="section-index">05 <span>·</span> Australian state patterns</div>
+          <h2 id="state-title">State views answer different questions</h2>
+          <p>Quotes, insured incidents and population use distinct measures.</p>
         </div>
-        <figure class="chart-figure chart-figure-wide map-overview-figure">
-          <div class="chart-host" data-spec="./maps/map04.json?v=4" data-sync="district" aria-label="Large Mercator map of Peninsular Malaysia and nearby countries, with Selangor highlighted" aria-busy="true"></div>
-          <figcaption>Mercator projection; neighbouring countries and seas provide geographic orientation only.</figcaption>
-        </figure>
         <div class="chart-grid two-up map-pair">
-          <figure class="chart-figure map-figure">
-            <div class="chart-host" data-spec="./maps/map01.json?v=3" data-sync="district" aria-label="Selangor choropleth map of poor-practice share within each district study sample; no-sample districts are grey" aria-busy="true"></div>
-            <figcaption>Share within each district sample; grey means no survey responses.</figcaption>
+          <figure class="chart-figure" id="map-01">
+            <div class="figure-kicker"><span>Map 01</span><span>Sample quote prices</span></div>
+            <div class="chart-host" data-spec="./maps/map01.vl.json" aria-label="Australian state choropleth of average dog insurance quote prices in a 16,652 quote panel" aria-busy="true"></div>
+            <figcaption>Grey means no matched quote. These prices are not policy uptake.</figcaption>
           </figure>
-          <figure class="chart-figure map-figure">
-            <div class="chart-host" data-spec="./maps/map02.json?v=3" data-sync="district" aria-label="Selangor proportional symbol map with circle area showing study participants by district" aria-busy="true"></div>
-            <figcaption>Circle area shows respondents; district counts total 116.</figcaption>
+          <figure class="chart-figure" id="map-02">
+            <div class="figure-kicker"><span>Map 02</span><span>Insured incidents</span></div>
+            <div class="chart-host" data-spec="./maps/map02.vl.json" aria-label="Proportional symbol map of PetSure motor-vehicle and bike accident claims by state in 2024" aria-busy="true"></div>
+            <figcaption>Circle area shows reported claims. State population is not a denominator.</figcaption>
           </figure>
         </div>
-        <figure class="chart-figure chart-figure-wide">
-          <div class="chart-host" data-spec="./charts/chart08.json?v=1" aria-label="Bubble scatterplot comparing district median household income with the poor-practice share in each district study sample; bubble area shows respondent count" aria-busy="true"></div>
-          <figcaption>District-level comparison only. Sample sizes range from 2 to 42; it cannot show how an individual’s income relates to their pet-care spending.</figcaption>
+        <figure class="chart-figure chart-figure-wide cartogram-figure" id="map-03">
+          <div class="figure-kicker"><span>Map 03</span><span>Population cartogram</span></div>
+          <div class="chart-host" data-spec="./maps/map03.vl.json" aria-label="Australia state area cartogram sized by 2026 population and coloured by sampled dog-cat quote gap" aria-busy="true"></div>
+          <figcaption>Each hex represents about 53,700 residents; fill shows the sampled dog–cat quote gap.</figcaption>
         </figure>
       </section>
 
-      <section class="method-section" id="sources-methodology" aria-labelledby="sources-title">
+      <section class="methods-section" id="sources-methodology" aria-labelledby="sources-title">
         <details class="method-details">
-          <summary id="sources-title">Sources and methods</summary>
+          <summary id="sources-title">Sources, definitions and limits</summary>
           <div class="method-grid">
             <div>
-              <h2>How to read this story</h2>
-              <p>Malaysia survey results, Selangor study findings, insurer prices and district income are separate sources. They are shown side by side for context, not treated as one linked dataset.</p>
-              <p>The Selangor pet-insurance study recruited 116 participants by convenience sampling in July–October 2024. The national emergency-fund survey reports 4,872 pet owners for the dedicated-buffer question.</p>
+              <h2>Different datasets, clear roles</h2>
+              <p>AMA surveys describe Australian households and reported spending.</p>
+              <p>PetSure results cover its insured claims and policyholders.</p>
+              <p>ASIC records firm-reported insurance issues and complaints.</p>
+              <p>Compare the Market reports quotes from its own panel.</p>
+              <p>ABS estimates set map population and cartogram size.</p>
             </div>
             <div>
-              <h2>Limits</h2>
+              <h2>How to read these views</h2>
               <ul class="limit-list">
-                <li>District practice shares describe only people in the study sample, not district populations.</li>
-                <li>Price expectations and current premiums are not matched to the same people or time.</li>
-                <li>Published claim examples are selected cases and do not estimate typical reimbursements.</li>
+                <li>Quote prices do not measure insurance uptake.</li>
+                <li>PetSure claim counts lack an insured-pet denominator.</li>
+                <li>Cartogram hexes generalise state shapes.</li>
+                <li>All dollar amounts are Australian dollars.</li>
               </ul>
             </div>
           </div>
           <details class="source-details">
-            <summary>Source register</summary>
+            <summary>Open the source register</summary>
             <ol>
-              <li><a href="https://www.malaymail.com/news/life/2026/08/11/pets-are-family-to-91pc-of-malaysian-owners-yet-most-lack-emergency-funds-survey-finds/230926">Malay Mail, Malaysian pet-owner survey, August 2026.</a></li>
-              <li><a href="https://www.mdpi.com/2813-9372/3/1/10">Koh and colleagues, “Knowledge, Attitudes, and Practices of Pet Owners Regarding Pet Insurance in Selangor, Malaysia,” <em>Pets</em>, 2026.</a> Fieldwork July to October 2024; convenience sample of 116.</li>
-              <li><a href="https://discol.umk.edu.my/id/eprint/14875/1/AUDREY%20KOH%20RUI%20PING%20D20B0082.pdf">Koh, UMK thesis, Table 6.</a> Annual price expectation bands for the same Selangor study.</li>
-              <li><a href="https://www.msig.com.my/products/personal/lifestyle/pet">MSIG Malaysia Pet Insurance.</a> Current annual premiums and veterinary limits checked 8 October 2026.</li>
-              <li><a href="https://www.oyen.my/post/is-pet-insurance-worth-it-malaysia-2026">Oyen, six selected claim examples, 28 September 2026.</a></li>
-              <li><a href="https://www.dosm.gov.my/uploads/release-content/file_20260312152657.pdf">Department of Statistics Malaysia, Selangor district household incomes, 2024.</a></li>
-              <li><a href="https://raw.githubusercontent.com/dosm-malaysia/data-open/main/datasets/geodata/administrative_2_district.geojson">DOSM administrative district boundaries</a> and <a href="https://github.com/dosm-malaysia/data-open/blob/main/LICENSE.md">Open Data License</a>.</li>
-              <li><a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/">Natural Earth, 1:110m country boundaries</a> and <a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/">1:10m country boundaries.</a></li>
+              <li><a href="https://animalmedicinesaustralia.org.au/resources/pets-in-australia-a-national-survey-of-pets-and-people-3/">Animal Medicines Australia, <em>Pets in Australia 2025</em>.</a></li>
+              <li><a href="https://petsure.com.au/pet-health-monitor/">PetSure, <em>Australian Pet Health Monitor 2026</em>.</a></li>
+              <li><a href="https://petsure.com.au/knowledge-hub/gastro-in-pets/">PetSure, gastroenteritis treatment costs, 2014–2024.</a></li>
+              <li><a href="https://petsure.com.au/knowledge-hub/top-health-conditions-2025-dogs/">PetSure, 2025 dog claim conditions.</a></li>
+              <li><a href="https://petsure.com.au/knowledge-hub/common-cat-health-conditions-2025/">PetSure, 2025 cat claim conditions.</a></li>
+              <li><a href="https://petsure.com.au/wp-content/uploads/2024/07/PHM-2025_VD-03-1.pdf">PetSure, <em>Pets &amp; Road Safety</em>, 2025 report.</a></li>
+              <li><a href="https://www.asic.gov.au/regulatory-resources/financial-services/dispute-resolution/internal-dispute-resolution-data-dashboard">ASIC, Internal Dispute Resolution data dashboard.</a></li>
+              <li><a href="https://www.comparethemarket.com.au/pet-insurance/features/pet-surgery-bills/">Compare the Market, 16,652 quote panel, March 2025–March 2026.</a></li>
+              <li><a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/mar-2026">ABS, March 2026 population estimates.</a></li>
+              <li><a href="https://geo.abs.gov.au/arcgis/rest/services/ASGS2026/STE/MapServer">ABS 2026 state and territory boundaries.</a></li>
             </ol>
           </details>
           <p class="ai-credit"><strong>AI acknowledgement:</strong> AI tools assisted with source review, data preparation and chart specifications.</p>
@@ -150,8 +226,8 @@
     </main>
 
     <footer class="page-footer">
-      <p>Pet care costs in Malaysia · FIT3179 Data Visualisation 2</p>
-      <p>Daffa Fariq Prasetyo · Updated 15 October 2026</p>
+      <p>Australia’s pets: care, costs and cover · FIT3179 Data Visualisation 2</p>
+      <p>Daffa Fariq Prasetyo · 34076492 · 20 October 2026</p>
     </footer>
   </body>
 </html>

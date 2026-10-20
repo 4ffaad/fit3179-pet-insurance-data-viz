@@ -1,0 +1,325 @@
+path_id,species,life_stage,condition,condition_short,rank,average_cost_aud,highest_cost_aud,edge,flow_weight,x_num,y_top,y_bottom
+Dog-0-r1-species_to_stage,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,species_to_stage,1,0.12,0.0,1.0
+Dog-0-r1-species_to_stage,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,species_to_stage,1,0.255,0.0,1.0
+Dog-0-r1-species_to_stage,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,species_to_stage,1,0.39,0.0,1.0
+Dog-0-r1-species_to_stage,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,species_to_stage,1,0.525,0.0,1.0
+Dog-0-r1-species_to_stage,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,species_to_stage,1,0.66,0.0,1.0
+Dog-0-r1-species_to_stage,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,species_to_stage,1,0.795,0.0,1.0
+Dog-0-r1-species_to_stage,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,species_to_stage,1,0.93,0.0,1.0
+Dog-0-r1-species_to_stage,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,species_to_stage,1,1.065,0.0,1.0
+Dog-0-r1-species_to_stage,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,species_to_stage,1,1.2000000000000002,0.0,1.0
+Dog-0-r1-stage_to_condition,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,stage_to_condition,1,1.6,0.0,1.0
+Dog-0-r1-stage_to_condition,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,stage_to_condition,1,1.76,0.253515625,1.253515625
+Dog-0-r1-stage_to_condition,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,stage_to_condition,1,1.92,0.921875,1.921875
+Dog-0-r1-stage_to_condition,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,stage_to_condition,1,2.08,1.8667968750000004,2.8667968750000004
+Dog-0-r1-stage_to_condition,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,stage_to_condition,1,2.24,2.95,3.95
+Dog-0-r1-stage_to_condition,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,stage_to_condition,1,2.4,4.033203125,5.033203125
+Dog-0-r1-stage_to_condition,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,stage_to_condition,1,2.56,4.978125,5.978125
+Dog-0-r1-stage_to_condition,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,stage_to_condition,1,2.7199999999999998,5.646484375,6.646484375
+Dog-0-r1-stage_to_condition,Dog,Under 1,Gastrointestinal conditions,Gastrointestinal,1,787,31008,stage_to_condition,1,2.88,5.9,6.9
+Dog-0-r2-species_to_stage,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,species_to_stage,1,0.12,1.0,2.0
+Dog-0-r2-species_to_stage,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,species_to_stage,1,0.255,1.0,2.0
+Dog-0-r2-species_to_stage,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,species_to_stage,1,0.39,1.0,2.0
+Dog-0-r2-species_to_stage,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,species_to_stage,1,0.525,1.0,2.0
+Dog-0-r2-species_to_stage,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,species_to_stage,1,0.66,1.0,2.0
+Dog-0-r2-species_to_stage,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,species_to_stage,1,0.795,1.0,2.0
+Dog-0-r2-species_to_stage,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,species_to_stage,1,0.93,1.0,2.0
+Dog-0-r2-species_to_stage,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,species_to_stage,1,1.065,1.0,2.0
+Dog-0-r2-species_to_stage,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,species_to_stage,1,1.2000000000000002,1.0,2.0
+Dog-0-r2-stage_to_condition,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,stage_to_condition,1,1.6,1.0,2.0
+Dog-0-r2-stage_to_condition,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,stage_to_condition,1,1.76,1.0623046875,2.0623046875
+Dog-0-r2-stage_to_condition,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,stage_to_condition,1,1.92,1.2265625,2.2265625
+Dog-0-r2-stage_to_condition,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,stage_to_condition,1,2.08,1.4587890625000002,2.4587890625
+Dog-0-r2-stage_to_condition,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,stage_to_condition,1,2.24,1.725,2.725
+Dog-0-r2-stage_to_condition,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,stage_to_condition,1,2.4,1.9912109375,2.9912109375
+Dog-0-r2-stage_to_condition,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,stage_to_condition,1,2.56,2.2234375,3.2234375
+Dog-0-r2-stage_to_condition,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,stage_to_condition,1,2.7199999999999998,2.3876953125,3.3876953125
+Dog-0-r2-stage_to_condition,Dog,Under 1,Skin infections / allergies,Skin / allergies,2,384,9945,stage_to_condition,1,2.88,2.45,3.45
+Dog-0-r3-species_to_stage,Dog,Under 1,Ear infections,Ear infections,3,342,6161,species_to_stage,1,0.12,2.0,3.0
+Dog-0-r3-species_to_stage,Dog,Under 1,Ear infections,Ear infections,3,342,6161,species_to_stage,1,0.255,2.0,3.0
+Dog-0-r3-species_to_stage,Dog,Under 1,Ear infections,Ear infections,3,342,6161,species_to_stage,1,0.39,2.0,3.0
+Dog-0-r3-species_to_stage,Dog,Under 1,Ear infections,Ear infections,3,342,6161,species_to_stage,1,0.525,2.0,3.0
+Dog-0-r3-species_to_stage,Dog,Under 1,Ear infections,Ear infections,3,342,6161,species_to_stage,1,0.66,2.0,3.0
+Dog-0-r3-species_to_stage,Dog,Under 1,Ear infections,Ear infections,3,342,6161,species_to_stage,1,0.795,2.0,3.0
+Dog-0-r3-species_to_stage,Dog,Under 1,Ear infections,Ear infections,3,342,6161,species_to_stage,1,0.93,2.0,3.0
+Dog-0-r3-species_to_stage,Dog,Under 1,Ear infections,Ear infections,3,342,6161,species_to_stage,1,1.065,2.0,3.0
+Dog-0-r3-species_to_stage,Dog,Under 1,Ear infections,Ear infections,3,342,6161,species_to_stage,1,1.2000000000000002,2.0,3.0
+Dog-0-r3-stage_to_condition,Dog,Under 1,Ear infections,Ear infections,3,342,6161,stage_to_condition,1,1.6,2.0,3.0
+Dog-0-r3-stage_to_condition,Dog,Under 1,Ear infections,Ear infections,3,342,6161,stage_to_condition,1,1.76,1.9140625,2.9140625
+Dog-0-r3-stage_to_condition,Dog,Under 1,Ear infections,Ear infections,3,342,6161,stage_to_condition,1,1.92,1.6875,2.6875
+Dog-0-r3-stage_to_condition,Dog,Under 1,Ear infections,Ear infections,3,342,6161,stage_to_condition,1,2.08,1.3671875,2.3671875
+Dog-0-r3-stage_to_condition,Dog,Under 1,Ear infections,Ear infections,3,342,6161,stage_to_condition,1,2.24,1.0,2.0
+Dog-0-r3-stage_to_condition,Dog,Under 1,Ear infections,Ear infections,3,342,6161,stage_to_condition,1,2.4,0.6328125,1.6328125
+Dog-0-r3-stage_to_condition,Dog,Under 1,Ear infections,Ear infections,3,342,6161,stage_to_condition,1,2.56,0.3125,1.3125
+Dog-0-r3-stage_to_condition,Dog,Under 1,Ear infections,Ear infections,3,342,6161,stage_to_condition,1,2.7199999999999998,0.0859375,1.0859375
+Dog-0-r3-stage_to_condition,Dog,Under 1,Ear infections,Ear infections,3,342,6161,stage_to_condition,1,2.88,0.0,1.0
+Dog-1-r1-species_to_stage,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,species_to_stage,1,0.12,3.0,4.0
+Dog-1-r1-species_to_stage,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,species_to_stage,1,0.255,3.021484375,4.021484375
+Dog-1-r1-species_to_stage,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,species_to_stage,1,0.39,3.078125,4.078125
+Dog-1-r1-species_to_stage,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,species_to_stage,1,0.525,3.158203125,4.158203125
+Dog-1-r1-species_to_stage,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,species_to_stage,1,0.66,3.25,4.25
+Dog-1-r1-species_to_stage,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,species_to_stage,1,0.795,3.341796875,4.341796875
+Dog-1-r1-species_to_stage,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,species_to_stage,1,0.93,3.421875,4.421875
+Dog-1-r1-species_to_stage,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,species_to_stage,1,1.065,3.478515625,4.478515625
+Dog-1-r1-species_to_stage,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,species_to_stage,1,1.2000000000000002,3.5,4.5
+Dog-1-r1-stage_to_condition,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,stage_to_condition,1,1.6,3.5,4.5
+Dog-1-r1-stage_to_condition,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,stage_to_condition,1,1.76,3.4978515625,4.4978515625
+Dog-1-r1-stage_to_condition,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,stage_to_condition,1,1.92,3.4921875,4.4921875
+Dog-1-r1-stage_to_condition,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,stage_to_condition,1,2.08,3.4841796875,4.4841796875
+Dog-1-r1-stage_to_condition,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,stage_to_condition,1,2.24,3.475,4.475
+Dog-1-r1-stage_to_condition,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,stage_to_condition,1,2.4,3.4658203125,4.4658203125
+Dog-1-r1-stage_to_condition,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,stage_to_condition,1,2.56,3.4578125,4.4578125
+Dog-1-r1-stage_to_condition,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,stage_to_condition,1,2.7199999999999998,3.4521484375,4.4521484375
+Dog-1-r1-stage_to_condition,Dog,1–8,Skin infections / allergies,Skin / allergies,1,771,23437,stage_to_condition,1,2.88,3.45,4.45
+Dog-1-r2-species_to_stage,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,species_to_stage,1,0.12,4.0,5.0
+Dog-1-r2-species_to_stage,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,species_to_stage,1,0.255,4.021484375,5.021484375
+Dog-1-r2-species_to_stage,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,species_to_stage,1,0.39,4.078125,5.078125
+Dog-1-r2-species_to_stage,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,species_to_stage,1,0.525,4.158203125,5.158203125
+Dog-1-r2-species_to_stage,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,species_to_stage,1,0.66,4.25,5.25
+Dog-1-r2-species_to_stage,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,species_to_stage,1,0.795,4.341796875,5.341796875
+Dog-1-r2-species_to_stage,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,species_to_stage,1,0.93,4.421875,5.421875
+Dog-1-r2-species_to_stage,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,species_to_stage,1,1.065,4.478515625,5.478515625
+Dog-1-r2-species_to_stage,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,species_to_stage,1,1.2000000000000002,4.5,5.5
+Dog-1-r2-stage_to_condition,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,stage_to_condition,1,1.6,4.5,5.5
+Dog-1-r2-stage_to_condition,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,stage_to_condition,1,1.76,4.603125,5.603125
+Dog-1-r2-stage_to_condition,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,stage_to_condition,1,1.92,4.875,5.875
+Dog-1-r2-stage_to_condition,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,stage_to_condition,1,2.08,5.259375,6.259375
+Dog-1-r2-stage_to_condition,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,stage_to_condition,1,2.24,5.7,6.7
+Dog-1-r2-stage_to_condition,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,stage_to_condition,1,2.4,6.140625,7.140625
+Dog-1-r2-stage_to_condition,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,stage_to_condition,1,2.56,6.525,7.525
+Dog-1-r2-stage_to_condition,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,stage_to_condition,1,2.7199999999999998,6.796875,7.796875
+Dog-1-r2-stage_to_condition,Dog,1–8,Gastrointestinal conditions,Gastrointestinal,2,983,36497,stage_to_condition,1,2.88,6.9,7.9
+Dog-1-r3-species_to_stage,Dog,1–8,Ear infections,Ear infections,3,473,24393,species_to_stage,1,0.12,5.0,6.0
+Dog-1-r3-species_to_stage,Dog,1–8,Ear infections,Ear infections,3,473,24393,species_to_stage,1,0.255,5.021484375,6.021484375
+Dog-1-r3-species_to_stage,Dog,1–8,Ear infections,Ear infections,3,473,24393,species_to_stage,1,0.39,5.078125,6.078125
+Dog-1-r3-species_to_stage,Dog,1–8,Ear infections,Ear infections,3,473,24393,species_to_stage,1,0.525,5.158203125,6.158203125
+Dog-1-r3-species_to_stage,Dog,1–8,Ear infections,Ear infections,3,473,24393,species_to_stage,1,0.66,5.25,6.25
+Dog-1-r3-species_to_stage,Dog,1–8,Ear infections,Ear infections,3,473,24393,species_to_stage,1,0.795,5.341796875,6.341796875
+Dog-1-r3-species_to_stage,Dog,1–8,Ear infections,Ear infections,3,473,24393,species_to_stage,1,0.93,5.421875,6.421875
+Dog-1-r3-species_to_stage,Dog,1–8,Ear infections,Ear infections,3,473,24393,species_to_stage,1,1.065,5.478515625,6.478515625
+Dog-1-r3-species_to_stage,Dog,1–8,Ear infections,Ear infections,3,473,24393,species_to_stage,1,1.2000000000000002,5.5,6.5
+Dog-1-r3-stage_to_condition,Dog,1–8,Ear infections,Ear infections,3,473,24393,stage_to_condition,1,1.6,5.5,6.5
+Dog-1-r3-stage_to_condition,Dog,1–8,Ear infections,Ear infections,3,473,24393,stage_to_condition,1,1.76,5.306640625,6.306640625
+Dog-1-r3-stage_to_condition,Dog,1–8,Ear infections,Ear infections,3,473,24393,stage_to_condition,1,1.92,4.796875,5.796875
+Dog-1-r3-stage_to_condition,Dog,1–8,Ear infections,Ear infections,3,473,24393,stage_to_condition,1,2.08,4.076171875,5.076171875
+Dog-1-r3-stage_to_condition,Dog,1–8,Ear infections,Ear infections,3,473,24393,stage_to_condition,1,2.24,3.25,4.25
+Dog-1-r3-stage_to_condition,Dog,1–8,Ear infections,Ear infections,3,473,24393,stage_to_condition,1,2.4,2.423828125,3.423828125
+Dog-1-r3-stage_to_condition,Dog,1–8,Ear infections,Ear infections,3,473,24393,stage_to_condition,1,2.56,1.703125,2.703125
+Dog-1-r3-stage_to_condition,Dog,1–8,Ear infections,Ear infections,3,473,24393,stage_to_condition,1,2.7199999999999998,1.193359375,2.193359375
+Dog-1-r3-stage_to_condition,Dog,1–8,Ear infections,Ear infections,3,473,24393,stage_to_condition,1,2.88,1.0,2.0
+Dog-2-r1-species_to_stage,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,species_to_stage,1,0.12,6.0,7.0
+Dog-2-r1-species_to_stage,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,species_to_stage,1,0.255,6.04296875,7.04296875
+Dog-2-r1-species_to_stage,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,species_to_stage,1,0.39,6.15625,7.15625
+Dog-2-r1-species_to_stage,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,species_to_stage,1,0.525,6.31640625,7.31640625
+Dog-2-r1-species_to_stage,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,species_to_stage,1,0.66,6.5,7.5
+Dog-2-r1-species_to_stage,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,species_to_stage,1,0.795,6.68359375,7.68359375
+Dog-2-r1-species_to_stage,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,species_to_stage,1,0.93,6.84375,7.84375
+Dog-2-r1-species_to_stage,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,species_to_stage,1,1.065,6.95703125,7.95703125
+Dog-2-r1-species_to_stage,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,species_to_stage,1,1.2000000000000002,7.0,8.0
+Dog-2-r1-stage_to_condition,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,stage_to_condition,1,1.6,7.0,8.0
+Dog-2-r1-stage_to_condition,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,stage_to_condition,1,1.76,6.8904296875,7.8904296875
+Dog-2-r1-stage_to_condition,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,stage_to_condition,1,1.92,6.6015625,7.6015625
+Dog-2-r1-stage_to_condition,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,stage_to_condition,1,2.08,6.1931640625,7.1931640625
+Dog-2-r1-stage_to_condition,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,stage_to_condition,1,2.24,5.725,6.725
+Dog-2-r1-stage_to_condition,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,stage_to_condition,1,2.4,5.2568359375,6.2568359375
+Dog-2-r1-stage_to_condition,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,stage_to_condition,1,2.56,4.8484375,5.8484375
+Dog-2-r1-stage_to_condition,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,stage_to_condition,1,2.7199999999999998,4.5595703125,5.5595703125
+Dog-2-r1-stage_to_condition,Dog,8+,Skin infections / allergies,Skin / allergies,1,994,21285,stage_to_condition,1,2.88,4.45,5.45
+Dog-2-r2-species_to_stage,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,species_to_stage,1,0.12,7.0,8.0
+Dog-2-r2-species_to_stage,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,species_to_stage,1,0.255,7.04296875,8.04296875
+Dog-2-r2-species_to_stage,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,species_to_stage,1,0.39,7.15625,8.15625
+Dog-2-r2-species_to_stage,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,species_to_stage,1,0.525,7.31640625,8.31640625
+Dog-2-r2-species_to_stage,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,species_to_stage,1,0.66,7.5,8.5
+Dog-2-r2-species_to_stage,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,species_to_stage,1,0.795,7.68359375,8.68359375
+Dog-2-r2-species_to_stage,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,species_to_stage,1,0.93,7.84375,8.84375
+Dog-2-r2-species_to_stage,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,species_to_stage,1,1.065,7.95703125,8.95703125
+Dog-2-r2-species_to_stage,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,species_to_stage,1,1.2000000000000002,8.0,9.0
+Dog-2-r2-stage_to_condition,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,stage_to_condition,1,1.6,8.0,9.0
+Dog-2-r2-stage_to_condition,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,stage_to_condition,1,1.76,7.995703125,8.995703125
+Dog-2-r2-stage_to_condition,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,stage_to_condition,1,1.92,7.984375,8.984375
+Dog-2-r2-stage_to_condition,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,stage_to_condition,1,2.08,7.968359375,8.968359375
+Dog-2-r2-stage_to_condition,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,stage_to_condition,1,2.24,7.949999999999999,8.95
+Dog-2-r2-stage_to_condition,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,stage_to_condition,1,2.4,7.931640625,8.931640625
+Dog-2-r2-stage_to_condition,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,stage_to_condition,1,2.56,7.915625,8.915625
+Dog-2-r2-stage_to_condition,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,stage_to_condition,1,2.7199999999999998,7.904296875,8.904296875
+Dog-2-r2-stage_to_condition,Dog,8+,Gastrointestinal conditions,Gastrointestinal,2,1262,36126,stage_to_condition,1,2.88,7.9,8.9
+Dog-2-r3-species_to_stage,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,species_to_stage,1,0.12,8.0,9.0
+Dog-2-r3-species_to_stage,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,species_to_stage,1,0.255,8.04296875,9.04296875
+Dog-2-r3-species_to_stage,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,species_to_stage,1,0.39,8.15625,9.15625
+Dog-2-r3-species_to_stage,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,species_to_stage,1,0.525,8.31640625,9.31640625
+Dog-2-r3-species_to_stage,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,species_to_stage,1,0.66,8.5,9.5
+Dog-2-r3-species_to_stage,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,species_to_stage,1,0.795,8.68359375,9.68359375
+Dog-2-r3-species_to_stage,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,species_to_stage,1,0.93,8.84375,9.84375
+Dog-2-r3-species_to_stage,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,species_to_stage,1,1.065,8.95703125,9.95703125
+Dog-2-r3-species_to_stage,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,species_to_stage,1,1.2000000000000002,9.0,10.0
+Dog-2-r3-stage_to_condition,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,stage_to_condition,1,1.6,9.0,10.0
+Dog-2-r3-stage_to_condition,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,stage_to_condition,1,1.76,9.0150390625,10.0150390625
+Dog-2-r3-stage_to_condition,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,stage_to_condition,1,1.92,9.0546875,10.0546875
+Dog-2-r3-stage_to_condition,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,stage_to_condition,1,2.08,9.1107421875,10.1107421875
+Dog-2-r3-stage_to_condition,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,stage_to_condition,1,2.24,9.175,10.175
+Dog-2-r3-stage_to_condition,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,stage_to_condition,1,2.4,9.239257812500002,10.239257812500002
+Dog-2-r3-stage_to_condition,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,stage_to_condition,1,2.56,9.2953125,10.2953125
+Dog-2-r3-stage_to_condition,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,stage_to_condition,1,2.7199999999999998,9.334960937500002,10.334960937500002
+Dog-2-r3-stage_to_condition,Dog,8+,Osteoarthritis,Osteoarthritis,3,839,15963,stage_to_condition,1,2.88,9.35,10.35
+Cat-0-r1-species_to_stage,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,species_to_stage,1,0.12,13.5,14.5
+Cat-0-r1-species_to_stage,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,species_to_stage,1,0.255,13.5,14.5
+Cat-0-r1-species_to_stage,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,species_to_stage,1,0.39,13.5,14.5
+Cat-0-r1-species_to_stage,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,species_to_stage,1,0.525,13.5,14.5
+Cat-0-r1-species_to_stage,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,species_to_stage,1,0.66,13.5,14.5
+Cat-0-r1-species_to_stage,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,species_to_stage,1,0.795,13.5,14.5
+Cat-0-r1-species_to_stage,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,species_to_stage,1,0.93,13.5,14.5
+Cat-0-r1-species_to_stage,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,species_to_stage,1,1.065,13.5,14.5
+Cat-0-r1-species_to_stage,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,species_to_stage,1,1.2000000000000002,13.5,14.5
+Cat-0-r1-stage_to_condition,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,stage_to_condition,1,1.6,13.5,14.5
+Cat-0-r1-stage_to_condition,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,stage_to_condition,1,1.76,13.624609375,14.624609375
+Cat-0-r1-stage_to_condition,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,stage_to_condition,1,1.92,13.953125,14.953125
+Cat-0-r1-stage_to_condition,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,stage_to_condition,1,2.08,14.417578125,15.417578125
+Cat-0-r1-stage_to_condition,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,stage_to_condition,1,2.24,14.95,15.95
+Cat-0-r1-stage_to_condition,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,stage_to_condition,1,2.4,15.482421875,16.482421875
+Cat-0-r1-stage_to_condition,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,stage_to_condition,1,2.56,15.946875,16.946875
+Cat-0-r1-stage_to_condition,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,stage_to_condition,1,2.7199999999999998,16.275390625,17.275390625
+Cat-0-r1-stage_to_condition,Cat,Under 1,Gastrointestinal conditions,Gastrointestinal,1,694,14141,stage_to_condition,1,2.88,16.4,17.4
+Cat-0-r2-species_to_stage,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,species_to_stage,1,0.12,14.5,15.5
+Cat-0-r2-species_to_stage,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,species_to_stage,1,0.255,14.5,15.5
+Cat-0-r2-species_to_stage,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,species_to_stage,1,0.39,14.5,15.5
+Cat-0-r2-species_to_stage,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,species_to_stage,1,0.525,14.5,15.5
+Cat-0-r2-species_to_stage,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,species_to_stage,1,0.66,14.5,15.5
+Cat-0-r2-species_to_stage,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,species_to_stage,1,0.795,14.5,15.5
+Cat-0-r2-species_to_stage,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,species_to_stage,1,0.93,14.5,15.5
+Cat-0-r2-species_to_stage,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,species_to_stage,1,1.065,14.5,15.5
+Cat-0-r2-species_to_stage,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,species_to_stage,1,1.2000000000000002,14.5,15.5
+Cat-0-r2-stage_to_condition,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,stage_to_condition,1,1.6,14.5,15.5
+Cat-0-r2-stage_to_condition,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,stage_to_condition,1,1.76,14.45703125,15.45703125
+Cat-0-r2-stage_to_condition,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,stage_to_condition,1,1.92,14.34375,15.34375
+Cat-0-r2-stage_to_condition,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,stage_to_condition,1,2.08,14.18359375,15.18359375
+Cat-0-r2-stage_to_condition,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,stage_to_condition,1,2.24,14.0,15.0
+Cat-0-r2-stage_to_condition,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,stage_to_condition,1,2.4,13.81640625,14.81640625
+Cat-0-r2-stage_to_condition,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,stage_to_condition,1,2.56,13.65625,14.65625
+Cat-0-r2-stage_to_condition,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,stage_to_condition,1,2.7199999999999998,13.54296875,14.54296875
+Cat-0-r2-stage_to_condition,Cat,Under 1,Respiratory tract conditions,Respiratory,2,969,3874,stage_to_condition,1,2.88,13.5,14.5
+Cat-0-r3-species_to_stage,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,species_to_stage,1,0.12,15.5,16.5
+Cat-0-r3-species_to_stage,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,species_to_stage,1,0.255,15.5,16.5
+Cat-0-r3-species_to_stage,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,species_to_stage,1,0.39,15.5,16.5
+Cat-0-r3-species_to_stage,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,species_to_stage,1,0.525,15.5,16.5
+Cat-0-r3-species_to_stage,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,species_to_stage,1,0.66,15.5,16.5
+Cat-0-r3-species_to_stage,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,species_to_stage,1,0.795,15.5,16.5
+Cat-0-r3-species_to_stage,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,species_to_stage,1,0.93,15.5,16.5
+Cat-0-r3-species_to_stage,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,species_to_stage,1,1.065,15.5,16.5
+Cat-0-r3-species_to_stage,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,species_to_stage,1,1.2000000000000002,15.5,16.5
+Cat-0-r3-stage_to_condition,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,stage_to_condition,1,1.6,15.5,16.5
+Cat-0-r3-stage_to_condition,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,stage_to_condition,1,1.76,15.4763671875,16.4763671875
+Cat-0-r3-stage_to_condition,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,stage_to_condition,1,1.92,15.4140625,16.4140625
+Cat-0-r3-stage_to_condition,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,stage_to_condition,1,2.08,15.3259765625,16.3259765625
+Cat-0-r3-stage_to_condition,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,stage_to_condition,1,2.24,15.225,16.225
+Cat-0-r3-stage_to_condition,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,stage_to_condition,1,2.4,15.1240234375,16.1240234375
+Cat-0-r3-stage_to_condition,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,stage_to_condition,1,2.56,15.0359375,16.0359375
+Cat-0-r3-stage_to_condition,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,stage_to_condition,1,2.7199999999999998,14.9736328125,15.9736328125
+Cat-0-r3-stage_to_condition,Cat,Under 1,Eye conditions,Eye conditions,3,442,9831,stage_to_condition,1,2.88,14.95,15.95
+Cat-1-r1-species_to_stage,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,species_to_stage,1,0.12,16.5,17.5
+Cat-1-r1-species_to_stage,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,species_to_stage,1,0.255,16.521484375,17.521484375
+Cat-1-r1-species_to_stage,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,species_to_stage,1,0.39,16.578125,17.578125
+Cat-1-r1-species_to_stage,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,species_to_stage,1,0.525,16.658203125,17.658203125
+Cat-1-r1-species_to_stage,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,species_to_stage,1,0.66,16.75,17.75
+Cat-1-r1-species_to_stage,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,species_to_stage,1,0.795,16.841796875,17.841796875
+Cat-1-r1-species_to_stage,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,species_to_stage,1,0.93,16.921875,17.921875
+Cat-1-r1-species_to_stage,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,species_to_stage,1,1.065,16.978515625,17.978515625
+Cat-1-r1-species_to_stage,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,species_to_stage,1,1.2000000000000002,17.0,18.0
+Cat-1-r1-stage_to_condition,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,stage_to_condition,1,1.6,17.0,18.0
+Cat-1-r1-stage_to_condition,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,stage_to_condition,1,1.76,17.0171875,18.0171875
+Cat-1-r1-stage_to_condition,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,stage_to_condition,1,1.92,17.0625,18.0625
+Cat-1-r1-stage_to_condition,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,stage_to_condition,1,2.08,17.1265625,18.1265625
+Cat-1-r1-stage_to_condition,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,stage_to_condition,1,2.24,17.2,18.2
+Cat-1-r1-stage_to_condition,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,stage_to_condition,1,2.4,17.2734375,18.2734375
+Cat-1-r1-stage_to_condition,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,stage_to_condition,1,2.56,17.3375,18.3375
+Cat-1-r1-stage_to_condition,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,stage_to_condition,1,2.7199999999999998,17.3828125,18.3828125
+Cat-1-r1-stage_to_condition,Cat,1–8,Gastrointestinal conditions,Gastrointestinal,1,1071,36833,stage_to_condition,1,2.88,17.4,18.4
+Cat-1-r2-species_to_stage,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,species_to_stage,1,0.12,17.5,18.5
+Cat-1-r2-species_to_stage,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,species_to_stage,1,0.255,17.521484375,18.521484375
+Cat-1-r2-species_to_stage,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,species_to_stage,1,0.39,17.578125,18.578125
+Cat-1-r2-species_to_stage,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,species_to_stage,1,0.525,17.658203125,18.658203125
+Cat-1-r2-species_to_stage,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,species_to_stage,1,0.66,17.75,18.75
+Cat-1-r2-species_to_stage,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,species_to_stage,1,0.795,17.841796875,18.841796875
+Cat-1-r2-species_to_stage,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,species_to_stage,1,0.93,17.921875,18.921875
+Cat-1-r2-species_to_stage,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,species_to_stage,1,1.065,17.978515625,18.978515625
+Cat-1-r2-species_to_stage,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,species_to_stage,1,1.2000000000000002,18.0,19.0
+Cat-1-r2-stage_to_condition,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,stage_to_condition,1,1.6,18.0,19.0
+Cat-1-r2-stage_to_condition,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,stage_to_condition,1,1.76,18.0794921875,19.0794921875
+Cat-1-r2-stage_to_condition,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,stage_to_condition,1,1.92,18.2890625,19.2890625
+Cat-1-r2-stage_to_condition,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,stage_to_condition,1,2.08,18.5853515625,19.5853515625
+Cat-1-r2-stage_to_condition,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,stage_to_condition,1,2.24,18.924999999999997,19.924999999999997
+Cat-1-r2-stage_to_condition,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,stage_to_condition,1,2.4,19.2646484375,20.2646484375
+Cat-1-r2-stage_to_condition,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,stage_to_condition,1,2.56,19.5609375,20.5609375
+Cat-1-r2-stage_to_condition,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,stage_to_condition,1,2.7199999999999998,19.770507812499996,20.770507812499996
+Cat-1-r2-stage_to_condition,Cat,1–8,Urinary tract disorders,Urinary tract,2,1448,50700,stage_to_condition,1,2.88,19.85,20.85
+Cat-1-r3-species_to_stage,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,species_to_stage,1,0.12,18.5,19.5
+Cat-1-r3-species_to_stage,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,species_to_stage,1,0.255,18.521484375,19.521484375
+Cat-1-r3-species_to_stage,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,species_to_stage,1,0.39,18.578125,19.578125
+Cat-1-r3-species_to_stage,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,species_to_stage,1,0.525,18.658203125,19.658203125
+Cat-1-r3-species_to_stage,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,species_to_stage,1,0.66,18.75,19.75
+Cat-1-r3-species_to_stage,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,species_to_stage,1,0.795,18.841796875,19.841796875
+Cat-1-r3-species_to_stage,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,species_to_stage,1,0.93,18.921875,19.921875
+Cat-1-r3-species_to_stage,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,species_to_stage,1,1.065,18.978515625,19.978515625
+Cat-1-r3-species_to_stage,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,species_to_stage,1,1.2000000000000002,19.0,20.0
+Cat-1-r3-stage_to_condition,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,stage_to_condition,1,1.6,19.0,20.0
+Cat-1-r3-stage_to_condition,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,stage_to_condition,1,1.76,19.141796875,20.141796875
+Cat-1-r3-stage_to_condition,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,stage_to_condition,1,1.92,19.515625,20.515625
+Cat-1-r3-stage_to_condition,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,stage_to_condition,1,2.08,20.044140625,21.044140625
+Cat-1-r3-stage_to_condition,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,stage_to_condition,1,2.24,20.65,21.65
+Cat-1-r3-stage_to_condition,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,stage_to_condition,1,2.4,21.255859375,22.255859375
+Cat-1-r3-stage_to_condition,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,stage_to_condition,1,2.56,21.784374999999997,22.784374999999997
+Cat-1-r3-stage_to_condition,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,stage_to_condition,1,2.7199999999999998,22.158203124999996,23.158203124999996
+Cat-1-r3-stage_to_condition,Cat,1–8,Dental conditions,Dental conditions,3,1016,6452,stage_to_condition,1,2.88,22.299999999999997,23.299999999999997
+Cat-2-r1-species_to_stage,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,species_to_stage,1,0.12,19.5,20.5
+Cat-2-r1-species_to_stage,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,species_to_stage,1,0.255,19.54296875,20.54296875
+Cat-2-r1-species_to_stage,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,species_to_stage,1,0.39,19.65625,20.65625
+Cat-2-r1-species_to_stage,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,species_to_stage,1,0.525,19.81640625,20.81640625
+Cat-2-r1-species_to_stage,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,species_to_stage,1,0.66,20.0,21.0
+Cat-2-r1-species_to_stage,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,species_to_stage,1,0.795,20.18359375,21.18359375
+Cat-2-r1-species_to_stage,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,species_to_stage,1,0.93,20.34375,21.34375
+Cat-2-r1-species_to_stage,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,species_to_stage,1,1.065,20.45703125,21.45703125
+Cat-2-r1-species_to_stage,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,species_to_stage,1,1.2000000000000002,20.5,21.5
+Cat-2-r1-stage_to_condition,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,stage_to_condition,1,1.6,20.5,21.5
+Cat-2-r1-stage_to_condition,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,stage_to_condition,1,1.76,20.409765625,21.409765625
+Cat-2-r1-stage_to_condition,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,stage_to_condition,1,1.92,20.171875,21.171875
+Cat-2-r1-stage_to_condition,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,stage_to_condition,1,2.08,19.835546875,20.835546875
+Cat-2-r1-stage_to_condition,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,stage_to_condition,1,2.24,19.45,20.45
+Cat-2-r1-stage_to_condition,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,stage_to_condition,1,2.4,19.064453125,20.064453125
+Cat-2-r1-stage_to_condition,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,stage_to_condition,1,2.56,18.728125,19.728125
+Cat-2-r1-stage_to_condition,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,stage_to_condition,1,2.7199999999999998,18.490234375,19.490234375
+Cat-2-r1-stage_to_condition,Cat,8+,Gastrointestinal conditions,Gastrointestinal,1,1401,29448,stage_to_condition,1,2.88,18.4,19.4
+Cat-2-r2-species_to_stage,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,species_to_stage,1,0.12,20.5,21.5
+Cat-2-r2-species_to_stage,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,species_to_stage,1,0.255,20.54296875,21.54296875
+Cat-2-r2-species_to_stage,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,species_to_stage,1,0.39,20.65625,21.65625
+Cat-2-r2-species_to_stage,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,species_to_stage,1,0.525,20.81640625,21.81640625
+Cat-2-r2-species_to_stage,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,species_to_stage,1,0.66,21.0,22.0
+Cat-2-r2-species_to_stage,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,species_to_stage,1,0.795,21.18359375,22.18359375
+Cat-2-r2-species_to_stage,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,species_to_stage,1,0.93,21.34375,22.34375
+Cat-2-r2-species_to_stage,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,species_to_stage,1,1.065,21.45703125,22.45703125
+Cat-2-r2-species_to_stage,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,species_to_stage,1,1.2000000000000002,21.5,22.5
+Cat-2-r2-stage_to_condition,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,stage_to_condition,1,1.6,21.5,22.5
+Cat-2-r2-stage_to_condition,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,stage_to_condition,1,1.76,21.4720703125,22.4720703125
+Cat-2-r2-stage_to_condition,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,stage_to_condition,1,1.92,21.3984375,22.3984375
+Cat-2-r2-stage_to_condition,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,stage_to_condition,1,2.08,21.2943359375,22.2943359375
+Cat-2-r2-stage_to_condition,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,stage_to_condition,1,2.24,21.174999999999997,22.174999999999997
+Cat-2-r2-stage_to_condition,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,stage_to_condition,1,2.4,21.0556640625,22.0556640625
+Cat-2-r2-stage_to_condition,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,stage_to_condition,1,2.56,20.9515625,21.9515625
+Cat-2-r2-stage_to_condition,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,stage_to_condition,1,2.7199999999999998,20.877929687499996,21.877929687499996
+Cat-2-r2-stage_to_condition,Cat,8+,Urinary tract disorders,Urinary tract,2,1627,24706,stage_to_condition,1,2.88,20.85,21.85
+Cat-2-r3-species_to_stage,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,species_to_stage,1,0.12,21.5,22.5
+Cat-2-r3-species_to_stage,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,species_to_stage,1,0.255,21.54296875,22.54296875
+Cat-2-r3-species_to_stage,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,species_to_stage,1,0.39,21.65625,22.65625
+Cat-2-r3-species_to_stage,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,species_to_stage,1,0.525,21.81640625,22.81640625
+Cat-2-r3-species_to_stage,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,species_to_stage,1,0.66,22.0,23.0
+Cat-2-r3-species_to_stage,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,species_to_stage,1,0.795,22.18359375,23.18359375
+Cat-2-r3-species_to_stage,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,species_to_stage,1,0.93,22.34375,23.34375
+Cat-2-r3-species_to_stage,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,species_to_stage,1,1.065,22.45703125,23.45703125
+Cat-2-r3-species_to_stage,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,species_to_stage,1,1.2000000000000002,22.5,23.5
+Cat-2-r3-stage_to_condition,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,stage_to_condition,1,1.6,22.5,23.5
+Cat-2-r3-stage_to_condition,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,stage_to_condition,1,1.76,22.534375,23.534375
+Cat-2-r3-stage_to_condition,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,stage_to_condition,1,1.92,22.625,23.625
+Cat-2-r3-stage_to_condition,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,stage_to_condition,1,2.08,22.753125,23.753125
+Cat-2-r3-stage_to_condition,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,stage_to_condition,1,2.24,22.9,23.9
+Cat-2-r3-stage_to_condition,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,stage_to_condition,1,2.4,23.046874999999996,24.046874999999996
+Cat-2-r3-stage_to_condition,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,stage_to_condition,1,2.56,23.174999999999997,24.174999999999997
+Cat-2-r3-stage_to_condition,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,stage_to_condition,1,2.7199999999999998,23.265624999999996,24.265624999999996
+Cat-2-r3-stage_to_condition,Cat,8+,Dental conditions,Dental conditions,3,1140,9045,stage_to_condition,1,2.88,23.299999999999997,24.299999999999997

@@ -1,0 +1,101 @@
+tile,column,row,status,share_pct,source
+0,0,0,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+1,1,0,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+2,2,0,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+3,3,0,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+4,4,0,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+5,5,0,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+6,6,0,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+7,7,0,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+8,8,0,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+9,9,0,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+10,0,1,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+11,1,1,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+12,2,1,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+13,3,1,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+14,4,1,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+15,5,1,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+16,6,1,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+17,7,1,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+18,8,1,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+19,9,1,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+20,0,2,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+21,1,2,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+22,2,2,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+23,3,2,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+24,4,2,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+25,5,2,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+26,6,2,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+27,7,2,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+28,8,2,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+29,9,2,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+30,0,3,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+31,1,3,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+32,2,3,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+33,3,3,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+34,4,3,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+35,5,3,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+36,6,3,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+37,7,3,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+38,8,3,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+39,9,3,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+40,0,4,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+41,1,4,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+42,2,4,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+43,3,4,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+44,4,4,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+45,5,4,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+46,6,4,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+47,7,4,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+48,8,4,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+49,9,4,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+50,0,5,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+51,1,5,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+52,2,5,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+53,3,5,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+54,4,5,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+55,5,5,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+56,6,5,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+57,7,5,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+58,8,5,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+59,9,5,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+60,0,6,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+61,1,6,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+62,2,6,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+63,3,6,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+64,4,6,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+65,5,6,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+66,6,6,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+67,7,6,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+68,8,6,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+69,9,6,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+70,0,7,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+71,1,7,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+72,2,7,Pet-owning household,73,AMA Pets in Australia 2025; prose rounded to whole percentage
+73,3,7,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+74,4,7,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+75,5,7,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+76,6,7,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+77,7,7,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+78,8,7,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+79,9,7,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+80,0,8,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+81,1,8,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+82,2,8,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+83,3,8,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+84,4,8,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+85,5,8,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+86,6,8,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+87,7,8,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+88,8,8,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+89,9,8,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+90,0,9,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+91,1,9,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+92,2,9,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+93,3,9,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+94,4,9,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+95,5,9,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+96,6,9,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+97,7,9,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+98,8,9,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage
+99,9,9,Household without a pet,27,AMA Pets in Australia 2025; prose rounded to whole percentage

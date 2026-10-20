@@ -1,0 +1,7 @@
+pet_type,owner_households_thousands,annual_spend_per_owner_household_aud,total_spend_aud_billions,sample_n,period
+Dogs,5241.5,2520,13.21,1188,12 months to March 2025
+Cats,3567.0,1656,5.91,779,12 months to March 2025
+Fish,1219.5,475,0.58,275,12 months to March 2025
+Birds,1005.8,555,0.558,207,12 months to March 2025
+Small mammals,315.1,2095,0.66,69,12 months to March 2025
+Reptiles,290.1,1319,0.382,69,12 months to March 2025
