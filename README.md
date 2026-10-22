@@ -21,6 +21,7 @@ Open [http://localhost:8000/](http://localhost:8000/). The chart libraries load 
 - `maps/`: three thematic map specifications: choropleth, proportional symbols and population tile cartogram.
 - `data/`: source observations and compact geographic assets loaded by the specifications.
 - `data/australia_data_sources.json`: source periods, caveats and measure decisions.
+- [`Sketch.pdf`](Sketch.pdf): the project sketch.
 - `.github/workflows/pages.yml`: static-site deployment workflow.
 
 The story combines five source owners: Animal Medicines Australia, PetSure, ASIC, Compare the Market Australia and the ABS. It keeps household survey results, insured claims, insurer complaints, quote-panel prices and population estimates separate. The page has eleven visual views: eight charts and three map idioms. No national pet-insurance uptake or policy-mix series was found for this draft, so the page does not claim to measure industry growth or compare coverage tiers.
