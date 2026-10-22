@@ -162,7 +162,7 @@ main { padding-top: 32px; }
 
 .chart-grid { display: grid; min-width: 0; gap: 18px; align-items: stretch; margin-bottom: 18px; }
 .two-up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.opening-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.opening-grid { grid-template-columns: 1fr; }
 .chart-figure {
   display: flex;
   min-width: 0;

@@ -32,8 +32,8 @@
     "legend": {
       "labelFont": "Arial",
       "titleFont": "Arial",
-      "labelFontSize": 10,
-      "titleFontSize": 11,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
       "labelColor": "#536979",
       "titleColor": "#334F63",
       "orient": "top",
@@ -42,344 +42,157 @@
     },
     "view": {
       "stroke": null
-    },
-    "text": {
-      "font": "Arial",
-      "color": "#173A52"
-    },
-    "facet": {
-      "spacing": 28
     }
   },
   "title": {
-    "text": "Reasons for not insuring dogs and cats",
-    "subtitle": "Uninsured owners who selected each reason · AMA 2022 and 2025 surveys."
+    "text": "Pet and horse insurance issue ranks",
+    "subtitle": "ASIC internal dispute reports · rank 1 marks the most reported issue."
   },
-  "description": "Slope chart comparing reasons reported by uninsured dog and cat owners in the AMA 2022 and 2025 surveys. Multiple responses were allowed, so shares do not sum to 100%.",
+  "description": "Bump chart of the five issue types with the highest cumulative reported complaint counts across five reporting half-years. Rank is calculated against all issue categories in each half-year. Counts are shown on hover. ASIC’s product name includes domestic pet/horse insurance. Complaint data are firm-reported; each complaint can list up to three issues, so issue counts must not be added to calculate unique complaints. These counts are not insurance claims.",
   "data": {
-    "url": "../data/ama_insurance_barriers_2022_2025.csv",
+    "url": "../data/asic_pet_horse_insurance_issues_2023_2025.csv",
     "format": {
       "type": "csv"
     }
   },
-  "facet": {
-    "field": "pet_type",
-    "type": "nominal",
-    "sort": [
-      "Dog",
-      "Cat"
-    ],
-    "columns": 2,
-    "header": {
-      "title": null,
-      "labelFontSize": 15,
-      "labelFontWeight": "bold",
-      "labelColor": "#173A52"
+  "transform": [
+    {
+      "calculate": "toNumber(datum.rank_all_issues)",
+      "as": "rank_num"
+    },
+    {
+      "calculate": "toNumber(datum.complaint_count)",
+      "as": "count_num"
+    },
+    {
+      "calculate": "toNumber(datum.period_order)",
+      "as": "period_num"
     }
+  ],
+  "width": 1050,
+  "height": 450,
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 125,
+      "stroke": "#FBFAF7",
+      "strokeWidth": 1.5
+    },
+    "strokeWidth": 3.5
   },
-  "spec": {
-    "width": 420,
-    "height": 290,
-    "layer": [
-      {
-        "mark": {
-          "type": "line",
-          "strokeWidth": 2.5,
-          "opacity": 0.88
-        },
-        "encoding": {
-          "x": {
-            "field": "year",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                2021,
-                2026
-              ]
-            },
-            "axis": {
-              "title": "Survey year",
-              "values": [
-                2022,
-                2025
-              ],
-              "format": "d",
-              "grid": false,
-              "labelOverlap": false
-            }
-          },
-          "y": {
-            "field": "share_pct",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                0,
-                60
-              ]
-            },
-            "axis": {
-              "title": "Uninsured owners (%)",
-              "values": [
-                0,
-                20,
-                40,
-                60
-              ],
-              "grid": true
-            }
-          },
-          "color": {
-            "field": "reason",
-            "type": "nominal",
-            "sort": [
-              "Too expensive",
-              "Don’t see the value",
-              "Haven’t looked / don’t know much",
-              "Didn’t know it was available",
-              "Other"
-            ],
-            "scale": {
-              "domain": [
-                "Too expensive",
-                "Don’t see the value",
-                "Haven’t looked / don’t know much",
-                "Didn’t know it was available",
-                "Other"
-              ],
-              "range": [
-                "#176B87",
-                "#79558D",
-                "#A45B7C",
-                "#A5864B",
-                "#688094"
-              ]
-            },
-            "legend": {
-              "title": "Reported reason",
-              "orient": "top",
-              "direction": "horizontal",
-              "columns": 3,
-              "labelLimit": 220
-            }
-          },
-          "detail": {
-            "field": "reason"
-          },
-          "order": {
-            "field": "year",
-            "type": "quantitative"
-          },
-          "tooltip": [
-            {
-              "field": "pet_type",
-              "type": "nominal",
-              "title": "Pet type"
-            },
-            {
-              "field": "reason",
-              "type": "nominal",
-              "title": "Reason"
-            },
-            {
-              "field": "year",
-              "type": "quantitative",
-              "title": "Survey year",
-              "format": "d"
-            },
-            {
-              "field": "share_pct",
-              "type": "quantitative",
-              "title": "Share (%)",
-              "format": ".0f"
-            },
-            {
-              "field": "uninsured_owner_base_n",
-              "type": "quantitative",
-              "title": "Uninsured owner base (n)",
-              "format": "d"
-            }
-          ]
-        }
-      },
-      {
-        "mark": {
-          "type": "point",
-          "filled": true,
-          "size": 80,
-          "stroke": "#FBFAF7",
-          "strokeWidth": 1.2
-        },
-        "encoding": {
-          "x": {
-            "field": "year",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                2021,
-                2026
-              ]
-            },
-            "axis": {
-              "title": "Survey year",
-              "values": [
-                2022,
-                2025
-              ],
-              "format": "d",
-              "grid": false,
-              "labelOverlap": false
-            }
-          },
-          "y": {
-            "field": "share_pct",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                0,
-                60
-              ]
-            },
-            "axis": {
-              "title": "Uninsured owners (%)",
-              "values": [
-                0,
-                20,
-                40,
-                60
-              ],
-              "grid": true
-            }
-          },
-          "color": {
-            "field": "reason",
-            "type": "nominal",
-            "sort": [
-              "Too expensive",
-              "Don’t see the value",
-              "Haven’t looked / don’t know much",
-              "Didn’t know it was available",
-              "Other"
-            ],
-            "scale": {
-              "domain": [
-                "Too expensive",
-                "Don’t see the value",
-                "Haven’t looked / don’t know much",
-                "Didn’t know it was available",
-                "Other"
-              ],
-              "range": [
-                "#176B87",
-                "#79558D",
-                "#A45B7C",
-                "#A5864B",
-                "#688094"
-              ]
-            }
-          },
-          "tooltip": [
-            {
-              "field": "pet_type",
-              "type": "nominal",
-              "title": "Pet type"
-            },
-            {
-              "field": "reason",
-              "type": "nominal",
-              "title": "Reason"
-            },
-            {
-              "field": "year",
-              "type": "quantitative",
-              "title": "Survey year",
-              "format": "d"
-            },
-            {
-              "field": "share_pct",
-              "type": "quantitative",
-              "title": "Share (%)",
-              "format": ".0f"
-            },
-            {
-              "field": "uninsured_owner_base_n",
-              "type": "quantitative",
-              "title": "Uninsured owner base (n)",
-              "format": "d"
-            }
-          ]
-        }
-      },
-      {
-        "transform": [
-          {
-            "filter": "datum.year === 2025 && (datum.reason === 'Too expensive' || datum.reason === 'Don’t see the value')"
-          },
-          {
-            "calculate": "format(datum.share_pct, '.0f') + '%'",
-            "as": "label"
-          }
-        ],
-        "mark": {
-          "type": "text",
-          "align": "left",
-          "dx": 7,
-          "dy": -2,
-          "fontSize": 10,
-          "fontWeight": "bold"
-        },
-        "encoding": {
-          "x": {
-            "field": "year",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                2021,
-                2026
-              ]
-            }
-          },
-          "y": {
-            "field": "share_pct",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                0,
-                60
-              ]
-            }
-          },
-          "text": {
-            "field": "label",
-            "type": "nominal"
-          },
-          "color": {
-            "field": "reason",
-            "type": "nominal",
-            "scale": {
-              "domain": [
-                "Too expensive",
-                "Don’t see the value",
-                "Haven’t looked / don’t know much",
-                "Didn’t know it was available",
-                "Other"
-              ],
-              "range": [
-                "#176B87",
-                "#79558D",
-                "#A45B7C",
-                "#A5864B",
-                "#688094"
-              ]
-            }
-          }
-        }
+  "encoding": {
+    "x": {
+      "field": "reporting_period",
+      "type": "ordinal",
+      "sort": [
+        "2023 H2",
+        "2024 H1",
+        "2024 H2",
+        "2025 H1",
+        "2025 H2"
+      ],
+      "axis": {
+        "title": "ASIC reporting half-year",
+        "labelAngle": 0,
+        "labelLimit": 100,
+        "grid": false
       }
-    ]
-  },
-  "resolve": {
-    "scale": {
-      "x": "shared",
-      "y": "shared"
+    },
+    "y": {
+      "field": "rank_num",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          1,
+          10
+        ],
+        "reverse": true,
+        "nice": false
+      },
+      "axis": {
+        "title": "Rank among all issue categories (1 = highest count)",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "format": "d",
+        "grid": true
+      }
+    },
+    "color": {
+      "field": "issue_label",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Premiums",
+          "Claim denial · exclusions",
+          "Terms interpretation",
+          "Service issues",
+          "Claim amount"
+        ],
+        "range": [
+          "#2878B5",
+          "#8064A2",
+          "#2A9D8F",
+          "#BC5090",
+          "#5C677D"
+        ]
+      },
+      "legend": {
+        "title": "Issue category",
+        "orient": "top",
+        "direction": "horizontal",
+        "columns": 3,
+        "labelLimit": 250
+      }
+    },
+    "detail": {
+      "field": "issue"
+    },
+    "order": {
+      "field": "period_num",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "reporting_period",
+        "type": "ordinal",
+        "title": "Reporting period"
+      },
+      {
+        "field": "issue",
+        "type": "nominal",
+        "title": "Issue type"
+      },
+      {
+        "field": "count_num",
+        "type": "quantitative",
+        "title": "Reported complaint count",
+        "format": ",d"
+      },
+      {
+        "field": "rank_num",
+        "type": "quantitative",
+        "title": "Rank among all issue types",
+        "format": "d"
+      }
+    ],
+    "opacity": {
+      "condition": {
+        "test": "datum.issue_label === 'Premiums'",
+        "value": 1
+      },
+      "value": 0.28,
+      "legend": null
     }
   }
 }

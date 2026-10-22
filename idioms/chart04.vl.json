@@ -32,8 +32,8 @@
     "legend": {
       "labelFont": "Arial",
       "titleFont": "Arial",
-      "labelFontSize": 12,
-      "titleFontSize": 12,
+      "labelFontSize": 10,
+      "titleFontSize": 11,
       "labelColor": "#536979",
       "titleColor": "#334F63",
       "orient": "top",
@@ -46,257 +46,340 @@
     "text": {
       "font": "Arial",
       "color": "#173A52"
+    },
+    "facet": {
+      "spacing": 28
     }
   },
   "title": {
-    "text": "Dog and cat household spending, 2025",
-    "subtitle": "Dog minus cat mean at right · hover for annual averages in AUD."
+    "text": "Reasons for not insuring dogs and cats",
+    "subtitle": "Uninsured owners who selected each reason · AMA 2022 and 2025 surveys."
   },
-  "description": "AMA averages include households that spent zero in a category. This compares the 13 shared categories; a source dash means no value was reported.",
+  "description": "Slope chart comparing reasons reported by uninsured dog and cat owners in the AMA 2022 and 2025 surveys. Multiple responses were allowed, so shares do not sum to 100%.",
   "data": {
-    "url": "../data/ama_dog_cat_household_spend_dumbbell_2025.csv",
+    "url": "../data/ama_insurance_barriers_2022_2025.csv",
     "format": {
       "type": "csv"
     }
   },
-  "hconcat": [
-    {
-      "width": 620,
-      "height": 440,
-      "layer": [
-        {
-          "mark": {
-            "type": "rule",
-            "strokeWidth": 3,
-            "opacity": 0.62,
-            "color": "#C4CFD5"
-          },
-          "encoding": {
-            "x": {
-              "field": "cats_num",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  1200
-                ],
-                "type": "symlog",
-                "constant": 100
-              },
-              "axis": {
-                "title": "Average annual household spend (AUD)",
-                "values": [
-                  0,
-                  25,
-                  50,
-                  100,
-                  200,
-                  500,
-                  1000
-                ],
-                "grid": true,
-                "format": "$,d",
-                "labelOverlap": false
-              }
-            },
-            "x2": {
-              "field": "dogs_num"
-            },
-            "y": {
-              "field": "category_label",
-              "type": "ordinal",
-              "sort": {
-                "field": "dogs_num",
-                "order": "descending"
-              },
-              "axis": {
-                "title": null,
-                "labelLimit": 235
-              }
-            },
-            "tooltip": [
-              {
-                "field": "spend_category",
-                "type": "nominal",
-                "title": "Category"
-              },
-              {
-                "field": "dogs_aud",
-                "type": "quantitative",
-                "title": "Dogs (AUD)",
-                "format": "$,d"
-              },
-              {
-                "field": "cats_aud",
-                "type": "quantitative",
-                "title": "Cats (AUD)",
-                "format": "$,d"
-              }
-            ]
-          }
-        },
-        {
-          "transform": [
-            {
-              "fold": [
-                "cats_aud",
-                "dogs_aud"
-              ],
-              "as": [
-                "series",
-                "spend_aud"
-              ]
-            },
-            {
-              "calculate": "datum.series === \"dogs_aud\" ? \"Dogs\" : \"Cats\"",
-              "as": "pet_type"
-            }
-          ],
-          "mark": {
-            "type": "point",
-            "filled": true,
-            "size": 105,
-            "stroke": "#FFFFFF",
-            "strokeWidth": 1.2
-          },
-          "encoding": {
-            "x": {
-              "field": "spend_aud",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  1200
-                ],
-                "type": "symlog",
-                "constant": 100
-              }
-            },
-            "y": {
-              "field": "category_label",
-              "type": "ordinal",
-              "sort": {
-                "field": "dogs_num",
-                "order": "descending"
-              }
-            },
-            "color": {
-              "field": "pet_type",
-              "type": "nominal",
-              "scale": {
-                "domain": [
-                  "Dogs",
-                  "Cats"
-                ],
-                "range": [
-                  "#1F5AA6",
-                  "#A33F73"
-                ]
-              },
-              "legend": {
-                "title": null,
-                "orient": "top"
-              }
-            },
-            "tooltip": [
-              {
-                "field": "spend_category",
-                "type": "nominal",
-                "title": "Category"
-              },
-              {
-                "field": "pet_type",
-                "type": "nominal",
-                "title": "Pet type"
-              },
-              {
-                "field": "spend_aud",
-                "type": "quantitative",
-                "title": "Annual average (AUD)",
-                "format": "$,d"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "width": 84,
-      "height": 440,
-      "transform": [
-        {
-          "calculate": "toNumber(datum.dogs_num) >= toNumber(datum.cats_num) ? \"+$\" + format(toNumber(datum.dogs_num) - toNumber(datum.cats_num), \",d\") : \"−$\" + format(toNumber(datum.cats_num) - toNumber(datum.dogs_num), \",d\")",
-          "as": "difference_label"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "color": "#334F63"
-      },
-      "encoding": {
-        "x": {
-          "datum": 0,
-          "type": "quantitative",
-          "axis": null,
-          "scale": {
-            "domain": [
-              0,
-              1
-            ]
-          }
-        },
-        "y": {
-          "field": "category_label",
-          "type": "ordinal",
-          "sort": {
-            "field": "dogs_num",
-            "order": "descending"
-          },
-          "axis": null
-        },
-        "text": {
-          "field": "difference_label",
-          "type": "nominal"
-        },
-        "tooltip": [
-          {
-            "field": "spend_category",
-            "type": "nominal",
-            "title": "Category"
-          },
-          {
-            "field": "dogs_aud",
-            "type": "quantitative",
-            "title": "Dogs (AUD)",
-            "format": "$,d"
-          },
-          {
-            "field": "cats_aud",
-            "type": "quantitative",
-            "title": "Cats (AUD)",
-            "format": "$,d"
-          }
-        ]
-      }
-    }
-  ],
-  "resolve": {
-    "scale": {
-      "y": "shared"
+  "facet": {
+    "field": "pet_type",
+    "type": "nominal",
+    "sort": [
+      "Dog",
+      "Cat"
+    ],
+    "columns": 2,
+    "header": {
+      "title": null,
+      "labelFontSize": 15,
+      "labelFontWeight": "bold",
+      "labelColor": "#173A52"
     }
   },
-  "spacing": 12,
-  "transform": [
-    {
-      "calculate": "toNumber(datum.dogs_aud)",
-      "as": "dogs_num"
-    },
-    {
-      "calculate": "toNumber(datum.cats_aud)",
-      "as": "cats_num"
+  "spec": {
+    "width": 420,
+    "height": 290,
+    "layer": [
+      {
+        "mark": {
+          "type": "line",
+          "strokeWidth": 2.5,
+          "opacity": 0.88
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                2021,
+                2026
+              ]
+            },
+            "axis": {
+              "title": "Survey year",
+              "values": [
+                2022,
+                2025
+              ],
+              "format": "d",
+              "grid": false,
+              "labelOverlap": false
+            }
+          },
+          "y": {
+            "field": "share_pct",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                60
+              ]
+            },
+            "axis": {
+              "title": "Uninsured owners (%)",
+              "values": [
+                0,
+                20,
+                40,
+                60
+              ],
+              "grid": true
+            }
+          },
+          "color": {
+            "field": "reason",
+            "type": "nominal",
+            "sort": [
+              "Too expensive",
+              "Don’t see the value",
+              "Haven’t looked / don’t know much",
+              "Didn’t know it was available",
+              "Other"
+            ],
+            "scale": {
+              "domain": [
+                "Too expensive",
+                "Don’t see the value",
+                "Haven’t looked / don’t know much",
+                "Didn’t know it was available",
+                "Other"
+              ],
+              "range": [
+                "#176B87",
+                "#79558D",
+                "#A45B7C",
+                "#A5864B",
+                "#688094"
+              ]
+            },
+            "legend": {
+              "title": "Reported reason",
+              "orient": "top",
+              "direction": "horizontal",
+              "columns": 3,
+              "labelLimit": 220
+            }
+          },
+          "detail": {
+            "field": "reason"
+          },
+          "order": {
+            "field": "year",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "pet_type",
+              "type": "nominal",
+              "title": "Pet type"
+            },
+            {
+              "field": "reason",
+              "type": "nominal",
+              "title": "Reason"
+            },
+            {
+              "field": "year",
+              "type": "quantitative",
+              "title": "Survey year",
+              "format": "d"
+            },
+            {
+              "field": "share_pct",
+              "type": "quantitative",
+              "title": "Share (%)",
+              "format": ".0f"
+            },
+            {
+              "field": "uninsured_owner_base_n",
+              "type": "quantitative",
+              "title": "Uninsured owner base (n)",
+              "format": "d"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "size": 80,
+          "stroke": "#FBFAF7",
+          "strokeWidth": 1.2
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                2021,
+                2026
+              ]
+            },
+            "axis": {
+              "title": "Survey year",
+              "values": [
+                2022,
+                2025
+              ],
+              "format": "d",
+              "grid": false,
+              "labelOverlap": false
+            }
+          },
+          "y": {
+            "field": "share_pct",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                60
+              ]
+            },
+            "axis": {
+              "title": "Uninsured owners (%)",
+              "values": [
+                0,
+                20,
+                40,
+                60
+              ],
+              "grid": true
+            }
+          },
+          "color": {
+            "field": "reason",
+            "type": "nominal",
+            "sort": [
+              "Too expensive",
+              "Don’t see the value",
+              "Haven’t looked / don’t know much",
+              "Didn’t know it was available",
+              "Other"
+            ],
+            "scale": {
+              "domain": [
+                "Too expensive",
+                "Don’t see the value",
+                "Haven’t looked / don’t know much",
+                "Didn’t know it was available",
+                "Other"
+              ],
+              "range": [
+                "#176B87",
+                "#79558D",
+                "#A45B7C",
+                "#A5864B",
+                "#688094"
+              ]
+            }
+          },
+          "tooltip": [
+            {
+              "field": "pet_type",
+              "type": "nominal",
+              "title": "Pet type"
+            },
+            {
+              "field": "reason",
+              "type": "nominal",
+              "title": "Reason"
+            },
+            {
+              "field": "year",
+              "type": "quantitative",
+              "title": "Survey year",
+              "format": "d"
+            },
+            {
+              "field": "share_pct",
+              "type": "quantitative",
+              "title": "Share (%)",
+              "format": ".0f"
+            },
+            {
+              "field": "uninsured_owner_base_n",
+              "type": "quantitative",
+              "title": "Uninsured owner base (n)",
+              "format": "d"
+            }
+          ]
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.year === 2025 && (datum.reason === 'Too expensive' || datum.reason === 'Don’t see the value')"
+          },
+          {
+            "calculate": "format(datum.share_pct, '.0f') + '%'",
+            "as": "label"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 7,
+          "dy": -2,
+          "fontSize": 10,
+          "fontWeight": "bold"
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                2021,
+                2026
+              ]
+            }
+          },
+          "y": {
+            "field": "share_pct",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                60
+              ]
+            }
+          },
+          "text": {
+            "field": "label",
+            "type": "nominal"
+          },
+          "color": {
+            "field": "reason",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Too expensive",
+                "Don’t see the value",
+                "Haven’t looked / don’t know much",
+                "Didn’t know it was available",
+                "Other"
+              ],
+              "range": [
+                "#176B87",
+                "#79558D",
+                "#A45B7C",
+                "#A5864B",
+                "#688094"
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
     }
-  ]
+  }
 }
