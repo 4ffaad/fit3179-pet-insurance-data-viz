@@ -32,8 +32,8 @@
     "legend": {
       "labelFont": "Arial",
       "titleFont": "Arial",
-      "labelFontSize": 10,
-      "titleFontSize": 11,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
       "labelColor": "#536979",
       "titleColor": "#334F63",
       "orient": "top",
@@ -52,334 +52,234 @@
     }
   },
   "title": {
-    "text": "Cost remains the leading reason for going uninsured",
-    "subtitle": "In 2025, 50% of dog owners and 49% of cat owners cited cost; low perceived value rose 11 points for cats."
+    "text": "PetSure’s top-ten conditions differ by species",
+    "subtitle": "2025 average claim amounts · grey crosses mean “not listed”, not zero."
   },
-  "description": "Slope chart comparing reasons reported by uninsured dog and cat owners in the AMA 2022 and 2025 surveys. Multiple responses were allowed, so shares do not sum to 100%.",
+  "description": "Each column is one species and each row is a condition published in the PetSure top-ten lists. Cell color shows the reported average claim amount; the highest claim is available on hover. A grey cross means that condition is not in that species’ published top ten. It does not mean zero claims or clinical incidence. PetSure claims cover its insured pets only.",
   "data": {
-    "url": "../data/ama_insurance_barriers_2022_2025.csv",
+    "url": "../data/petsure_condition_cost_matrix_2025.csv",
     "format": {
       "type": "csv"
     }
   },
-  "facet": {
-    "field": "pet_type",
-    "type": "nominal",
-    "sort": [
-      "Dog",
-      "Cat"
-    ],
-    "columns": 2,
-    "header": {
-      "title": null,
-      "labelFontSize": 15,
-      "labelFontWeight": "bold",
-      "labelColor": "#173A52"
+  "transform": [
+    {
+      "calculate": "datum.average_cost_aud === \"\" ? null : toNumber(datum.average_cost_aud)",
+      "as": "average_num"
     }
-  },
-  "spec": {
-    "width": 420,
-    "height": 290,
-    "layer": [
-      {
-        "mark": {
-          "type": "line",
-          "strokeWidth": 2.5,
-          "opacity": 0.88
+  ],
+  "width": 760,
+  "height": 520,
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#FBFAF7",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "species",
+          "type": "ordinal",
+          "sort": [
+            "Dog",
+            "Cat"
+          ],
+          "axis": {
+            "orient": "top",
+            "title": null,
+            "labelAngle": 0,
+            "labelFontWeight": "bold",
+            "labelFontSize": 13
+          }
         },
-        "encoding": {
-          "x": {
-            "field": "year",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                2021,
-                2026
-              ]
-            },
-            "axis": {
-              "title": "Survey year",
-              "values": [
-                2022,
-                2025
-              ],
-              "format": "d",
-              "grid": false,
-              "labelOverlap": false
-            }
-          },
-          "y": {
-            "field": "share_pct",
+        "y": {
+          "field": "condition_axis",
+          "type": "ordinal",
+          "sort": [
+            "Heart / circulatory",
+            "Urinary tract",
+            "Dental",
+            "Mass lesions",
+            "Gastrointestinal",
+            "Osteoarthritis",
+            "Fight / bite wounds",
+            "Skin / allergies",
+            "Musculoskeletal",
+            "Respiratory",
+            "Eye conditions",
+            "Ear infections",
+            "Anal sac",
+            "Behavioural"
+          ],
+          "axis": {
+            "title": null,
+            "labelLimit": 190,
+            "labelFontSize": 11
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "isValid(datum.average_num)",
+            "field": "average_num",
             "type": "quantitative",
             "scale": {
               "domain": [
                 0,
-                60
-              ]
-            },
-            "axis": {
-              "title": "Uninsured owners (%)",
-              "values": [
-                0,
-                20,
-                40,
-                60
-              ],
-              "grid": true
-            }
-          },
-          "color": {
-            "field": "reason",
-            "type": "nominal",
-            "sort": [
-              "Too expensive",
-              "Don’t see the value",
-              "Haven’t looked / don’t know much",
-              "Didn’t know it was available",
-              "Other"
-            ],
-            "scale": {
-              "domain": [
-                "Too expensive",
-                "Don’t see the value",
-                "Haven’t looked / don’t know much",
-                "Didn’t know it was available",
-                "Other"
+                1700
               ],
               "range": [
-                "#176B87",
-                "#79558D",
-                "#A45B7C",
-                "#A5864B",
-                "#688094"
+                "#F5F4F8",
+                "#D5D3E2",
+                "#AAA9CB",
+                "#7C80AE",
+                "#525F93",
+                "#2E456F"
               ]
             },
             "legend": {
-              "title": "Reported reason",
+              "title": "Average claim amount (AUD)",
               "orient": "top",
-              "direction": "horizontal",
-              "columns": 3,
-              "labelLimit": 220
-            }
-          },
-          "detail": {
-            "field": "reason"
-          },
-          "order": {
-            "field": "year",
-            "type": "quantitative"
-          },
-          "tooltip": [
-            {
-              "field": "pet_type",
-              "type": "nominal",
-              "title": "Pet type"
-            },
-            {
-              "field": "reason",
-              "type": "nominal",
-              "title": "Reason"
-            },
-            {
-              "field": "year",
-              "type": "quantitative",
-              "title": "Survey year",
-              "format": "d"
-            },
-            {
-              "field": "share_pct",
-              "type": "quantitative",
-              "title": "Share (%)",
-              "format": ".0f"
-            },
-            {
-              "field": "uninsured_owner_base_n",
-              "type": "quantitative",
-              "title": "Uninsured owner base (n)",
-              "format": "d"
-            }
-          ]
-        }
-      },
-      {
-        "mark": {
-          "type": "point",
-          "filled": true,
-          "size": 80,
-          "stroke": "#FBFAF7",
-          "strokeWidth": 1.2
-        },
-        "encoding": {
-          "x": {
-            "field": "year",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                2021,
-                2026
-              ]
-            },
-            "axis": {
-              "title": "Survey year",
-              "values": [
-                2022,
-                2025
-              ],
-              "format": "d",
-              "grid": false,
-              "labelOverlap": false
-            }
-          },
-          "y": {
-            "field": "share_pct",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                0,
-                60
-              ]
-            },
-            "axis": {
-              "title": "Uninsured owners (%)",
+              "format": "$,d",
               "values": [
                 0,
-                20,
-                40,
-                60
+                400,
+                800,
+                1200,
+                1600
               ],
-              "grid": true
+              "gradientLength": 280
             }
           },
-          "color": {
-            "field": "reason",
-            "type": "nominal",
-            "sort": [
-              "Too expensive",
-              "Don’t see the value",
-              "Haven’t looked / don’t know much",
-              "Didn’t know it was available",
-              "Other"
-            ],
-            "scale": {
-              "domain": [
-                "Too expensive",
-                "Don’t see the value",
-                "Haven’t looked / don’t know much",
-                "Didn’t know it was available",
-                "Other"
-              ],
-              "range": [
-                "#176B87",
-                "#79558D",
-                "#A45B7C",
-                "#A5864B",
-                "#688094"
-              ]
-            }
-          },
-          "tooltip": [
-            {
-              "field": "pet_type",
-              "type": "nominal",
-              "title": "Pet type"
-            },
-            {
-              "field": "reason",
-              "type": "nominal",
-              "title": "Reason"
-            },
-            {
-              "field": "year",
-              "type": "quantitative",
-              "title": "Survey year",
-              "format": "d"
-            },
-            {
-              "field": "share_pct",
-              "type": "quantitative",
-              "title": "Share (%)",
-              "format": ".0f"
-            },
-            {
-              "field": "uninsured_owner_base_n",
-              "type": "quantitative",
-              "title": "Uninsured owner base (n)",
-              "format": "d"
-            }
-          ]
-        }
-      },
-      {
-        "transform": [
-          {
-            "filter": "datum.year === 2025 && (datum.reason === 'Too expensive' || datum.reason === 'Don’t see the value')"
-          },
-          {
-            "calculate": "format(datum.share_pct, '.0f') + '%'",
-            "as": "label"
-          }
-        ],
-        "mark": {
-          "type": "text",
-          "align": "left",
-          "dx": 7,
-          "dy": -2,
-          "fontSize": 10,
-          "fontWeight": "bold"
+          "value": "#D1D0CD"
         },
-        "encoding": {
-          "x": {
-            "field": "year",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                2021,
-                2026
-              ]
-            }
-          },
-          "y": {
-            "field": "share_pct",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                0,
-                60
-              ]
-            }
-          },
-          "text": {
-            "field": "label",
-            "type": "nominal"
-          },
-          "color": {
-            "field": "reason",
+        "tooltip": [
+          {
+            "field": "species",
             "type": "nominal",
-            "scale": {
-              "domain": [
-                "Too expensive",
-                "Don’t see the value",
-                "Haven’t looked / don’t know much",
-                "Didn’t know it was available",
-                "Other"
-              ],
-              "range": [
-                "#176B87",
-                "#79558D",
-                "#A45B7C",
-                "#A5864B",
-                "#688094"
-              ]
-            }
+            "title": "Species"
+          },
+          {
+            "field": "condition",
+            "type": "nominal",
+            "title": "Condition"
+          },
+          {
+            "field": "value_label",
+            "type": "nominal",
+            "title": "Published average claim"
+          },
+          {
+            "field": "average_num",
+            "type": "quantitative",
+            "title": "Average claim amount (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "highest_cost_aud",
+            "type": "quantitative",
+            "title": "Highest single claim (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "rank",
+            "type": "quantitative",
+            "title": "Rank in species list",
+            "format": "d"
+          },
+          {
+            "field": "cell_status",
+            "type": "nominal",
+            "title": "Listing status"
           }
-        }
+        ]
       }
-    ]
-  },
-  "resolve": {
-    "scale": {
-      "x": "shared",
-      "y": "shared"
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.cell_status !== 'In top 10'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": "×",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "color": "#667681",
+        "baseline": "middle",
+        "align": "center"
+      },
+      "encoding": {
+        "x": {
+          "field": "species",
+          "type": "ordinal",
+          "sort": [
+            "Dog",
+            "Cat"
+          ]
+        },
+        "y": {
+          "field": "condition_axis",
+          "type": "ordinal",
+          "sort": [
+            "Heart / circulatory",
+            "Urinary tract",
+            "Dental",
+            "Mass lesions",
+            "Gastrointestinal",
+            "Osteoarthritis",
+            "Fight / bite wounds",
+            "Skin / allergies",
+            "Musculoskeletal",
+            "Respiratory",
+            "Eye conditions",
+            "Ear infections",
+            "Anal sac",
+            "Behavioural"
+          ]
+        },
+        "tooltip": [
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "condition",
+            "type": "nominal",
+            "title": "Condition"
+          },
+          {
+            "field": "value_label",
+            "type": "nominal",
+            "title": "Published average claim"
+          },
+          {
+            "field": "average_num",
+            "type": "quantitative",
+            "title": "Average claim amount (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "highest_cost_aud",
+            "type": "quantitative",
+            "title": "Highest single claim (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "rank",
+            "type": "quantitative",
+            "title": "Rank in species list",
+            "format": "d"
+          },
+          {
+            "field": "cell_status",
+            "type": "nominal",
+            "title": "Listing status"
+          }
+        ]
+      }
     }
-  }
+  ]
 }

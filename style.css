@@ -155,12 +155,11 @@ main { padding-top: 32px; }
 .section-index { grid-column: 1 / -1; margin-bottom: 9px; color: var(--blue); }
 .section-index span { color: var(--cat); }
 .section-heading h2 { max-width: 21ch; margin: 0; color: var(--blue-deep); font-size: clamp(1.8rem, 3vw, 2.65rem); letter-spacing: -0.025em; }
-.section-heading > p { max-width: 39ch; margin: 0 0 3px; color: var(--muted); font-size: 0.98rem; line-height: 1.45; }
+.section-heading > p { justify-self: end; max-width: 39ch; margin: 0 0 3px; color: var(--muted); font-size: 0.98rem; line-height: 1.45; text-align: right; }
 
 .chart-grid { display: grid; min-width: 0; gap: 18px; align-items: stretch; margin-bottom: 18px; }
 .two-up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.opening-grid { grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr); }
-.cost-grid { grid-template-columns: minmax(0, 1fr); }
+.opening-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .chart-figure {
   display: flex;
   min-width: 0;
@@ -184,6 +183,19 @@ main { padding-top: 32px; }
   text-transform: uppercase;
 }
 .figure-kicker span:first-child { color: var(--blue); }
+.chart-annotation {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin: 0 0 6px;
+  padding: 7px 10px;
+  border-left: 3px solid var(--teal);
+  background: #f0f5f3;
+  color: var(--ink);
+  font-size: 0.83rem;
+  line-height: 1.35;
+}
+.annotation-label { flex: 0 0 auto; color: #246b65; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .chart-host { display: block; width: 100%; min-width: 0; }
 .chart-host .vega-embed, .chart-host .vega-embed > div { width: 100%; }
 .chart-host svg, .chart-host canvas { display: block; max-width: 100%; height: auto; margin-inline: auto; }
@@ -256,9 +268,10 @@ main { padding-top: 32px; }
   .stat-value { font-size: 2rem; }
   .section-heading { display: block; }
   .section-heading h2 { margin-bottom: 8px; }
-  .section-heading > p { max-width: 42ch; }
+  .section-heading > p { max-width: 42ch; margin-left: 0; text-align: left; }
   .story-section { padding-block: 36px 30px; }
   .chart-figure { padding: 12px; }
+  .chart-annotation { align-items: flex-start; gap: 7px; padding: 7px 8px; font-size: 0.78rem; }
   .chart-host--left-labels .vega-embed, .chart-host--left-labels .vega-embed > div { min-width: 690px; }
   .chart-figure figcaption { font-size: 0.76rem; }
   .method-details { padding: 15px; }

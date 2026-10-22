@@ -52,8 +52,8 @@
     }
   },
   "title": {
-    "text": "Pets are part of nearly three in four Australian homes",
-    "subtitle": "73% have a pet · 27% do not, rounded to whole percentages."
+    "text": "Australian household pet ownership",
+    "subtitle": "73% own a pet; 27% do not · rounded to whole percentages."
   },
   "description": "Each tile represents one percentage point in the 2025 headline estimate, not one household. The detailed table totals 99.8% after rounding.",
   "data": {

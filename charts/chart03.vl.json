@@ -52,8 +52,8 @@
     }
   },
   "title": {
-    "text": "Ownership rose by 2022, then edged up",
-    "subtitle": "Share of Australian households with dogs or cats · AMA waves, 2019–2025."
+    "text": "Dog and cat ownership, 2019–2025",
+    "subtitle": "Share of Australian households owning each animal · AMA survey waves."
   },
   "description": "National household penetration estimates from AMA report waves. Historical 2019 and 2022 shares are reported as whole percentages; 2025 estimates use one decimal place. Dog and cat households overlap.",
   "data": {

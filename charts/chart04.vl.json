@@ -52,8 +52,8 @@
     }
   },
   "title": {
-    "text": "Dog-owning households report higher annual spend in shared categories",
-    "subtitle": "Dog minus cat mean difference at right · hover for each annual average (AUD)."
+    "text": "Dog and cat household spending, 2025",
+    "subtitle": "Dog minus cat mean at right · hover for annual averages in AUD."
   },
   "description": "AMA averages include households that spent zero in a category. This compares the 13 shared categories; a source dash means no value was reported.",
   "data": {

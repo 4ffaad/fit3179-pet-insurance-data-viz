@@ -7,7 +7,7 @@
     <meta name="author" content="Daffa Fariq Prasetyo 34076492" />
     <title>Australia’s pets: care, costs and cover</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./style.css?v=20261020-3" />
+    <link rel="stylesheet" href="./style.css?v=20261022-1" />
     <script defer src="https://cdn.jsdelivr.net/npm/vega@5.22.1/build/vega.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.0/build/vega-lite.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0/build/vega-embed.min.js"></script>
@@ -71,66 +71,60 @@
         <div class="section-heading">
           <div class="section-index">01 <span>·</span> The scale of pet ownership</div>
           <h2 id="ownership-title">Pets are part of most Australian homes</h2>
-          <p>Explore the household share, animal mix and recent change.</p>
+          <p>Household share, animal mix and recent ownership change.</p>
         </div>
         <div class="chart-grid opening-grid">
           <figure class="chart-figure" id="chart-01">
             <div class="figure-kicker"><span>Chart 01</span><span>Household share</span></div>
-            <div class="chart-host" data-spec="./charts/chart01.vl.json" aria-label="Waffle chart: 73 percent of Australian households have pets" aria-busy="true"></div>
+            <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>Nearly three in four Australian homes have a pet.</span></p>
+            <div class="chart-host" data-spec="./charts/chart01.vl.json?v=20261022-1" aria-label="Waffle chart: 73 percent of Australian households have pets" aria-busy="true"></div>
             <figcaption>Each tile represents one percentage point. Shares are rounded.</figcaption>
           </figure>
           <figure class="chart-figure" id="chart-02">
             <div class="figure-kicker"><span>Chart 02</span><span>Population mix</span></div>
-            <div class="chart-host" data-spec="./charts/chart02.vl.json" aria-label="Treemap of Australia's estimated pet population by animal type" aria-busy="true"></div>
+            <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>Fish outnumber dogs: 12.14 million versus 7.37 million.</span></p>
+            <div class="chart-host" data-spec="./charts/chart02.vl.json?v=20261022-1" aria-label="Treemap of Australia's estimated pet population by animal type" aria-busy="true"></div>
             <figcaption>Tile area shows estimated animal counts. Household shares overlap across pet types.</figcaption>
           </figure>
         </div>
         <figure class="chart-figure chart-figure-wide" id="chart-03">
           <div class="figure-kicker"><span>Chart 03</span><span>2019, 2022 and 2025</span></div>
-          <div class="chart-host" data-spec="./charts/chart03.vl.json" aria-label="Line chart comparing dog and cat household ownership in the 2019, 2022 and 2025 AMA survey waves" aria-busy="true"></div>
+          <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>Dog ownership gained 9.3 percentage points since 2019.</span></p>
+          <div class="chart-host" data-spec="./charts/chart03.vl.json?v=20261022-1" aria-label="Line chart comparing dog and cat household ownership in the 2019, 2022 and 2025 AMA survey waves" aria-busy="true"></div>
           <figcaption>Ownership growth slowed between 2022 and 2025.</figcaption>
         </figure>
       </section>
 
       <section class="story-section" id="household-costs" aria-labelledby="costs-title">
         <div class="section-heading">
-          <div class="section-index">02 <span>·</span> Household spending and care pressure</div>
-          <h2 id="costs-title">Care spending differs by pet type</h2>
-          <p>Annual averages show where dog and cat budgets diverge.</p>
+          <div class="section-index">02 <span>·</span> Household spending</div>
+          <h2 id="costs-title">Dog households spend more on care</h2>
+          <p>Annual dog and cat averages across shared categories.</p>
         </div>
-        <div class="chart-grid two-up cost-grid">
-          <figure class="chart-figure" id="chart-04">
-            <div class="figure-kicker"><span>Chart 04</span><span>Dogs and cats</span></div>
-            <div class="chart-host chart-host--left-labels" data-spec="./charts/chart04.vl.json" aria-label="Dumbbell plot comparing dog and cat household spending in shared categories" aria-busy="true"></div>
-            <figcaption>Means include households reporting no spend in a category.</figcaption>
-          </figure>
-          <figure class="chart-figure" id="chart-05">
-            <div class="figure-kicker"><span>Chart 05</span><span>Spending by category</span></div>
-            <div class="chart-host chart-host--left-labels" data-spec="./charts/chart05.vl.json" aria-label="Heatmap of average household spending by pet type and category" aria-busy="true"></div>
-            <figcaption>Crosses mean no value was reported, not zero. Reptiles peak at A$692; n = 69.</figcaption>
-          </figure>
-        </div>
-        <figure class="chart-figure chart-figure-wide" id="chart-06">
-          <div class="figure-kicker"><span>Chart 06</span><span>Help with veterinary bills</span></div>
-          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart06.vl.json" aria-label="Lollipop chart showing the share of pet owners needing financial help for veterinary care" aria-busy="true"></div>
-          <figcaption>Some subgroup sample sizes were not published.</figcaption>
+        <figure class="chart-figure chart-figure-wide" id="chart-04">
+          <div class="figure-kicker"><span>Chart 04</span><span>Dogs and cats</span></div>
+          <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>Dog households spend A$75 more yearly on insurance.</span></p>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart04.vl.json?v=20261022-1" aria-label="Dumbbell plot comparing dog and cat household spending in shared categories" aria-busy="true"></div>
+          <figcaption>Means include households reporting no spend in a category.</figcaption>
         </figure>
       </section>
 
       <section class="story-section" id="insurance" aria-labelledby="insurance-title">
         <div class="section-heading">
           <div class="section-index">03 <span>·</span> Insurance access and issues</div>
-          <h2 id="insurance-title">Affordability shapes insurance choices</h2>
-          <p>The survey and complaint charts measure different things.</p>
+          <h2 id="insurance-title">Cost shapes insurance decisions and complaints</h2>
+          <p>Survey and regulator data reveal separate pressures.</p>
         </div>
-        <figure class="chart-figure chart-figure-wide" id="chart-07">
-          <div class="figure-kicker"><span>Chart 07</span><span>Reasons owners go uninsured</span></div>
-          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart07.vl.json" aria-label="Slope chart comparing reasons uninsured dog and cat owners reported in the 2022 and 2025 AMA surveys" aria-busy="true"></div>
+        <figure class="chart-figure chart-figure-wide" id="chart-05">
+          <div class="figure-kicker"><span>Chart 05</span><span>Reasons owners go uninsured</span></div>
+          <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>Cost remains the leading reason owners go uninsured.</span></p>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart05.vl.json?v=20261022-1" aria-label="Slope chart comparing reasons uninsured dog and cat owners reported in the 2022 and 2025 AMA surveys" aria-busy="true"></div>
           <figcaption>Among uninsured owners; multiple responses were allowed.</figcaption>
         </figure>
-        <figure class="chart-figure chart-figure-wide" id="chart-08">
-          <div class="figure-kicker"><span>Chart 08</span><span>Reported complaint ranks</span></div>
-          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart08.vl.json" aria-label="Bump chart ranking pet and horse insurance issue categories in ASIC internal dispute data from 2023 to 2025" aria-busy="true"></div>
+        <figure class="chart-figure chart-figure-wide" id="chart-06">
+          <div class="figure-kicker"><span>Chart 06</span><span>Reported complaint ranks</span></div>
+          <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>Premium complaints ranked first in all five periods.</span></p>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart06.vl.json?v=20261022-1" aria-label="Bump chart ranking pet and horse insurance issue categories in ASIC internal dispute data from 2023 to 2025" aria-busy="true"></div>
           <figcaption>Premiums stay at rank 1; other issue lines are muted. One complaint may list several issues.</figcaption>
         </figure>
       </section>
@@ -138,22 +132,19 @@
       <section class="story-section" id="claims" aria-labelledby="claims-title">
         <div class="section-heading">
           <div class="section-index">04 <span>·</span> Insured claims and conditions</div>
-          <h2 id="claims-title">Claim costs vary across time and conditions</h2>
-          <p>PetSure claims describe its insured pets, not all Australian animals.</p>
+          <h2 id="claims-title">Conditions differ by species and life stage</h2>
+          <p>PetSure claims describe insured pets, not all Australian animals.</p>
         </div>
-        <figure class="chart-figure chart-figure-wide" id="chart-09">
-          <div class="figure-kicker"><span>Chart 09</span><span>Gastroenteritis costs</span></div>
-          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart09.vl.json" aria-label="Line chart of average PetSure gastroenteritis treatment costs for dogs and cats from 2014 to 2024, with labeled axes and a species legend" aria-busy="true"></div>
-          <figcaption>Average amount claimed per policy; nominal AUD, not adjusted for inflation.</figcaption>
-        </figure>
-        <figure class="chart-figure chart-figure-wide" id="chart-10">
-          <div class="figure-kicker"><span>Chart 10</span><span>Conditions by species</span></div>
-          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart10.vl.json" aria-label="Heatmap comparing average PetSure claim amounts for conditions listed in the 2025 dog and cat top tens" aria-busy="true"></div>
+        <figure class="chart-figure chart-figure-wide" id="chart-07">
+          <div class="figure-kicker"><span>Chart 07</span><span>Conditions by species</span></div>
+          <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>Cat urinary and heart claims average above A$1,400.</span></p>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart07.vl.json?v=20261022-1" aria-label="Heatmap comparing average PetSure claim amounts for conditions listed in the 2025 dog and cat top tens" aria-busy="true"></div>
           <figcaption>Colour shows average claim. Grey crosses mean the species’ top ten did not list that condition.</figcaption>
         </figure>
-        <figure class="chart-figure chart-figure-wide" id="chart-11">
-          <div class="figure-kicker"><span>Chart 11</span><span>PetSure rankings by age and species</span></div>
-          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart11.vl.json" aria-label="Alluvial diagram linking dog and cat species to life stage and the published top-three condition groups" aria-busy="true"></div>
+        <figure class="chart-figure chart-figure-wide" id="chart-08">
+          <div class="figure-kicker"><span>Chart 08</span><span>PetSure rankings by age and species</span></div>
+          <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>Gastrointestinal appears in all six top-three lists.</span></p>
+          <div class="chart-host chart-host--left-labels" data-spec="./charts/chart08.vl.json?v=20261022-1" aria-label="Alluvial diagram linking dog and cat species to life stage and the published top-three condition groups" aria-busy="true"></div>
           <figcaption>Each ribbon links one published rank entry; the report does not track pets across life stages.</figcaption>
         </figure>
       </section>
@@ -161,24 +152,27 @@
       <section class="story-section geography-section" id="state-patterns" aria-labelledby="state-title">
         <div class="section-heading">
           <div class="section-index">05 <span>·</span> Australian state patterns</div>
-          <h2 id="state-title">State views answer different questions</h2>
-          <p>Quotes, insured incidents and population use distinct measures.</p>
+          <h2 id="state-title">Quotes and claims vary across states</h2>
+          <p>Three maps compare sample prices, incidents and population.</p>
         </div>
         <div class="chart-grid two-up map-pair">
           <figure class="chart-figure" id="map-01">
             <div class="figure-kicker"><span>Map 01</span><span>Sample quote prices</span></div>
+            <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>Western Australia is highest at A$1,356 per year.</span></p>
             <div class="chart-host" data-spec="./maps/map01.vl.json" aria-label="Australian state choropleth of average dog insurance quote prices in a 16,652 quote panel" aria-busy="true"></div>
             <figcaption>Grey means no matched quote. These prices are not policy uptake.</figcaption>
           </figure>
           <figure class="chart-figure" id="map-02">
             <div class="figure-kicker"><span>Map 02</span><span>Insured incidents</span></div>
+            <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>New South Wales: 420 reports; Northern Territory: four.</span></p>
             <div class="chart-host" data-spec="./maps/map02.vl.json" aria-label="Proportional symbol map of PetSure motor-vehicle and bike accident claims by state in 2024" aria-busy="true"></div>
             <figcaption>Circle area shows reported claims. State population is not a denominator.</figcaption>
           </figure>
         </div>
         <figure class="chart-figure chart-figure-wide cartogram-figure" id="map-03">
           <div class="figure-kicker"><span>Map 03</span><span>Population cartogram</span></div>
-          <div class="chart-host" data-spec="./maps/map03.vl.json" aria-label="Australia state area cartogram sized by 2026 population and coloured by sampled dog-cat quote gap" aria-busy="true"></div>
+          <p class="chart-annotation"><span class="annotation-label">Key finding</span><span>Dog quotes exceed cat quotes across all eight jurisdictions.</span></p>
+          <div class="chart-host" data-spec="./maps/map03.vl.json?v=20261022-1" aria-label="Australia state area cartogram sized by 2026 population and coloured by sampled dog-cat quote gap" aria-busy="true"></div>
           <figcaption>Each hex represents about 53,700 residents; fill shows the sampled dog–cat quote gap.</figcaption>
         </figure>
       </section>
@@ -210,7 +204,6 @@
             <ol>
               <li><a href="https://animalmedicinesaustralia.org.au/resources/pets-in-australia-a-national-survey-of-pets-and-people-3/">Animal Medicines Australia, <em>Pets in Australia 2025</em>.</a></li>
               <li><a href="https://petsure.com.au/pet-health-monitor/">PetSure, <em>Australian Pet Health Monitor 2026</em>.</a></li>
-              <li><a href="https://petsure.com.au/knowledge-hub/gastro-in-pets/">PetSure, gastroenteritis treatment costs, 2014–2024.</a></li>
               <li><a href="https://petsure.com.au/knowledge-hub/top-health-conditions-2025-dogs/">PetSure, 2025 dog claim conditions.</a></li>
               <li><a href="https://petsure.com.au/knowledge-hub/common-cat-health-conditions-2025/">PetSure, 2025 cat claim conditions.</a></li>
               <li><a href="https://petsure.com.au/wp-content/uploads/2024/07/PHM-2025_VD-03-1.pdf">PetSure, <em>Pets &amp; Road Safety</em>, 2025 report.</a></li>
