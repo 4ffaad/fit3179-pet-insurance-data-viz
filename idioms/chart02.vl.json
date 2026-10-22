@@ -15,20 +15,6 @@
       "subtitleColor": "#687988",
       "offset": 14
     },
-    "axis": {
-      "labelFont": "Arial",
-      "titleFont": "Arial",
-      "labelFontSize": 12,
-      "titleFontSize": 13,
-      "labelColor": "#5B6F7E",
-      "titleColor": "#334F63",
-      "domainColor": "#D4DEE4",
-      "tickColor": "#D4DEE4",
-      "gridColor": "#E8EDF0",
-      "gridOpacity": 0.9,
-      "labelLimit": 260,
-      "titlePadding": 10
-    },
     "legend": {
       "labelFont": "Arial",
       "titleFont": "Arial",
@@ -46,9 +32,6 @@
     "text": {
       "font": "Arial",
       "color": "#173A52"
-    },
-    "facet": {
-      "spacing": 28
     }
   },
   "title": {
