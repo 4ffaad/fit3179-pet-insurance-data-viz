@@ -1,0 +1,237 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FBFAF7",
+  "config": {
+    "font": "Arial",
+    "background": "#FBFAF7",
+    "title": {
+      "font": "Georgia",
+      "fontSize": 22,
+      "fontWeight": "normal",
+      "anchor": "start",
+      "color": "#173A52",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 13,
+      "subtitleColor": "#687988",
+      "offset": 14
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#5B6F7E",
+      "titleColor": "#334F63",
+      "domainColor": "#D4DEE4",
+      "tickColor": "#D4DEE4",
+      "gridColor": "#E8EDF0",
+      "gridOpacity": 0.9,
+      "labelLimit": 260,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelColor": "#536979",
+      "titleColor": "#334F63",
+      "orient": "top",
+      "direction": "horizontal",
+      "padding": 4
+    },
+    "text": {
+      "font": "Arial",
+      "color": "#173A52"
+    }
+  },
+  "title": {
+    "text": "Dog and cat ownership, 2019–2025",
+    "subtitle": "Share of Australian households owning each animal · AMA survey waves."
+  },
+  "data": {
+    "url": "../data/ama_pet_ownership_slope_2019_2025.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "width": 1000,
+  "height": 430,
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 4,
+        "point": {
+          "filled": true,
+          "size": 110
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              2019,
+              2027
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": "AMA survey year",
+            "values": [
+              2019,
+              2022,
+              2027
+            ],
+            "format": "d",
+            "labelAngle": 0,
+            "tickSize": 0,
+            "domain": false,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "household_penetration_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              55
+            ]
+          },
+          "axis": {
+            "title": "Households with this pet (%)",
+            "values": [
+              0,
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            "grid": true
+          }
+        },
+        "color": {
+          "field": "pet_type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Dogs",
+              "Cats"
+            ],
+            "range": [
+              "#1F5AA6",
+              "#A33F73"
+            ]
+          },
+          "legend": {
+            "title": "",
+            "orient": "top"
+          }
+        },
+        "detail": {
+          "field": "pet_type"
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Survey year",
+            "format": "d"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year == 2025"
+        },
+        {
+          "calculate": "datum.pet_type + \"  \" + format(datum.household_penetration_pct, \".1f\") + \"%\"",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "fontSize": 14,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              2019,
+              2027
+            ],
+            "nice": false
+          }
+        },
+        "y": {
+          "field": "household_penetration_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              55
+            ]
+          }
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "field": "pet_type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Dogs",
+              "Cats"
+            ],
+            "range": [
+              "#1F5AA6",
+              "#A33F73"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Survey year",
+            "format": "d"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ]
+}

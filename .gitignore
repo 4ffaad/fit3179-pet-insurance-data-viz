@@ -43,9 +43,3 @@ dist/
 /scripts/
 /docs/
 /tasks/
-
-# Keep the charts used for interview practice local for now.
-/idioms/chart02.vl.json
-/idioms/chart07.vl.json
-/idioms/treemap.vl.json
-/data/ama_pet_population_treemap_layout.csv
