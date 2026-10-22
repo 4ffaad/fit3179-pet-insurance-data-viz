@@ -242,8 +242,6 @@ main { padding-top: 32px; }
 .source-details { margin-top: 25px; padding: 15px 17px; border: 1px solid var(--line); }
 .source-details ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 30px; padding-left: 22px; color: var(--muted); font-size: 0.82rem; }
 .source-details li { padding-left: 3px; }
-.ai-credit { margin: 19px 0 0; padding-top: 13px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.78rem; }
-.ai-credit strong { color: var(--ink); }
 .page-footer {
   display: flex;
   flex-wrap: wrap;
