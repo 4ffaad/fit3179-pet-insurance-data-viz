@@ -44,13 +44,7 @@ async function renderChart(container) {
 
   const spec = await response.json();
   resolveDataUrls(spec, specUrl);
-  const { view } = await vegaEmbed(container, spec, {
-    actions: false,
-    renderer: "svg",
-    hover: true,
-    tooltip: true,
-    config: chartConfig,
-  });
+  const { view } = await vegaEmbed(container, spec, { actions: false, renderer: "svg", config: chartConfig });
   container.setAttribute("aria-busy", "false");
   container.dataset.rendered = "true";
   return view;
