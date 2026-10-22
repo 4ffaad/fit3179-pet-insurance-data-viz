@@ -39,16 +39,12 @@
       "orient": "top",
       "direction": "horizontal",
       "padding": 4
-    },
-    "view": {
-      "stroke": null
     }
   },
   "title": {
     "text": "Pet and horse insurance issue ranks",
     "subtitle": "ASIC internal dispute reports · rank 1 marks the most reported issue."
   },
-  "description": "Bump chart of the five issue types with the highest cumulative reported complaint counts across five reporting half-years. Rank is calculated against all issue categories in each half-year. Counts are shown on hover. ASIC’s product name includes domestic pet/horse insurance. Complaint data are firm-reported; each complaint can list up to three issues, so issue counts must not be added to calculate unique complaints. These counts are not insurance claims.",
   "data": {
     "url": "../data/asic_pet_horse_insurance_issues_2023_2025.csv",
     "format": {
@@ -191,8 +187,7 @@
         "test": "datum.issue_label === 'Premiums'",
         "value": 1
       },
-      "value": 0.28,
-      "legend": null
+      "value": 0.28
     }
   }
 }

@@ -4,7 +4,6 @@
     "text": "Where PetSure recorded motor-vehicle and bike incident claims",
     "subtitle": "Reported 2024 insured claims · circle area is count; state populations and insured-pet counts are not denominators."
   },
-  "description": "Proportional symbol map of PetSure policyholder motor-vehicle and bike accident claims by state/territory. The state labels sum to 1,303 while report prose says 1,304; raw claims are not risk rates.",
   "background": "#FBFAF7",
   "width": 720,
   "height": 490,
@@ -48,9 +47,6 @@
       "orient": "top",
       "direction": "horizontal",
       "padding": 4
-    },
-    "view": {
-      "stroke": null
     }
   },
   "layer": [

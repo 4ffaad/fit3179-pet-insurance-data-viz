@@ -4,7 +4,6 @@
     "text": "Population tiles reveal the dog–cat quote gap",
     "subtitle": "Each hex represents about 53,700 residents · fill shows sampled price differences."
   },
-  "description": "A contiguous tile cartogram built from equal-area hexagons in Australian Albers coordinates. Each state receives a whole-number tile count using largest-remainder apportionment of ABS estimated resident population at 31 March 2026; each hex represents about 53,700 residents. The cell layout generalizes state shape and is not a replacement for geographic boundaries. Fill shows the difference between Compare the Market Australia average annual dog and cat quote prices from a 16,652-quote sample collected March 2025–March 2026. These sample prices are not state-wide market averages or measures of insurance uptake.",
   "background": "#FBFAF7",
   "width": 1000,
   "height": 620,
@@ -167,9 +166,9 @@
       ],
       "mark": {
         "type": "geoshape",
-        "fill": null,
         "stroke": "#102B40",
-        "strokeWidth": 2.4
+        "strokeWidth": 2.4,
+        "fillOpacity": 0
       },
       "encoding": {
         "tooltip": [
@@ -206,9 +205,6 @@
       "orient": "top",
       "direction": "horizontal",
       "padding": 4
-    },
-    "view": {
-      "stroke": null
     }
   }
 }

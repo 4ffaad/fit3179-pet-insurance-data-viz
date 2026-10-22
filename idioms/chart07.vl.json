@@ -40,9 +40,6 @@
       "direction": "horizontal",
       "padding": 4
     },
-    "view": {
-      "stroke": null
-    },
     "text": {
       "font": "Arial",
       "color": "#173A52"
@@ -52,7 +49,6 @@
     "text": "Top-three conditions vary by species and life stage",
     "subtitle": "PetSure 2025 rankings · each ribbon is a list entry, not a claim flow."
   },
-  "description": "Each of the 18 entries is one condition listed in PetSure’s top three for a species and life stage. Ribbons connect those published rank entries; they do not track individual pets as they age and do not represent claim counts, disease prevalence, or all Australian pets.",
   "data": {
     "url": "../data/petsure_age_condition_alluvial_ribbons.csv",
     "format": {
@@ -80,7 +76,13 @@
               4.25
             ]
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "y": {
           "field": "y_top_num",
@@ -92,7 +94,13 @@
             ],
             "reverse": true
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "y2": {
           "field": "y_bottom_num"
@@ -236,7 +244,13 @@
               4.25
             ]
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "x2": {
           "field": "x_right"
@@ -251,7 +265,13 @@
             ],
             "reverse": true
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "y2": {
           "field": "node_bottom"
@@ -322,7 +342,13 @@
               4.25
             ]
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "y": {
           "field": "center",
@@ -334,7 +360,13 @@
             ],
             "reverse": true
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "text": {
           "field": "label",
@@ -425,7 +457,13 @@
               4.25
             ]
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "y": {
           "field": "center",
@@ -437,7 +475,13 @@
             ],
             "reverse": true
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "text": {
           "field": "stage_label",
@@ -502,7 +546,13 @@
               4.25
             ]
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "y": {
           "field": "center",
@@ -514,7 +564,13 @@
             ],
             "reverse": true
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "text": {
           "field": "label",
@@ -523,7 +579,22 @@
         "color": {
           "field": "label_color",
           "type": "nominal",
-          "scale": null
+          "scale": {
+            "domain": [
+              "#FFFFFF",
+              "#1F5AA6",
+              "#A33F73",
+              "#253746",
+              "#334F63"
+            ],
+            "range": [
+              "#FFFFFF",
+              "#1F5AA6",
+              "#A33F73",
+              "#253746",
+              "#334F63"
+            ]
+          }
         },
         "tooltip": [
           {
@@ -606,7 +677,13 @@
               4.25
             ]
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "y": {
           "field": "center",
@@ -618,7 +695,13 @@
             ],
             "reverse": true
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "text": {
           "field": "label",

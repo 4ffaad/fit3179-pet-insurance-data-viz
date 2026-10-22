@@ -40,9 +40,6 @@
       "direction": "horizontal",
       "padding": 4
     },
-    "view": {
-      "stroke": null
-    },
     "text": {
       "font": "Arial",
       "color": "#173A52"
@@ -52,7 +49,6 @@
     "text": "PetSure’s top-ten conditions differ by species",
     "subtitle": "2025 average claim amounts · grey crosses mean “not listed”, not zero."
   },
-  "description": "Each column is one species and each row is a condition published in the PetSure top-ten lists. Cell color shows the reported average claim amount; the highest claim is available on hover. A grey cross means that condition is not in that species’ published top ten. It does not mean zero claims or clinical incidence. PetSure claims cover its insured pets only.",
   "data": {
     "url": "../data/petsure_condition_cost_matrix_2025.csv",
     "format": {
@@ -61,7 +57,7 @@
   },
   "transform": [
     {
-      "calculate": "datum.average_cost_aud === \"\" ? null : toNumber(datum.average_cost_aud)",
+      "calculate": "toNumber(datum.average_cost_aud)",
       "as": "average_num"
     }
   ],
@@ -84,7 +80,7 @@
           ],
           "axis": {
             "orient": "top",
-            "title": null,
+            "title": "",
             "labelAngle": 0,
             "labelFontWeight": "bold",
             "labelFontSize": 13
@@ -110,14 +106,14 @@
             "Behavioural"
           ],
           "axis": {
-            "title": null,
+            "title": "",
             "labelLimit": 190,
             "labelFontSize": 11
           }
         },
         "color": {
           "condition": {
-            "test": "isValid(datum.average_num)",
+            "test": "datum.cell_status === 'In top 10'",
             "field": "average_num",
             "type": "quantitative",
             "scale": {
@@ -165,12 +161,6 @@
             "field": "value_label",
             "type": "nominal",
             "title": "Published average claim"
-          },
-          {
-            "field": "average_num",
-            "type": "quantitative",
-            "title": "Average claim amount (AUD)",
-            "format": "$,d"
           },
           {
             "field": "highest_cost_aud",
@@ -251,12 +241,6 @@
             "field": "value_label",
             "type": "nominal",
             "title": "Published average claim"
-          },
-          {
-            "field": "average_num",
-            "type": "quantitative",
-            "title": "Average claim amount (AUD)",
-            "format": "$,d"
           },
           {
             "field": "highest_cost_aud",

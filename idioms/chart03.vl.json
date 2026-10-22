@@ -40,9 +40,6 @@
       "direction": "horizontal",
       "padding": 4
     },
-    "view": {
-      "stroke": null
-    },
     "text": {
       "font": "Arial",
       "color": "#173A52"
@@ -52,7 +49,6 @@
     "text": "Dog and cat household spending, 2025",
     "subtitle": "Dog minus cat mean at right · hover for annual averages in AUD."
   },
-  "description": "AMA averages include households that spent zero in a category. This compares the 13 shared categories; a source dash means no value was reported.",
   "data": {
     "url": "../data/ama_dog_cat_household_spend_dumbbell_2025.csv",
     "format": {
@@ -110,7 +106,7 @@
                 "order": "descending"
               },
               "axis": {
-                "title": null,
+                "title": "",
                 "labelLimit": 235
               }
             },
@@ -194,7 +190,7 @@
                 ]
               },
               "legend": {
-                "title": null,
+                "title": "",
                 "orient": "top"
               }
             },
@@ -240,7 +236,13 @@
         "x": {
           "datum": 0,
           "type": "quantitative",
-          "axis": null,
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          },
           "scale": {
             "domain": [
               0,
@@ -255,7 +257,13 @@
             "field": "dogs_num",
             "order": "descending"
           },
-          "axis": null
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
         },
         "text": {
           "field": "difference_label",

@@ -4,7 +4,6 @@
     "text": "Average dog-insurance quotes vary by state",
     "subtitle": "Annual quotes in Compare the Market’s March 2025–March 2026 sample · dollars, not policy uptake."
   },
-  "description": "Choropleth of average annual dog quote prices in a 16,652-quote panel. AMA does not publish a full comparable state ownership table. Values are not state-wide market averages.",
   "background": "#FBFAF7",
   "width": 720,
   "height": 490,
@@ -48,9 +47,6 @@
       "orient": "top",
       "direction": "horizontal",
       "padding": 4
-    },
-    "view": {
-      "stroke": null
     }
   },
   "data": {

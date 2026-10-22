@@ -40,9 +40,6 @@
       "direction": "horizontal",
       "padding": 4
     },
-    "view": {
-      "stroke": null
-    },
     "text": {
       "font": "Arial",
       "color": "#173A52"
@@ -52,7 +49,6 @@
     "text": "Dog and cat ownership, 2019–2025",
     "subtitle": "Share of Australian households owning each animal · AMA survey waves."
   },
-  "description": "National household penetration estimates from AMA report waves. Historical 2019 and 2022 shares are reported as whole percentages; 2025 estimates use one decimal place. Dog and cat households overlap.",
   "data": {
     "url": "../data/ama_pet_ownership_slope_2019_2025.csv",
     "format": {
@@ -132,7 +128,7 @@
             ]
           },
           "legend": {
-            "title": null,
+            "title": "",
             "orient": "top"
           }
         },
