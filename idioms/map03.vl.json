@@ -106,25 +106,7 @@
           {
             "field": "properties.population_people",
             "type": "quantitative",
-            "title": "ABS residents · 31 Mar 2026",
-            "format": ",.0f"
-          },
-          {
-            "field": "properties.population_share_pct",
-            "type": "quantitative",
-            "title": "Population share",
-            "format": ".1f"
-          },
-          {
-            "field": "properties.tile_count",
-            "type": "quantitative",
-            "title": "Equal-area hexes",
-            "format": "d"
-          },
-          {
-            "field": "properties.residents_per_tile_estimate",
-            "type": "quantitative",
-            "title": "Residents represented per hex · approx.",
+            "title": "Residents · 31 Mar 2026",
             "format": ",.0f"
           },
           {
@@ -144,16 +126,6 @@
             "type": "quantitative",
             "title": "Average cat quote (AUD)",
             "format": "$,d"
-          },
-          {
-            "field": "period",
-            "type": "nominal",
-            "title": "Quote sample period"
-          },
-          {
-            "field": "scope",
-            "type": "nominal",
-            "title": "Interpretation"
           }
         ]
       }
