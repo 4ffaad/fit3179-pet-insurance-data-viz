@@ -211,6 +211,8 @@ main { padding-top: 32px; }
   font-size: 0.79rem;
   line-height: 1.45;
 }
+.figure-source { display: block; margin-top: 4px; }
+.figure-source a { color: inherit; text-underline-offset: 2px; }
 .chart-error { padding: 16px; border-left: 3px solid #79558d; background: #f3edf4; color: #4f365f; font-size: 0.9rem; }
 .chart-error-detail { display: block; margin-top: 8px; font: 0.78rem/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; overflow-wrap: anywhere; }
 .cartogram-figure { padding-bottom: 18px; }
