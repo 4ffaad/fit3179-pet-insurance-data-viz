@@ -223,7 +223,26 @@
             "value": "#FFFFFF"
           },
           "value": "#FFFFFF"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "animal_millions",
+            "type": "quantitative",
+            "title": "Animals (millions)",
+            "format": ".2f"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
       }
     },
     {
@@ -278,7 +297,26 @@
             "value": "#FFFFFF"
           },
           "value": "#FFFFFF"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "animal_millions",
+            "type": "quantitative",
+            "title": "Animals (millions)",
+            "format": ".2f"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
       }
     },
     {
@@ -331,7 +369,26 @@
         "text": {
           "field": "pet_type",
           "type": "nominal"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "animal_millions",
+            "type": "quantitative",
+            "title": "Animals (millions)",
+            "format": ".2f"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
       }
     },
     {
@@ -387,7 +444,26 @@
         "text": {
           "field": "animal_label",
           "type": "nominal"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "animal_millions",
+            "type": "quantitative",
+            "title": "Animals (millions)",
+            "format": ".2f"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
       }
     }
   ]

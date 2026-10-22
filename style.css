@@ -176,6 +176,7 @@ main { padding-top: 32px; }
 .chart-figure-wide { width: 100%; margin-bottom: 18px; }
 .figure-kicker {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 7px;
@@ -185,24 +186,39 @@ main { padding-top: 32px; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.figure-kicker::after { content: "Hover for values"; margin-left: auto; color: #246b65; font-size: 0.92em; letter-spacing: 0.025em; text-transform: none; }
 .figure-kicker span:first-child { color: var(--blue); }
 .chart-annotation {
   display: flex;
   align-items: baseline;
   gap: 9px;
-  margin: 0 0 6px;
-  padding: 7px 10px;
-  border-left: 3px solid var(--teal);
-  background: #f0f5f3;
+  margin: 0 0 9px;
+  padding: 9px 12px;
+  border-left: 4px solid var(--blue);
+  background: #e8f2f4;
   color: var(--ink);
   font-size: 0.83rem;
+  font-weight: 700;
   line-height: 1.35;
 }
-.annotation-label { flex: 0 0 auto; color: #246b65; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.annotation-label { flex: 0 0 auto; padding: 3px 6px; background: var(--blue-deep); color: #fff; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .chart-host { display: block; width: 100%; min-width: 0; }
 .chart-host .vega-embed, .chart-host .vega-embed > div { width: 100%; }
 .chart-host svg, .chart-host canvas { display: block; max-width: 100%; height: auto; margin-inline: auto; }
 .chart-host--left-labels { max-width: 100%; overflow-x: auto; scrollbar-color: #b7c6cc transparent; scrollbar-width: thin; }
+#vg-tooltip-element, .vg-tooltip {
+  z-index: 20 !important;
+  max-width: min(320px, calc(100vw - 24px));
+  border: 1px solid #c8d7de !important;
+  border-top: 3px solid var(--teal) !important;
+  border-radius: 2px !important;
+  background: #fff !important;
+  color: var(--ink) !important;
+  box-shadow: 0 4px 16px rgb(18 59 85 / 16%) !important;
+  font: 0.82rem/1.4 var(--sans) !important;
+}
+#vg-tooltip-element th, .vg-tooltip th { color: var(--muted) !important; }
+#vg-tooltip-element td, .vg-tooltip td { color: var(--ink) !important; }
 .chart-figure figcaption {
   max-width: 62ch;
   margin: auto 0 0;

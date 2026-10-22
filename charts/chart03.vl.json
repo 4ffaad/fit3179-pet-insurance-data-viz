@@ -141,7 +141,26 @@
         },
         "detail": {
           "field": "pet_type"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Survey year",
+            "format": "d"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
       }
     },
     {
@@ -199,7 +218,26 @@
               "#A33F73"
             ]
           }
-        }
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Survey year",
+            "format": "d"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
       }
     }
   ]

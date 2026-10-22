@@ -345,7 +345,48 @@
         },
         "color": {
           "value": "#FFFFFF"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "life_stage",
+            "type": "nominal",
+            "title": "Life stage"
+          },
+          {
+            "field": "condition",
+            "type": "nominal",
+            "title": "Top-ranked condition"
+          },
+          {
+            "field": "rank_num",
+            "type": "quantitative",
+            "title": "Published rank",
+            "format": "d"
+          },
+          {
+            "field": "average_num",
+            "type": "quantitative",
+            "title": "Average claim (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "highest_num",
+            "type": "quantitative",
+            "title": "Highest claim (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "weight_num",
+            "type": "quantitative",
+            "title": "Rank entries represented",
+            "format": "d"
+          }
+        ]
       }
     },
     {
@@ -486,7 +527,48 @@
           "field": "label_color",
           "type": "nominal",
           "scale": null
-        }
+        },
+        "tooltip": [
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "life_stage",
+            "type": "nominal",
+            "title": "Life stage"
+          },
+          {
+            "field": "condition",
+            "type": "nominal",
+            "title": "Top-ranked condition"
+          },
+          {
+            "field": "rank_num",
+            "type": "quantitative",
+            "title": "Published rank",
+            "format": "d"
+          },
+          {
+            "field": "average_num",
+            "type": "quantitative",
+            "title": "Average claim (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "highest_num",
+            "type": "quantitative",
+            "title": "Highest claim (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "weight_num",
+            "type": "quantitative",
+            "title": "Rank entries represented",
+            "format": "d"
+          }
+        ]
       }
     },
     {
@@ -544,7 +626,48 @@
         "text": {
           "field": "label",
           "type": "nominal"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "life_stage",
+            "type": "nominal",
+            "title": "Life stage"
+          },
+          {
+            "field": "condition",
+            "type": "nominal",
+            "title": "Top-ranked condition"
+          },
+          {
+            "field": "rank_num",
+            "type": "quantitative",
+            "title": "Published rank",
+            "format": "d"
+          },
+          {
+            "field": "average_num",
+            "type": "quantitative",
+            "title": "Average claim (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "highest_num",
+            "type": "quantitative",
+            "title": "Highest claim (AUD)",
+            "format": "$,d"
+          },
+          {
+            "field": "weight_num",
+            "type": "quantitative",
+            "title": "Rank entries represented",
+            "format": "d"
+          }
+        ]
       }
     }
   ]
