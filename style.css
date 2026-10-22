@@ -67,8 +67,11 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.12; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+.masthead-identity { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 22px; }
 .course-mark { color: #f7f6f1; text-decoration: none; }
 .course-mark span { padding-inline: 5px; color: #69bdc1; }
+.student-credit { color: #b7d4dc; letter-spacing: 0.06em; }
+.student-credit strong { color: #f7f6f1; }
 .edition { text-align: right; }
 .hero {
   display: grid;
@@ -252,8 +255,9 @@ main { padding-top: 32px; }
 @media (max-width: 650px) {
   body { font-size: 15px; }
   .masthead-top, .hero, .story-nav, main, .page-footer { width: calc(100% - 30px); }
-  .masthead-top { align-items: flex-start; font-size: 0.63rem; letter-spacing: 0.06em; }
-  .edition { max-width: 130px; }
+  .masthead-top { align-items: flex-start; flex-direction: column; font-size: 0.63rem; letter-spacing: 0.06em; }
+  .masthead-identity { gap: 5px 14px; }
+  .edition { max-width: none; text-align: left; }
   .hero { grid-template-columns: 1fr; gap: 25px; padding-block: 38px 32px; }
   .hero h1 { font-size: clamp(2.75rem, 13vw, 4rem); }
   .hero-note { max-width: none; padding: 15px 17px; }
