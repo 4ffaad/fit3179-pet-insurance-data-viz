@@ -15,20 +15,6 @@
       "subtitleColor": "#687988",
       "offset": 14
     },
-    "axis": {
-      "labelFont": "Arial",
-      "titleFont": "Arial",
-      "labelFontSize": 12,
-      "titleFontSize": 13,
-      "labelColor": "#5B6F7E",
-      "titleColor": "#334F63",
-      "domainColor": "#D4DEE4",
-      "tickColor": "#D4DEE4",
-      "gridColor": "#E8EDF0",
-      "gridOpacity": 0.9,
-      "labelLimit": 260,
-      "titlePadding": 10
-    },
     "legend": {
       "labelFont": "Arial",
       "titleFont": "Arial",
@@ -46,73 +32,81 @@
     }
   },
   "title": {
-    "text": "Dog and cat ownership, 2019–2025",
-    "subtitle": "Share of Australian households owning each animal · AMA survey waves."
+    "text": "What fills Australia’s 31.6 million pet population?",
+    "subtitle": "Tile area shows animal counts; household ownership overlaps."
   },
   "data": {
-    "url": "../data/ama_pet_ownership_slope_2019_2025.csv",
+    "url": "../data/ama_pet_population_treemap_layout.csv",
     "format": {
       "type": "csv"
     }
   },
-  "width": 1000,
-  "height": 430,
+  "width": 650,
+  "height": 520,
+  "transform": [
+    {
+      "calculate": "toNumber(datum.x0)",
+      "as": "x_start"
+    },
+    {
+      "calculate": "toNumber(datum.x1)",
+      "as": "x_end"
+    },
+    {
+      "calculate": "toNumber(datum.y0)",
+      "as": "y_start"
+    },
+    {
+      "calculate": "toNumber(datum.y1)",
+      "as": "y_end"
+    },
+    {
+      "calculate": "(datum.x_end-datum.x_start)*(datum.y_end-datum.y_start)",
+      "as": "box_area"
+    }
+  ],
   "layer": [
     {
       "mark": {
-        "type": "line",
-        "strokeWidth": 4,
-        "point": {
-          "filled": true,
-          "size": 110
-        }
+        "type": "rect",
+        "stroke": "#FBFAF7",
+        "strokeWidth": 3
       },
       "encoding": {
         "x": {
-          "field": "year",
+          "field": "x_start",
           "type": "quantitative",
           "scale": {
-            "domain": [
-              2019,
-              2027
-            ],
-            "nice": false
+            "domain": [0, 100]
           },
           "axis": {
-            "title": "AMA survey year",
-            "values": [
-              2019,
-              2022,
-              2027
-            ],
-            "format": "d",
-            "labelAngle": 0,
-            "tickSize": 0,
+            "labels": false,
+            "ticks": false,
             "domain": false,
-            "grid": false
+            "grid": false,
+            "title": ""
           }
         },
+        "x2": {
+          "field": "x_end"
+        },
         "y": {
-          "field": "household_penetration_pct",
+          "field": "y_start",
           "type": "quantitative",
           "scale": {
-            "domain": [
-              0,
-              55
-            ]
+            "domain": [0, 100],
+            "reverse": true
           },
           "axis": {
-            "title": "Households with this pet (%)",
-            "values": [
-              0,
-              10,
-              20,
-              30,
-              40,
-              50
-            ],
-            "grid": true
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
           }
+        },
+        "y2": {
+          "field": "y_end"
         },
         "color": {
           "field": "pet_type",
@@ -120,20 +114,29 @@
           "scale": {
             "domain": [
               "Dogs",
-              "Cats"
+              "Cats",
+              "Fish",
+              "Birds",
+              "Small mammals",
+              "Reptiles",
+              "Other pets"
             ],
             "range": [
               "#1F5AA6",
-              "#A33F73"
+              "#A33F73",
+              "#168C85",
+              "#63A4C7",
+              "#8C6BB1",
+              "#6D8392",
+              "#B08AA3"
             ]
           },
           "legend": {
-            "title": "",
-            "orient": "top"
+            "title": "Pet type",
+            "orient": "top",
+            "direction": "horizontal",
+            "columns": 4
           }
-        },
-        "detail": {
-          "field": "pet_type"
         },
         "tooltip": [
           {
@@ -142,10 +145,10 @@
             "title": "Pet type"
           },
           {
-            "field": "year",
+            "field": "animal_millions",
             "type": "quantitative",
-            "title": "Survey year",
-            "format": "d"
+            "title": "Animals (millions)",
+            "format": ".2f"
           },
           {
             "field": "household_penetration_pct",
@@ -159,58 +162,58 @@
     {
       "transform": [
         {
-          "filter": "datum.year == 2025"
-        },
-        {
-          "calculate": "datum.pet_type + \"  \" + format(datum.household_penetration_pct, \".1f\") + \"%\"",
-          "as": "label"
+          "filter": "datum.box_area > 450"
         }
       ],
       "mark": {
         "type": "text",
-        "align": "left",
-        "dx": 12,
         "fontSize": 14,
-        "fontWeight": "bold"
+        "fontWeight": "bold",
+        "align": "left",
+        "baseline": "top",
+        "dx": 8,
+        "dy": 8,
+        "limit": 155
       },
       "encoding": {
         "x": {
-          "field": "year",
+          "field": "x_start",
           "type": "quantitative",
           "scale": {
-            "domain": [
-              2019,
-              2027
-            ],
-            "nice": false
+            "domain": [0, 100]
+          },
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
           }
         },
         "y": {
-          "field": "household_penetration_pct",
+          "field": "y_start",
           "type": "quantitative",
           "scale": {
-            "domain": [
-              0,
-              55
-            ]
+            "domain": [0, 100],
+            "reverse": true
+          },
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
           }
         },
         "text": {
-          "field": "label"
+          "field": "pet_type"
         },
         "color": {
-          "field": "pet_type",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "Dogs",
-              "Cats"
-            ],
-            "range": [
-              "#1F5AA6",
-              "#A33F73"
-            ]
-          }
+          "condition": {
+            "test": "datum.pet_type === 'Birds'",
+            "value": "#FFFFFF"
+          },
+          "value": "#FFFFFF"
         },
         "tooltip": [
           {
@@ -219,10 +222,249 @@
             "title": "Pet type"
           },
           {
-            "field": "year",
+            "field": "animal_millions",
             "type": "quantitative",
-            "title": "Survey year",
-            "format": "d"
+            "title": "Animals (millions)",
+            "format": ".2f"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.box_area > 450"
+        },
+        {
+          "calculate": "format(toNumber(datum.animal_millions), \".2f\") + \"m\"",
+          "as": "animal_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "left",
+        "baseline": "top",
+        "dx": 8,
+        "dy": 28
+      },
+      "encoding": {
+        "x": {
+          "field": "x_start",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 100]
+          },
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
+        },
+        "y": {
+          "field": "y_start",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 100],
+            "reverse": true
+          },
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
+        },
+        "text": {
+          "field": "animal_label",
+          "type": "nominal"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.pet_type === 'Birds'",
+            "value": "#FFFFFF"
+          },
+          "value": "#FFFFFF"
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "animal_millions",
+            "type": "quantitative",
+            "title": "Animals (millions)",
+            "format": ".2f"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.box_area <= 450"
+        },
+        {
+          "calculate": "(datum.x_start + datum.x_end) / 2",
+          "as": "tile_center_x"
+        },
+        {
+          "calculate": "(datum.y_start + datum.y_end) / 2",
+          "as": "tile_center_y"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "align": "center",
+        "baseline": "middle",
+        "dy": -8,
+        "color": "#FFFFFF"
+      },
+      "encoding": {
+        "x": {
+          "field": "tile_center_x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 100]
+          },
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
+        },
+        "y": {
+          "field": "tile_center_y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 100],
+            "reverse": true
+          },
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
+        },
+        "text": {
+          "field": "pet_type",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "animal_millions",
+            "type": "quantitative",
+            "title": "Animals (millions)",
+            "format": ".2f"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.box_area <= 450"
+        },
+        {
+          "calculate": "(datum.x_start + datum.x_end) / 2",
+          "as": "tile_center_x"
+        },
+        {
+          "calculate": "(datum.y_start + datum.y_end) / 2",
+          "as": "tile_center_y"
+        },
+        {
+          "calculate": "format(toNumber(datum.animal_millions), '.2f') + 'm'",
+          "as": "animal_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "align": "center",
+        "baseline": "middle",
+        "dy": 8,
+        "color": "#FFFFFF"
+      },
+      "encoding": {
+        "x": {
+          "field": "tile_center_x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 100]
+          },
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
+        },
+        "y": {
+          "field": "tile_center_y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 100],
+            "reverse": true
+          },
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "title": ""
+          }
+        },
+        "text": {
+          "field": "animal_label",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "animal_millions",
+            "type": "quantitative",
+            "title": "Animals (millions)",
+            "format": ".2f"
           },
           {
             "field": "household_penetration_pct",

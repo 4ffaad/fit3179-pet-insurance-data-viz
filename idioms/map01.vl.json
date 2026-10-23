@@ -9,18 +9,9 @@
   "height": 490,
   "projection": {
     "type": "albers",
-    "rotate": [
-      -134,
-      0
-    ],
-    "center": [
-      0,
-      -27
-    ],
-    "parallels": [
-      -18,
-      -36
-    ],
+    "rotate": [-134, 0],
+    "center": [0, -27],
+    "parallels": [-18, -36],
     "scale": 600
   },
   "config": {
@@ -93,10 +84,7 @@
         "field": "dog_quote",
         "type": "quantitative",
         "scale": {
-          "domain": [
-            1050,
-            1400
-          ],
+          "domain": [1050, 1400],
           "range": [
             "#F3E0F7",
             "#E0C2EF",

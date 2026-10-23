@@ -9,18 +9,9 @@
   "height": 490,
   "projection": {
     "type": "albers",
-    "rotate": [
-      -134,
-      0
-    ],
-    "center": [
-      0,
-      -27
-    ],
-    "parallels": [
-      -18,
-      -36
-    ],
+    "rotate": [-134, 0],
+    "center": [0, -27],
+    "parallels": [-18, -36],
     "scale": 600
   },
   "config": {
@@ -105,27 +96,13 @@
           "field": "claims",
           "type": "quantitative",
           "scale": {
-            "domain": [
-              0,
-              420
-            ],
-            "range": [
-              24,
-              1650
-            ]
+            "domain": [0, 420],
+            "range": [24, 1650]
           },
           "legend": {
             "title": "PetSure claims (2024)",
             "orient": "top",
-            "values": [
-              4,
-              24,
-              78,
-              158,
-              269,
-              331,
-              420
-            ]
+            "values": [4, 24, 78, 158, 269, 331, 420]
           }
         },
         "color": {

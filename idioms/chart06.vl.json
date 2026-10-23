@@ -39,228 +39,129 @@
       "orient": "top",
       "direction": "horizontal",
       "padding": 4
-    },
-    "text": {
-      "font": "Arial",
-      "color": "#173A52"
     }
   },
   "title": {
-    "text": "PetSure’s top-ten conditions differ by species",
-    "subtitle": "2025 average claim amounts · grey crosses mean “not listed”, not zero."
+    "text": "Pet and horse insurance issue ranks",
+    "subtitle": "ASIC internal dispute reports · rank 1 marks the most reported issue."
   },
   "data": {
-    "url": "../data/petsure_condition_cost_matrix_2025.csv",
+    "url": "../data/asic_pet_horse_insurance_issues_2023_2025.csv",
     "format": {
       "type": "csv"
     }
   },
   "transform": [
     {
-      "calculate": "toNumber(datum.average_cost_aud)",
-      "as": "average_num"
-    }
-  ],
-  "width": 760,
-  "height": 520,
-  "layer": [
-    {
-      "mark": {
-        "type": "rect",
-        "stroke": "#FBFAF7",
-        "strokeWidth": 2
-      },
-      "encoding": {
-        "x": {
-          "field": "species",
-          "type": "ordinal",
-          "sort": [
-            "Dog",
-            "Cat"
-          ],
-          "axis": {
-            "orient": "top",
-            "title": "",
-            "labelAngle": 0,
-            "labelFontWeight": "bold",
-            "labelFontSize": 13
-          }
-        },
-        "y": {
-          "field": "condition_axis",
-          "type": "ordinal",
-          "sort": [
-            "Heart / circulatory",
-            "Urinary tract",
-            "Dental",
-            "Mass lesions",
-            "Gastrointestinal",
-            "Osteoarthritis",
-            "Fight / bite wounds",
-            "Skin / allergies",
-            "Musculoskeletal",
-            "Respiratory",
-            "Eye conditions",
-            "Ear infections",
-            "Anal sac",
-            "Behavioural"
-          ],
-          "axis": {
-            "title": "",
-            "labelLimit": 190,
-            "labelFontSize": 11
-          }
-        },
-        "color": {
-          "condition": {
-            "test": "datum.cell_status === 'In top 10'",
-            "field": "average_num",
-            "type": "quantitative",
-            "scale": {
-              "domain": [
-                0,
-                1700
-              ],
-              "range": [
-                "#F5F4F8",
-                "#D5D3E2",
-                "#AAA9CB",
-                "#7C80AE",
-                "#525F93",
-                "#2E456F"
-              ]
-            },
-            "legend": {
-              "title": "Average claim amount (AUD)",
-              "orient": "top",
-              "format": "$,d",
-              "values": [
-                0,
-                400,
-                800,
-                1200,
-                1600
-              ],
-              "gradientLength": 280
-            }
-          },
-          "value": "#D1D0CD"
-        },
-        "tooltip": [
-          {
-            "field": "species",
-            "type": "nominal",
-            "title": "Species"
-          },
-          {
-            "field": "condition",
-            "type": "nominal",
-            "title": "Condition"
-          },
-          {
-            "field": "value_label",
-            "type": "nominal",
-            "title": "Published average claim"
-          },
-          {
-            "field": "highest_cost_aud",
-            "type": "quantitative",
-            "title": "Highest single claim (AUD)",
-            "format": "$,d"
-          },
-          {
-            "field": "rank",
-            "type": "quantitative",
-            "title": "Rank in species list",
-            "format": "d"
-          },
-          {
-            "field": "cell_status",
-            "type": "nominal",
-            "title": "Listing status"
-          }
-        ]
-      }
+      "calculate": "toNumber(datum.rank_all_issues)",
+      "as": "rank_num"
     },
     {
-      "transform": [
-        {
-          "filter": "datum.cell_status !== 'In top 10'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "text": "×",
-        "fontSize": 18,
-        "fontWeight": "bold",
-        "color": "#667681",
-        "baseline": "middle",
-        "align": "center"
-      },
-      "encoding": {
-        "x": {
-          "field": "species",
-          "type": "ordinal",
-          "sort": [
-            "Dog",
-            "Cat"
-          ]
-        },
-        "y": {
-          "field": "condition_axis",
-          "type": "ordinal",
-          "sort": [
-            "Heart / circulatory",
-            "Urinary tract",
-            "Dental",
-            "Mass lesions",
-            "Gastrointestinal",
-            "Osteoarthritis",
-            "Fight / bite wounds",
-            "Skin / allergies",
-            "Musculoskeletal",
-            "Respiratory",
-            "Eye conditions",
-            "Ear infections",
-            "Anal sac",
-            "Behavioural"
-          ]
-        },
-        "tooltip": [
-          {
-            "field": "species",
-            "type": "nominal",
-            "title": "Species"
-          },
-          {
-            "field": "condition",
-            "type": "nominal",
-            "title": "Condition"
-          },
-          {
-            "field": "value_label",
-            "type": "nominal",
-            "title": "Published average claim"
-          },
-          {
-            "field": "highest_cost_aud",
-            "type": "quantitative",
-            "title": "Highest single claim (AUD)",
-            "format": "$,d"
-          },
-          {
-            "field": "rank",
-            "type": "quantitative",
-            "title": "Rank in species list",
-            "format": "d"
-          },
-          {
-            "field": "cell_status",
-            "type": "nominal",
-            "title": "Listing status"
-          }
-        ]
-      }
+      "calculate": "toNumber(datum.complaint_count)",
+      "as": "count_num"
+    },
+    {
+      "calculate": "toNumber(datum.period_order)",
+      "as": "period_num"
     }
-  ]
+  ],
+  "width": 1050,
+  "height": 450,
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 125,
+      "stroke": "#FBFAF7",
+      "strokeWidth": 1.5
+    },
+    "strokeWidth": 3.5
+  },
+  "encoding": {
+    "x": {
+      "field": "reporting_period",
+      "type": "ordinal",
+      "sort": ["2023 H2", "2024 H1", "2024 H2", "2025 H1", "2025 H2"],
+      "axis": {
+        "title": "ASIC reporting half-year",
+        "labelAngle": 0,
+        "labelLimit": 100,
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "rank_num",
+      "type": "quantitative",
+      "scale": {
+        "domain": [1, 10],
+        "reverse": true,
+        "nice": false
+      },
+      "axis": {
+        "title": "Rank among all issue categories (1 = highest count)",
+        "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "format": "d",
+        "grid": true
+      }
+    },
+    "color": {
+      "field": "issue_label",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Premiums",
+          "Claim denial · exclusions",
+          "Terms interpretation",
+          "Service issues",
+          "Claim amount"
+        ],
+        "range": ["#2878B5", "#8064A2", "#2A9D8F", "#BC5090", "#5C677D"]
+      },
+      "legend": {
+        "title": "Issue category",
+        "orient": "top",
+        "direction": "horizontal",
+        "columns": 3,
+        "labelLimit": 250
+      }
+    },
+    "detail": {
+      "field": "issue"
+    },
+    "order": {
+      "field": "period_num",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "reporting_period",
+        "type": "ordinal",
+        "title": "Reporting period"
+      },
+      {
+        "field": "issue",
+        "type": "nominal",
+        "title": "Issue type"
+      },
+      {
+        "field": "count_num",
+        "type": "quantitative",
+        "title": "Reported complaint count",
+        "format": ",d"
+      },
+      {
+        "field": "rank_num",
+        "type": "quantitative",
+        "title": "Rank among all issue types",
+        "format": "d"
+      }
+    ],
+    "opacity": {
+      "condition": {
+        "test": "datum.issue_label === 'Premiums'",
+        "value": 1
+      },
+      "value": 0.28
+    }
+  }
 }

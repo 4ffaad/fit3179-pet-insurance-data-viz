@@ -78,14 +78,8 @@
       "field": "status",
       "type": "nominal",
       "scale": {
-        "domain": [
-          "Pet-owning household",
-          "Household without a pet"
-        ],
-        "range": [
-          "#176B87",
-          "#D8E0E5"
-        ]
+        "domain": ["Pet-owning household", "Household without a pet"],
+        "range": ["#176B87", "#D8E0E5"]
       },
       "legend": {
         "title": "Australian households",

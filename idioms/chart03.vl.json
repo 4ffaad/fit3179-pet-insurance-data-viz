@@ -46,261 +46,157 @@
     }
   },
   "title": {
-    "text": "Dog and cat household spending, 2025",
-    "subtitle": "Dog minus cat mean at right · $25 tick marks; labels every $200."
+    "text": "Dog and cat ownership, 2019–2025",
+    "subtitle": "Share of Australian households owning each animal · AMA survey waves."
   },
   "data": {
-    "url": "../data/ama_dog_cat_household_spend_dumbbell_2025.csv",
+    "url": "../data/ama_pet_ownership_slope_2019_2025.csv",
     "format": {
       "type": "csv"
     }
   },
-  "hconcat": [
+  "width": 1000,
+  "height": 430,
+  "layer": [
     {
-      "width": 620,
-      "height": 440,
-      "layer": [
-        {
-          "mark": {
-            "type": "rule",
-            "strokeWidth": 3,
-            "opacity": 0.62,
-            "color": "#C4CFD5"
+      "mark": {
+        "type": "line",
+        "strokeWidth": 4,
+        "point": {
+          "filled": true,
+          "size": 110
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [2019, 2027],
+            "nice": false
           },
-          "encoding": {
-            "x": {
-              "field": "cats_num",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  1200
-                ],
-                "type": "linear"
-              },
-              "axis": {
-                "title": "Average annual household spend (AUD)",
-                "values": [
-                  0, 25, 50, 75, 100, 125, 150, 175, 200, 225,
-                  250, 275, 300, 325, 350, 375, 400, 425, 450, 475,
-                  500, 525, 550, 575, 600, 625, 650, 675, 700, 725,
-                  750, 775, 800, 825, 850, 875, 900, 925, 950, 975,
-                  1000, 1025, 1050, 1075, 1100, 1125, 1150, 1175, 1200
-                ],
-                "labelExpr": "datum.value % 200 === 0 ? '$' + format(datum.value, ',.0f') : ''",
-                "grid": false,
-                "labelOverlap": false
-              }
-            },
-            "x2": {
-              "field": "dogs_num"
-            },
-            "y": {
-              "field": "category_label",
-              "type": "ordinal",
-              "sort": {
-                "field": "dogs_num",
-                "order": "descending"
-              },
-              "axis": {
-                "title": "",
-                "labelLimit": 235
-              }
-            },
-            "tooltip": [
-              {
-                "field": "spend_category",
-                "type": "nominal",
-                "title": "Category"
-              },
-              {
-                "field": "dogs_aud",
-                "type": "quantitative",
-                "title": "Dogs (AUD)",
-                "format": "$,d"
-              },
-              {
-                "field": "cats_aud",
-                "type": "quantitative",
-                "title": "Cats (AUD)",
-                "format": "$,d"
-              }
-            ]
+          "axis": {
+            "title": "AMA survey year",
+            "values": [2019, 2022, 2025],
+            "format": "d",
+            "labelAngle": 0,
+            "tickSize": 0,
+            "domain": false,
+            "grid": false
           }
         },
-        {
-          "transform": [
-            {
-              "fold": [
-                "cats_aud",
-                "dogs_aud"
-              ],
-              "as": [
-                "series",
-                "spend_aud"
-              ]
-            },
-            {
-              "calculate": "datum.series === \"dogs_aud\" ? \"Dogs\" : \"Cats\"",
-              "as": "pet_type"
-            }
-          ],
-          "mark": {
-            "type": "point",
-            "filled": true,
-            "size": 105,
-            "stroke": "#FFFFFF",
-            "strokeWidth": 1.2
+        "y": {
+          "field": "household_penetration_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 55]
           },
-          "encoding": {
-            "x": {
-              "field": "spend_aud",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  1200
-                ],
-                "type": "linear"
-              }
-            },
-            "y": {
-              "field": "category_label",
-              "type": "ordinal",
-              "sort": {
-                "field": "dogs_num",
-                "order": "descending"
-              }
-            },
-            "color": {
-              "field": "pet_type",
-              "type": "nominal",
-              "scale": {
-                "domain": [
-                  "Dogs",
-                  "Cats"
-                ],
-                "range": [
-                  "#1F5AA6",
-                  "#A33F73"
-                ]
-              },
-              "legend": {
-                "title": "",
-                "orient": "top"
-              }
-            },
-            "tooltip": [
-              {
-                "field": "spend_category",
-                "type": "nominal",
-                "title": "Category"
-              },
-              {
-                "field": "pet_type",
-                "type": "nominal",
-                "title": "Pet type"
-              },
-              {
-                "field": "spend_aud",
-                "type": "quantitative",
-                "title": "Annual average (AUD)",
-                "format": "$,d"
-              }
-            ]
+          "axis": {
+            "title": "Households with this pet (%)",
+            "values": [0, 10, 20, 30, 40, 50],
+            "grid": true
           }
-        }
-      ]
+        },
+        "color": {
+          "field": "pet_type",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dogs", "Cats"],
+            "range": ["#1F5AA6", "#A33F73"]
+          },
+          "legend": {
+            "title": "",
+            "orient": "top"
+          }
+        },
+        "detail": {
+          "field": "pet_type"
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "type": "nominal",
+            "title": "Pet type"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Survey year",
+            "format": "d"
+          },
+          {
+            "field": "household_penetration_pct",
+            "type": "quantitative",
+            "title": "Households with this pet (%)",
+            "format": ".1f"
+          }
+        ]
+      }
     },
     {
-      "width": 84,
-      "height": 440,
       "transform": [
         {
-          "calculate": "toNumber(datum.dogs_num) >= toNumber(datum.cats_num) ? \"+$\" + format(toNumber(datum.dogs_num) - toNumber(datum.cats_num), \",d\") : \"−$\" + format(toNumber(datum.cats_num) - toNumber(datum.dogs_num), \",d\")",
-          "as": "difference_label"
+          "filter": "datum.year == 2025"
+        },
+        {
+          "calculate": "datum.pet_type + \"  \" + format(datum.household_penetration_pct, \".1f\") + \"%\"",
+          "as": "label"
         }
       ],
       "mark": {
         "type": "text",
         "align": "left",
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "color": "#334F63"
+        "dx": 12,
+        "fontSize": 14,
+        "fontWeight": "bold"
       },
       "encoding": {
         "x": {
-          "datum": 0,
+          "field": "year",
           "type": "quantitative",
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          },
           "scale": {
-            "domain": [
-              0,
-              1
-            ]
+            "domain": [2019, 2027],
+            "nice": false
           }
         },
         "y": {
-          "field": "category_label",
-          "type": "ordinal",
-          "sort": {
-            "field": "dogs_num",
-            "order": "descending"
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
+          "field": "household_penetration_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 55]
           }
         },
         "text": {
-          "field": "difference_label",
-          "type": "nominal"
+          "field": "label"
+        },
+        "color": {
+          "field": "pet_type",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dogs", "Cats"],
+            "range": ["#1F5AA6", "#A33F73"]
+          }
         },
         "tooltip": [
           {
-            "field": "spend_category",
+            "field": "pet_type",
             "type": "nominal",
-            "title": "Category"
+            "title": "Pet type"
           },
           {
-            "field": "dogs_aud",
+            "field": "year",
             "type": "quantitative",
-            "title": "Dogs (AUD)",
-            "format": "$,d"
+            "title": "Survey year",
+            "format": "d"
           },
           {
-            "field": "cats_aud",
+            "field": "household_penetration_pct",
             "type": "quantitative",
-            "title": "Cats (AUD)",
-            "format": "$,d"
+            "title": "Households with this pet (%)",
+            "format": ".1f"
           }
         ]
       }
-    }
-  ],
-  "resolve": {
-    "scale": {
-      "y": "shared"
-    }
-  },
-  "spacing": 12,
-  "transform": [
-    {
-      "calculate": "toNumber(datum.dogs_aud)",
-      "as": "dogs_num"
-    },
-    {
-      "calculate": "toNumber(datum.cats_aud)",
-      "as": "cats_num"
     }
   ]
 }

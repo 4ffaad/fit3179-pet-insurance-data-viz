@@ -46,334 +46,93 @@
     }
   },
   "title": {
-    "text": "Top-three conditions vary by species and life stage",
-    "subtitle": "PetSure 2025 rankings · each ribbon is a list entry, not a claim flow."
+    "text": "PetSure’s top-ten conditions differ by species",
+    "subtitle": "2025 average claim amounts · grey crosses mean “not listed”, not zero."
   },
   "data": {
-    "url": "../data/petsure_age_condition_alluvial_ribbons.csv",
+    "url": "../data/petsure_condition_cost_matrix_2025.csv",
     "format": {
       "type": "csv"
     }
   },
-  "width": 1180,
-  "height": 610,
+  "transform": [
+    {
+      "calculate": "toNumber(datum.average_cost_aud)",
+      "as": "average_num"
+    }
+  ],
+  "width": 760,
+  "height": 520,
   "layer": [
     {
       "mark": {
-        "type": "area",
-        "interpolate": "monotone",
-        "orient": "vertical",
-        "opacity": 0.28,
-        "clip": true
-      },
-      "encoding": {
-        "x": {
-          "field": "x_value",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.25,
-              4.25
-            ]
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          }
-        },
-        "y": {
-          "field": "y_top_num",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -1.6,
-              26
-            ],
-            "reverse": true
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          }
-        },
-        "y2": {
-          "field": "y_bottom_num"
-        },
-        "detail": {
-          "field": "path_id"
-        },
-        "color": {
-          "field": "species",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "Dog",
-              "Cat"
-            ],
-            "range": [
-              "#1F5AA6",
-              "#A33F73"
-            ]
-          },
-          "legend": {
-            "title": "Species",
-            "orient": "top",
-            "direction": "horizontal",
-            "symbolOpacity": 1
-          }
-        },
-        "tooltip": [
-          {
-            "field": "species",
-            "type": "nominal",
-            "title": "Species"
-          },
-          {
-            "field": "life_stage",
-            "type": "nominal",
-            "title": "Life stage"
-          },
-          {
-            "field": "condition",
-            "type": "nominal",
-            "title": "Top-ranked condition"
-          },
-          {
-            "field": "rank_num",
-            "type": "quantitative",
-            "title": "Published rank",
-            "format": "d"
-          },
-          {
-            "field": "average_num",
-            "type": "quantitative",
-            "title": "Average claim (AUD)",
-            "format": "$,d"
-          },
-          {
-            "field": "highest_num",
-            "type": "quantitative",
-            "title": "Highest claim (AUD)",
-            "format": "$,d"
-          },
-          {
-            "field": "weight_num",
-            "type": "quantitative",
-            "title": "Rank entries represented",
-            "format": "d"
-          }
-        ]
-      },
-      "transform": [
-        {
-          "calculate": "toNumber(datum.x_num)",
-          "as": "x_value"
-        },
-        {
-          "calculate": "toNumber(datum.y_top)",
-          "as": "y_top_num"
-        },
-        {
-          "calculate": "toNumber(datum.y_bottom)",
-          "as": "y_bottom_num"
-        },
-        {
-          "calculate": "toNumber(datum.rank)",
-          "as": "rank_num"
-        },
-        {
-          "calculate": "toNumber(datum.average_cost_aud)",
-          "as": "average_num"
-        },
-        {
-          "calculate": "toNumber(datum.highest_cost_aud)",
-          "as": "highest_num"
-        },
-        {
-          "calculate": "toNumber(datum.flow_weight)",
-          "as": "weight_num"
-        }
-      ]
-    },
-    {
-      "data": {
-        "url": "../data/petsure_age_condition_alluvial_nodes.csv",
-        "format": {
-          "type": "csv"
-        }
-      },
-      "transform": [
-        {
-          "filter": "datum.stage_index < 3"
-        },
-        {
-          "calculate": "toNumber(datum.x0)",
-          "as": "x_left"
-        },
-        {
-          "calculate": "toNumber(datum.x1)",
-          "as": "x_right"
-        },
-        {
-          "calculate": "toNumber(datum.y0)",
-          "as": "node_top"
-        },
-        {
-          "calculate": "toNumber(datum.y1)",
-          "as": "node_bottom"
-        }
-      ],
-      "mark": {
         "type": "rect",
         "stroke": "#FBFAF7",
-        "strokeWidth": 1.2
+        "strokeWidth": 2
       },
       "encoding": {
         "x": {
-          "field": "x_left",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.25,
-              4.25
-            ]
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          }
-        },
-        "x2": {
-          "field": "x_right"
-        },
-        "y": {
-          "field": "node_top",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -1.6,
-              26
-            ],
-            "reverse": true
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          }
-        },
-        "y2": {
-          "field": "node_bottom"
-        },
-        "color": {
           "field": "species",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "Dog",
-              "Cat"
-            ],
-            "range": [
-              "#1F5AA6",
-              "#A33F73"
-            ]
-          }
-        },
-        "tooltip": [
-          {
-            "field": "node_label",
-            "type": "nominal",
-            "title": "Node"
-          },
-          {
-            "field": "weight",
-            "type": "quantitative",
-            "title": "Published rank entries",
-            "format": "d"
-          }
-        ]
-      }
-    },
-    {
-      "data": {
-        "url": "../data/petsure_age_condition_alluvial_nodes.csv",
-        "format": {
-          "type": "csv"
-        }
-      },
-      "transform": [
-        {
-          "filter": "datum.stage_index == 0"
-        },
-        {
-          "calculate": "toNumber(datum.center_y)",
-          "as": "center"
-        },
-        {
-          "calculate": "toNumber(datum.label_x)",
-          "as": "label_pos"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize": 14,
-        "fontWeight": "bold",
-        "align": "center",
-        "baseline": "middle"
-      },
-      "encoding": {
-        "x": {
-          "field": "label_pos",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.25,
-              4.25
-            ]
-          },
+          "type": "ordinal",
+          "sort": ["Dog", "Cat"],
           "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
+            "orient": "top",
+            "title": "",
+            "labelAngle": 0,
+            "labelFontWeight": "bold",
+            "labelFontSize": 13
           }
         },
         "y": {
-          "field": "center",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -1.6,
-              26
-            ],
-            "reverse": true
-          },
+          "field": "condition_axis",
+          "type": "ordinal",
+          "sort": [
+            "Heart / circulatory",
+            "Urinary tract",
+            "Dental",
+            "Mass lesions",
+            "Gastrointestinal",
+            "Osteoarthritis",
+            "Fight / bite wounds",
+            "Skin / allergies",
+            "Musculoskeletal",
+            "Respiratory",
+            "Eye conditions",
+            "Ear infections",
+            "Anal sac",
+            "Behavioural"
+          ],
           "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
+            "title": "",
+            "labelLimit": 190,
+            "labelFontSize": 11
           }
-        },
-        "text": {
-          "field": "label",
-          "type": "nominal"
         },
         "color": {
-          "value": "#FFFFFF"
+          "condition": {
+            "test": "datum.cell_status === 'In top 10'",
+            "field": "average_num",
+            "type": "quantitative",
+            "scale": {
+              "domain": [0, 1700],
+              "range": [
+                "#F5F4F8",
+                "#D5D3E2",
+                "#AAA9CB",
+                "#7C80AE",
+                "#525F93",
+                "#2E456F"
+              ]
+            },
+            "legend": {
+              "title": "Average claim amount (AUD)",
+              "orient": "top",
+              "format": "$,d",
+              "values": [0, 400, 800, 1200, 1600],
+              "gradientLength": 280
+            }
+          },
+          "value": "#D1D0CD"
         },
         "tooltip": [
           {
@@ -382,353 +141,108 @@
             "title": "Species"
           },
           {
-            "field": "life_stage",
-            "type": "nominal",
-            "title": "Life stage"
-          },
-          {
             "field": "condition",
             "type": "nominal",
-            "title": "Top-ranked condition"
+            "title": "Condition"
           },
           {
-            "field": "rank_num",
-            "type": "quantitative",
-            "title": "Published rank",
-            "format": "d"
+            "field": "value_label",
+            "type": "nominal",
+            "title": "Published average claim"
           },
           {
-            "field": "average_num",
+            "field": "highest_cost_aud",
             "type": "quantitative",
-            "title": "Average claim (AUD)",
+            "title": "Highest single claim (AUD)",
             "format": "$,d"
           },
           {
-            "field": "highest_num",
+            "field": "rank",
             "type": "quantitative",
-            "title": "Highest claim (AUD)",
-            "format": "$,d"
+            "title": "Rank in species list",
+            "format": "d"
           },
           {
-            "field": "weight_num",
-            "type": "quantitative",
-            "title": "Rank entries represented",
-            "format": "d"
+            "field": "cell_status",
+            "type": "nominal",
+            "title": "Listing status"
           }
         ]
       }
     },
     {
-      "data": {
-        "url": "../data/petsure_age_condition_alluvial_nodes.csv",
-        "format": {
-          "type": "csv"
-        }
-      },
       "transform": [
         {
-          "filter": "datum.stage_index == 1"
-        },
-        {
-          "calculate": "toNumber(datum.center_y)",
-          "as": "center"
-        },
-        {
-          "calculate": "toNumber(datum.label_x)",
-          "as": "label_pos"
+          "filter": "datum.cell_status !== 'In top 10'"
         }
       ],
       "mark": {
         "type": "text",
-        "fontSize": 11,
+        "text": "×",
+        "fontSize": 18,
         "fontWeight": "bold",
-        "align": "center",
+        "color": "#667681",
         "baseline": "middle",
-        "color": "#FFFFFF",
-        "limit": 85
+        "align": "center"
       },
       "encoding": {
         "x": {
-          "field": "label_pos",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.25,
-              4.25
-            ]
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          }
+          "field": "species",
+          "type": "ordinal",
+          "sort": ["Dog", "Cat"]
         },
         "y": {
-          "field": "center",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -1.6,
-              26
-            ],
-            "reverse": true
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          }
-        },
-        "text": {
-          "field": "stage_label",
-          "type": "nominal"
+          "field": "condition_axis",
+          "type": "ordinal",
+          "sort": [
+            "Heart / circulatory",
+            "Urinary tract",
+            "Dental",
+            "Mass lesions",
+            "Gastrointestinal",
+            "Osteoarthritis",
+            "Fight / bite wounds",
+            "Skin / allergies",
+            "Musculoskeletal",
+            "Respiratory",
+            "Eye conditions",
+            "Ear infections",
+            "Anal sac",
+            "Behavioural"
+          ]
         },
         "tooltip": [
           {
             "field": "species",
             "type": "nominal",
             "title": "Species"
-          },
-          {
-            "field": "stage_label",
-            "type": "nominal",
-            "title": "Life stage"
-          },
-          {
-            "field": "weight",
-            "type": "quantitative",
-            "title": "Published rank entries",
-            "format": "d"
-          }
-        ]
-      }
-    },
-    {
-      "data": {
-        "url": "../data/petsure_age_condition_alluvial_nodes.csv",
-        "format": {
-          "type": "csv"
-        }
-      },
-      "transform": [
-        {
-          "filter": "datum.stage_index == 2"
-        },
-        {
-          "calculate": "toNumber(datum.center_y)",
-          "as": "center"
-        },
-        {
-          "calculate": "toNumber(datum.label_x)",
-          "as": "label_pos"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "align": "left",
-        "baseline": "middle",
-        "dx": 2,
-        "limit": 205
-      },
-      "encoding": {
-        "x": {
-          "field": "label_pos",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.25,
-              4.25
-            ]
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          }
-        },
-        "y": {
-          "field": "center",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -1.6,
-              26
-            ],
-            "reverse": true
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          }
-        },
-        "text": {
-          "field": "label",
-          "type": "nominal"
-        },
-        "color": {
-          "value": "#253746"
-        },
-        "tooltip": [
-          {
-            "field": "species",
-            "type": "nominal",
-            "title": "Species"
-          },
-          {
-            "field": "life_stage",
-            "type": "nominal",
-            "title": "Life stage"
           },
           {
             "field": "condition",
             "type": "nominal",
-            "title": "Top-ranked condition"
+            "title": "Condition"
           },
           {
-            "field": "rank_num",
-            "type": "quantitative",
-            "title": "Published rank",
-            "format": "d"
-          },
-          {
-            "field": "average_num",
-            "type": "quantitative",
-            "title": "Average claim (AUD)",
-            "format": "$,d"
-          },
-          {
-            "field": "highest_num",
-            "type": "quantitative",
-            "title": "Highest claim (AUD)",
-            "format": "$,d"
-          },
-          {
-            "field": "weight_num",
-            "type": "quantitative",
-            "title": "Rank entries represented",
-            "format": "d"
-          }
-        ]
-      }
-    },
-    {
-      "data": {
-        "url": "../data/petsure_age_condition_alluvial_nodes.csv",
-        "format": {
-          "type": "csv"
-        }
-      },
-      "transform": [
-        {
-          "filter": "datum.stage_index == 3"
-        },
-        {
-          "calculate": "toNumber(datum.center_y)",
-          "as": "center"
-        },
-        {
-          "calculate": "toNumber(datum.label_x)",
-          "as": "label_pos"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize": 13,
-        "fontWeight": "bold",
-        "align": "center",
-        "baseline": "middle",
-        "color": "#334F63"
-      },
-      "encoding": {
-        "x": {
-          "field": "label_pos",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.25,
-              4.25
-            ]
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          }
-        },
-        "y": {
-          "field": "center",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -1.6,
-              26
-            ],
-            "reverse": true
-          },
-          "axis": {
-            "labels": false,
-            "ticks": false,
-            "domain": false,
-            "grid": false,
-            "title": ""
-          }
-        },
-        "text": {
-          "field": "label",
-          "type": "nominal"
-        },
-        "tooltip": [
-          {
-            "field": "species",
+            "field": "value_label",
             "type": "nominal",
-            "title": "Species"
+            "title": "Published average claim"
           },
           {
-            "field": "life_stage",
-            "type": "nominal",
-            "title": "Life stage"
-          },
-          {
-            "field": "condition",
-            "type": "nominal",
-            "title": "Top-ranked condition"
-          },
-          {
-            "field": "rank_num",
+            "field": "highest_cost_aud",
             "type": "quantitative",
-            "title": "Published rank",
-            "format": "d"
-          },
-          {
-            "field": "average_num",
-            "type": "quantitative",
-            "title": "Average claim (AUD)",
+            "title": "Highest single claim (AUD)",
             "format": "$,d"
           },
           {
-            "field": "highest_num",
+            "field": "rank",
             "type": "quantitative",
-            "title": "Highest claim (AUD)",
-            "format": "$,d"
+            "title": "Rank in species list",
+            "format": "d"
           },
           {
-            "field": "weight_num",
-            "type": "quantitative",
-            "title": "Rank entries represented",
-            "format": "d"
+            "field": "cell_status",
+            "type": "nominal",
+            "title": "Listing status"
           }
         ]
       }

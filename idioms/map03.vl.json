@@ -9,18 +9,9 @@
   "height": 620,
   "projection": {
     "type": "albers",
-    "rotate": [
-      -134,
-      0
-    ],
-    "center": [
-      0,
-      -27
-    ],
-    "parallels": [
-      -18,
-      -36
-    ],
+    "rotate": [-134, 0],
+    "center": [0, -27],
+    "parallels": [-18, -36],
     "scale": 1000
   },
   "data": {
@@ -70,31 +61,14 @@
           "field": "quote_gap",
           "type": "quantitative",
           "scale": {
-            "domain": [
-              520,
-              680
-            ],
-            "range": [
-              "#EFF3FF",
-              "#BDD7E7",
-              "#6BAED6",
-              "#3182BD",
-              "#08519C"
-            ]
+            "domain": [520, 680],
+            "range": ["#EFF3FF", "#BDD7E7", "#6BAED6", "#3182BD", "#08519C"]
           },
           "legend": {
             "title": "Dog–cat quote gap (AUD)",
             "orient": "top",
             "format": "$,d",
-            "values": [
-              525,
-              550,
-              575,
-              600,
-              625,
-              650,
-              675
-            ]
+            "values": [525, 550, 575, 600, 625, 650, 675]
           }
         },
         "tooltip": [
