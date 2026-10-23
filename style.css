@@ -382,7 +382,7 @@ main {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.chart-image-viewport {
+.chart-viewport {
   display: block;
   width: 100%;
   min-width: 0;
@@ -404,15 +404,10 @@ main {
   max-width: 100%;
   height: auto;
 }
-.chart-host[data-rendered="true"] + .chart-image-fallback {
-  display: none;
-}
-.chart-image {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin-inline: auto;
+.chart-load-error {
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 .chart-figure figcaption {
   max-width: 62ch;
@@ -558,21 +553,15 @@ main {
   .chart-grid .chart-figure {
     height: auto;
   }
-  .chart-image-viewport--wide {
+  .chart-viewport--wide {
     text-align: left;
   }
-  .chart-image-viewport--wide .chart-host {
+  .chart-viewport--wide .chart-host {
     min-width: 690px;
     justify-content: flex-start;
   }
-  .chart-image-viewport--wide .chart-host .vega-embed {
+  .chart-viewport--wide .chart-host .vega-embed {
     max-width: none;
-  }
-  .chart-image-viewport--wide .chart-image {
-    width: auto;
-    min-width: 690px;
-    max-width: none;
-    margin-inline: 0;
   }
 }
 @media (max-width: 650px) {
@@ -664,9 +653,6 @@ main {
     gap: 7px;
     padding: 7px 8px;
     font-size: 0.78rem;
-  }
-  .chart-image-viewport--wide .chart-image {
-    min-width: 690px;
   }
   .chart-figure figcaption {
     font-size: 0.76rem;

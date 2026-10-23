@@ -16,8 +16,6 @@ function makeDataUrlsAbsolute(spec, specUrl) {
 }
 
 async function renderChart(host) {
-  const fallback = host.nextElementSibling;
-
   try {
     const specUrl = new URL(host.dataset.spec, document.baseURI);
     const response = await fetch(specUrl);
@@ -34,9 +32,13 @@ async function renderChart(host) {
     });
 
     host.dataset.rendered = "true";
-    if (fallback instanceof HTMLImageElement) fallback.hidden = true;
   } catch (error) {
-    host.hidden = true;
+    const message = document.createElement("p");
+    message.className = "chart-load-error";
+    message.setAttribute("role", "status");
+    message.textContent =
+      "This chart could not load. Reload the page to try again.";
+    host.replaceChildren(message);
     console.error(`Chart failed to render: ${host.dataset.spec}`, error);
   }
 }
