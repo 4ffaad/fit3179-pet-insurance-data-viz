@@ -28,7 +28,7 @@ jobs:
       - name: Prepare the site files
         run: |
           mkdir site
-          cp index.html style.css site/
+          cp index.html style.css main.js site/
           cp -R idioms diagrams data site/
           touch site/.nojekyll
       - name: Upload the Pages artifact

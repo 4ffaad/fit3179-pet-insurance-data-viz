@@ -383,13 +383,29 @@ main {
   text-transform: uppercase;
 }
 .chart-image-viewport {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-color: #b7c6cc transparent;
+  scrollbar-width: thin;
+}
+.chart-host {
   display: flex;
   width: 100%;
   min-width: 0;
   justify-content: center;
-  overflow-x: auto;
-  scrollbar-color: #b7c6cc transparent;
-  scrollbar-width: thin;
+}
+.chart-host .vega-embed {
+  max-width: 100%;
+}
+.chart-host svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.chart-host[data-rendered="true"] + .chart-image-fallback {
+  display: none;
 }
 .chart-image {
   display: block;
@@ -543,7 +559,14 @@ main {
     height: auto;
   }
   .chart-image-viewport--wide {
+    text-align: left;
+  }
+  .chart-image-viewport--wide .chart-host {
+    min-width: 690px;
     justify-content: flex-start;
+  }
+  .chart-image-viewport--wide .chart-host .vega-embed {
+    max-width: none;
   }
   .chart-image-viewport--wide .chart-image {
     width: auto;
